@@ -227,6 +227,10 @@
   scrollbar-color: transparent transparent;
 }
 
+.game-cont{
+  /*ADD STYLE*/
+}
+
 .leccion-cont::-webkit-scrollbar, .game-cont::-webkit-scrollbar {
   width: 5px; /* Ajusta el ancho de la barra de desplazamiento */
 }
