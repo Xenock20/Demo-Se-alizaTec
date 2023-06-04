@@ -1,0 +1,22 @@
+button {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button > img{
+  width: 100px;
+}
+
+button.correcta {
+  background-color: green;
+  color: white;
+}
+
+button.incorrecta {
+  background-color: red;
+  color: white;
+}

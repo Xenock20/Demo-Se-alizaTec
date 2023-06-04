@@ -8,8 +8,8 @@ export default function AdivinaGame({ contenido }) {
   const [juegoTerminado, setJuegoTerminado] = useState(false);
 
   useEffect(() => {
-    const listOptionCopy = arrayRevuelto([...contenido[0].options]);
-    const objetoImageCopy = contenido[0].img;
+    const listOptionCopy = arrayRevuelto([...contenido.options]);
+    const objetoImageCopy = contenido.img;
     setOptions(
       listOptionCopy.map((option, i) => ({
         index: i,

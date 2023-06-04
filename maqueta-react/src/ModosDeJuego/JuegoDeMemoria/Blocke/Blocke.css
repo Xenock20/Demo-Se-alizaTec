@@ -35,6 +35,10 @@
   font-size: 55px;
 }
 
+.memo-block-back > img {
+  width: 50px;
+}
+
 .memo-block-front {
   background-color: #28436B;
 }

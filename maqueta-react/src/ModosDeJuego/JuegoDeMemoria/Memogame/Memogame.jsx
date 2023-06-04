@@ -2,6 +2,9 @@ import Tabla from "../Tabla/Tabla";
 import { useState, useEffect } from "react";
 
 export default function Memogame({ contenido }) {
+
+  const {items} = contenido
+
   const [contenidoRevueltoDeLaTabla, setContenidoRevueltoDeLaTabla] = useState(
     []
   );
@@ -9,13 +12,14 @@ export default function Memogame({ contenido }) {
   const [animacion, setAnimacion] = useState(false);
 
   useEffect(() => {
-    const listaContenidoRevuelto = arrayRevuelto([...contenido, ...contenido]);
+    const listaContenidoRevuelto = arrayRevuelto([...items]);
     setContenidoRevueltoDeLaTabla(
       listaContenidoRevuelto.map((item, i) => ({
         index: i,
         item: item.item,
         name: item.name,
         flipped: false,
+        type: item.type
       }))
     );
   }, []);

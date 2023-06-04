@@ -4,7 +4,7 @@ import vocalI from "./Image/N0-Vocales/I.png";
 import vocalO from "./Image/N0-Vocales/O.png";
 import vocalU from "./Image/N0-Vocales/U.png";
 
-export const contGame = [
+export const contGames = [
   {
     id: 0,
     modeGame: "juego-de-emparejamiento",
@@ -63,42 +63,62 @@ export const contGame = [
         {
           item: "A",
           name: "A",
+          type: "text"
         },
         {
           item: "E",
           name: "E",
+          type: "text"
         },
         {
           item: "I",
           name: "I",
+          type: "text"
         },
         {
           item: "O",
           name: "O",
+          type: "text"
         },
         {
           item: "U",
           name: "U",
+          type: "text"
         },
         {
           item: vocalA,
           name: "A",
+          type: "img"
         },
         {
           item: vocalE,
           name: "E",
+          type: "img"
         },
         {
           item: vocalI,
           name: "I",
+          type: "img"
         },
         {
           item: vocalO,
           name: "O",
+          type: "img"
         },
         {
           item: vocalU,
           name: "U",
+          type: "img"
+        },
+        {
+          item: "⭐",
+          name: "extra",
+          type: "text"
+        },
+        {
+          item: "⭐",
+          name: "extra",
+          type: "text"
         },
       ],
     },
@@ -106,6 +126,18 @@ export const contGame = [
   {
     id: 3,
     modeGame: "adivinanza-de-señas",
-    cont: {},
+    cont: {
+      img: {
+        url: vocalO,
+        name: "O"
+      },
+      options: [
+        "A",
+        "E",
+        "I",
+        "O",
+        "U"
+      ]
+    },
   },
 ];
