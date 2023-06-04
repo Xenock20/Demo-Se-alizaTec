@@ -1,9 +1,6 @@
 import React from "react";
 
 export default function ContSecundario({ cont }) {
-
-  console.log(cont);
-
   return (
     <div className="cont-secundario">
       {cont !== null ? (
