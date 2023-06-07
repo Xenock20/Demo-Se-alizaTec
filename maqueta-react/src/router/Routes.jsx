@@ -3,7 +3,7 @@ import LeccionPage from "../pages/LeccionPage";
 import PractPage from "./../pages/PractPage";
 import { useContext } from "react";
 import { UserContext } from "../context/UserProvider";
-import HomeDemo from './../pages/HomeDemo';
+import HomeDemo from "./../pages/HomeDemo";
 
 export default function Routers() {
   return (
