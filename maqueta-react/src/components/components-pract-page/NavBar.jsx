@@ -3,7 +3,9 @@ import logo from "./../../assets/log.png"
 import profile from "../../assets/profile.png"
 import start from "../../assets/Vector.png"
 
+
 export default function NavBar() {
+
   return (
     <div className="nav-bar-home">
       <div className="nav-bar-logo">

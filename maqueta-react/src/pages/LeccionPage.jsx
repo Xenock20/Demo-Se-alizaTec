@@ -8,18 +8,20 @@ import ContPrincipal from "../components/components-leccion-page/ContPrincipal";
 import ContSecundario from "../components/components-leccion-page/ContSecundario";
 
 export default function LeccionPage() {
-  const { id } = useParams();
+  const {id} = useParams()
   const [titulo, setTitulo] = useState("");
   const [contPrincipal, setContPrincipal] = useState("");
   const [contSecundario, setContSecundario] = useState([]);
+  const [links, setLinks] = useState({})
 
   useEffect(() => {
-    const leccionCopia = lecciones[id]
-    
-    setTitulo(leccionCopia.titulo)
-    setContPrincipal(leccionCopia.contenido.contPrincipal)
-    setContSecundario(leccionCopia.contenido.contSecundario)
-  }, []);
+    const leccionCopia = lecciones[id];
+
+    setTitulo(leccionCopia.titulo);
+    setContPrincipal(leccionCopia.contenido.contPrincipal);
+    setContSecundario(leccionCopia.contenido.contSecundario);
+    setLinks(leccionCopia.link)
+  }, [id]);
 
   return (
     <div className="home-page">
@@ -31,7 +33,7 @@ export default function LeccionPage() {
           <ContPrincipal text={contPrincipal}></ContPrincipal>
           <ContSecundario cont={contSecundario}></ContSecundario>
         </div>
-        <ButtonCont></ButtonCont>
+        <ButtonCont links={links}></ButtonCont>
       </div>
     </div>
   );

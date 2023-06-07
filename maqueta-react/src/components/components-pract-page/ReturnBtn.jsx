@@ -1,11 +1,12 @@
 import React from "react";
-import rowLeft from "../../assets/rowlefth.png"
+import rowLeft from "../../assets/rowlefth.png";
+import { Link } from "react-router-dom";
 
-export default function ReturnBtn() {
+export default function ReturnBtn({ link }) {
   return (
-    <div className="return-btn btn">
+    <Link to={link} className="return-btn btn">
       <img src={rowLeft} />
       Atras
-    </div>
+    </Link>
   );
 }
