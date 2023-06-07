@@ -1,14 +1,14 @@
 import { Routes, Route, useParams, Navigate } from "react-router-dom";
-import HomePage from "../pages/HomePage";
 import LeccionPage from "../pages/LeccionPage";
 import PractPage from "./../pages/PractPage";
 import { useContext } from "react";
 import { UserContext } from "../context/UserProvider";
+import HomeDemo from './../pages/HomeDemo';
 
 export default function Routers() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />}></Route>
+      <Route path="/" element={<HomeDemo />}></Route>
       <Route path="/leccion/:id" element={<LeccionPageWrapper />}></Route>
       <Route path="/mododejuego/:id" element={<PractPageWrapper />}></Route>
     </Routes>
