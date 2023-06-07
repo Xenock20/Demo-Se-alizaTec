@@ -14,11 +14,11 @@ export default function LeccionPage() {
   const [contSecundario, setContSecundario] = useState([]);
 
   useEffect(() => {
-    const leccionCopia = lecciones[id]
-    
-    setTitulo(leccionCopia.titulo)
-    setContPrincipal(leccionCopia.contenido.contPrincipal)
-    setContSecundario(leccionCopia.contenido.contSecundario)
+    const leccionCopia = lecciones[id];
+
+    setTitulo(leccionCopia.titulo);
+    setContPrincipal(leccionCopia.contenido.contPrincipal);
+    setContSecundario(leccionCopia.contenido.contSecundario);
   }, []);
 
   return (
