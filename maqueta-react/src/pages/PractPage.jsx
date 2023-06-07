@@ -8,12 +8,14 @@ import { contGames } from "../Contenido/ContenidoGame";
 
 export default function PractPage() {
   const { id } = useParams();
+  const [links, setLinks] = useState({})
 
   const [contenidoDelJuego, setContenidoDelJuego] = useState({});
 
   useEffect(() => {
     const contGame = contGames[id];
     setContenidoDelJuego(contGame);
+    setLinks(contGame.link)
   }, []);
 
   return (
@@ -23,7 +25,7 @@ export default function PractPage() {
         <ContTop></ContTop>
       </div>
       <GameCont contJuego={contenidoDelJuego}></GameCont>
-      <ButtonCont></ButtonCont>
+      <ButtonCont links={links}></ButtonCont>
     </div>
   );
 }

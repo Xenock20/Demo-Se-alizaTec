@@ -29,6 +29,10 @@ export const contGames = [
         },
       ],
     },
+    link:{
+      return: "/leccion/1",
+      next: "/leccion/2"
+    }
   },
   {
     id: 1,

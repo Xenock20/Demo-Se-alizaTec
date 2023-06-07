@@ -19,6 +19,10 @@ export const lecciones = [
         },
       ],
     },
+    link: {
+      return: "/",
+      next: "/leccion/1"
+    }
   },
   {
     id: 1,
@@ -34,6 +38,10 @@ export const lecciones = [
         },
       ],
     },
+    link: {
+      return: "/leccion/0",
+      next: "/mododejuego/0"
+    }
   },
   {
     id: 2,

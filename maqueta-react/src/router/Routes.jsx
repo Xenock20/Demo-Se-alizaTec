@@ -2,7 +2,7 @@ import { Routes, Route, useParams, Navigate } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import LeccionPage from "../pages/LeccionPage";
 import PractPage from "./../pages/PractPage";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { UserContext } from "../context/UserProvider";
 
 export default function Routers() {
