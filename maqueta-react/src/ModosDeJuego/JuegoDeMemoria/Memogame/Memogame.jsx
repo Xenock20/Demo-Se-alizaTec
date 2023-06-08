@@ -65,7 +65,7 @@ export default function Memogame({ contenido, gameComplete, style }) {
   };
 
   return (
-    <div>
+    <div className="memo-game-cont">
       <div className="info-game">
         <p>❕</p>
         <span>

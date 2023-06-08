@@ -265,12 +265,13 @@ a:link, a:visited, a:active {
   position: relative;
   top: 25px;
   left: 25px;
-  font-size: 32px;
+  font-size: 38px;
+  color: #de4a97;
 }
 
 .leccion-cont > .cont-principal {
   position: relative;
-  top: 50px;
+  top: 30px;
   font-size: 22px;
   padding: 10px;
   margin: 0px 10px;
@@ -278,23 +279,33 @@ a:link, a:visited, a:active {
 
 .leccion-cont > .cont-secundario {
   position: relative;
-  top: 50px;
-  font-size: 22px;
+  top: 60px;
+  font-size: 20px;
   padding: 10px;
   margin: 0px 10px;
+  text-align: center;
+}
+
+.titulo-cont-sec{
+  font-size: 32px;
 }
 
 .img-cont-sec {
-  width: 100px;
-  height: 100px;
+  width: 420px;
+  height: 420px;
+  background-color: #423b5078;
 }
 
 .cont-sec-item {
   margin: 10px;
   display: flex;
   justify-content: space-around;
+  text-align: initial;
+  color: white;
 }
 
 .cont-sec-item > p {
   width: 50%;
+  padding: 10px;
+  font-size: 32px;
 }

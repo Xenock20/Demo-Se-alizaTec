@@ -129,7 +129,7 @@ export const contGames = [
       ],
     },
     link:{
-      return: "/leccion/2",
+      return: "/leccion/3",
       next: "/mododejuego/3"
     },
     desblock: {

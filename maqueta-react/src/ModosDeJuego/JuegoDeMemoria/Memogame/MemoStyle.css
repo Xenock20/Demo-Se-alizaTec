@@ -9,6 +9,11 @@
     border-radius: 10px;
 }
 
+.memo-game-cont{
+    display: flex;
+    align-items: center;
+}
+
 .info-game > p{
     font-size: 28px;
 }
