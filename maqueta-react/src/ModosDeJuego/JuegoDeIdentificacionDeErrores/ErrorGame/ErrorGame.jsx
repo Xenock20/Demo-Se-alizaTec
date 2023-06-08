@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import ConetOptionsErro from "../ContOptions/ConetOptionsError"; 
+import ConetOptionsErro from "../ContOptions/ConetOptionsError";
 import Frase from "../Frase/Frase";
 
-export default function ErrorGame({contenido}) {
+export default function ErrorGame({ contenido, gameComplete }) {
   const [optionsImg, setOptionsImg] = useState([]);
   const [frase, setFrase] = useState();
   const [juegoTerminado, setJuegoTerminado] = useState(false);
@@ -22,13 +22,11 @@ export default function ErrorGame({contenido}) {
   }, []);
 
   const handleClick = (option) => {
-
-    const optionCopy = {...option, clicket: true}
-    const optionsCopy = [...optionsImg]
+    const optionCopy = { ...option, clicket: true };
+    const optionsCopy = [...optionsImg];
     optionsCopy.splice(option.index, 1, optionCopy);
-    setOptionsImg(optionsCopy)
-    setJuegoTerminado(true)
-
+    setOptionsImg(optionsCopy);
+    setJuegoTerminado(true);
   };
 
   return (

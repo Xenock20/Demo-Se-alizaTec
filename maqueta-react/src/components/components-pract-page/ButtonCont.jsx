@@ -1,13 +1,13 @@
 import React from "react";
-import ReturnBtn from './ReturnBtn';
-import NextBtn from './NextBtn';
+import ReturnBtn from "./ReturnBtn";
+import NextBtn from "./NextBtn";
 
-export default function ButtonCont({links}) {
+export default function ButtonCont({ links, completado = true }) {
   return (
     <div className="button-cont">
       <div className="button-box">
         <ReturnBtn link={links.return}></ReturnBtn>
-        <NextBtn link={links.next}></NextBtn>
+        <NextBtn link={links.next} completado={completado}></NextBtn>
       </div>
     </div>
   );

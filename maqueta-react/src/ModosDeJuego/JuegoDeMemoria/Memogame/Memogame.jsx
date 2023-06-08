@@ -1,9 +1,8 @@
 import Tabla from "../Tabla/Tabla";
 import { useState, useEffect } from "react";
 
-export default function Memogame({ contenido }) {
-
-  const {items} = contenido
+export default function Memogame({ contenido, gameComplete }) {
+  const { items } = contenido;
 
   const [contenidoRevueltoDeLaTabla, setContenidoRevueltoDeLaTabla] = useState(
     []
@@ -19,7 +18,7 @@ export default function Memogame({ contenido }) {
         item: item.item,
         name: item.name,
         flipped: false,
-        type: item.type
+        type: item.type,
       }))
     );
   }, []);
@@ -32,6 +31,10 @@ export default function Memogame({ contenido }) {
     return a;
   };
 
+  const verifictComplete = (contenido) => {
+    return contenido.every((item) => item.flipped);
+  };
+
   const handleClick = (blocke) => {
     const blockeDadoVuelta = { ...blocke, flipped: true };
     let contenidoRevueltoDeLaTablaCopia = [...contenidoRevueltoDeLaTabla];
@@ -41,6 +44,9 @@ export default function Memogame({ contenido }) {
       setBloqueSeleccionado(blocke);
     } else if (bloqueSeleccionado.name === blocke.name) {
       setBloqueSeleccionado(null);
+      if (verifictComplete(contenidoRevueltoDeLaTablaCopia)) {
+        gameComplete()
+      }
     } else {
       setAnimacion(true);
       setTimeout(() => {

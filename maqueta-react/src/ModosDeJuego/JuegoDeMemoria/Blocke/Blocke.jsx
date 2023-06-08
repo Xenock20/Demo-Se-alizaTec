@@ -1,7 +1,7 @@
 import "./Blocke.css";
 
 export default function Blocke({ animating, handleBlockeClick, blocke }) {
-  console.log(blocke);
+
 
   return (
     <div

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ContOptions from "../ContOptions/ContOptions";
 import ImagenAdivinaGame from "../Imagen/ImagenAdivinaGame";
 
-export default function AdivinaGame({ contenido }) {
+export default function AdivinaGame({ contenido, gameComplete }) {
   const [options, setOptions] = useState([]);
   const [objetoImage, setObjetoImage] = useState({});
   const [juegoTerminado, setJuegoTerminado] = useState(false);
@@ -38,6 +38,7 @@ export default function AdivinaGame({ contenido }) {
     } else {
       const optionCopy = { ...option, clicket: true, result: true };
       optionsCopy.splice(option.index, 1, optionCopy);
+      gameComplete()
     }
     setOptions(optionsCopy);
     setJuegoTerminado(true);

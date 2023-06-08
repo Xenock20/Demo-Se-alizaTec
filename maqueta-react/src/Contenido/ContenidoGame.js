@@ -32,6 +32,10 @@ export const contGames = [
     link:{
       return: "/leccion/1",
       next: "/leccion/2"
+    },
+    desblock: {
+      leccionID: [2],
+      modeGameID: [1]
     }
   },
   {
@@ -58,6 +62,14 @@ export const contGames = [
         },
       ],
     },
+    link:{
+      return: "/leccion/2",
+      next: "/leccion/3"
+    },
+    desblock: {
+      leccionID: [3],
+      modeGameID: [2]
+    }
   },
   {
     id: 2,
@@ -126,6 +138,14 @@ export const contGames = [
         },
       ],
     },
+    link:{
+      return: "/leccion/2",
+      next: "/mododejuego/3"
+    },
+    desblock: {
+      leccionID: [],
+      modeGameID: [3]
+    }
   },
   {
     id: 3,
@@ -143,5 +163,13 @@ export const contGames = [
         "U"
       ]
     },
+    link:{
+      return: "/mododejuego/3",
+      next: "/"
+    },
+    desblock: {
+      leccionID: [],
+      modeGameID: []
+    }
   },
 ];
