@@ -49,7 +49,7 @@ export const contGames = [
           type: true,
         },
         {
-          url: vocalO,
+          url: vocalU,
           type: false,
         },
         {
