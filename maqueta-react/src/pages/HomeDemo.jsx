@@ -4,10 +4,10 @@ const HomeDemo = () => {
   return (
     <div className="home-demo">
       <div className="box-inicio animate__animated animate__fadeInUp">
-        <div className="init">
-          <img className="img-home-demo" src="/src/assets/logo.png" alt="" />
-          <h1 className="title">Comenzamos</h1>
+        <div className="box-completa">
           <div className="botones">
+          <img className="img-home-demo" src="/src/assets/logo.png" alt="Logo de SeñalizaTec" />
+          <h1 className="title">Comenzamos</h1>
             <BtnInicio name="Iniciar Demo" estilo="btn1-inicio" />
           </div>
         </div>
