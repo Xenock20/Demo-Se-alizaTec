@@ -4,29 +4,46 @@ import AdivinaGame from "./../../ModosDeJuego/AdivinanzaDeSeñas/AdivinaGame/Adi
 import ErrorGame from "./../../ModosDeJuego/JuegoDeIdentificacionDeErrores/ErrorGame/ErrorGame";
 import { GameDeEmparejamiento } from "../../ModosDeJuego/JuegoDeEmparejamiento/juegoDeEmparejamiento";
 
-export default function GameCont({ contJuego }) {
+export default function GameCont({ contJuego, handleCompleteGame }) {
   const { modeGame } = contJuego;
   const { cont } = contJuego;
   let componente;
 
   switch (modeGame) {
     case "juego-de-emparejamiento":
-      componente = <GameDeEmparejamiento contenido={cont}></GameDeEmparejamiento>;
+      componente = (
+        <GameDeEmparejamiento
+          contenido={cont}
+          gameComplete={handleCompleteGame}
+        ></GameDeEmparejamiento>
+      );
       break;
     case "juego-de-memoria":
-      componente = <Memogame contenido={cont}></Memogame>
+      componente = (
+        <Memogame contenido={cont} gameComplete={handleCompleteGame}></Memogame>
+      );
       break;
     case "adivinanza-de-señas":
-      componente = <AdivinaGame contenido={cont}></AdivinaGame>
+      componente = (
+        <AdivinaGame
+          contenido={cont}
+          gameComplete={handleCompleteGame}
+        ></AdivinaGame>
+      );
       break;
     case "juego-de-ordenamiento":
-      componente = <div>"juego-de-ordenamiento"</div>
+      componente = <div>"juego-de-ordenamiento"</div>;
       break;
     case "juego-de-completar":
-      componente = <div>"juego-de-completar"</div>
+      componente = <div>"juego-de-completar"</div>;
       break;
     case "juego-de-identificar-errores":
-      componente = <ErrorGame contenido={cont}></ErrorGame>
+      componente = (
+        <ErrorGame
+          contenido={cont}
+          gameComplete={handleCompleteGame}
+        ></ErrorGame>
+      );
       break;
     default:
       componente = null;

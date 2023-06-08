@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Pregunta from "./pregunta";
 
-export const GameDeEmparejamiento = ({ contenido }) => {
+export const GameDeEmparejamiento = ({ contenido, gameComplete }) => {
   const [pregunta, setPregunta] = useState();
   const [options, setOptions] = useState([]);
   const [finalGame, setFinalGame] = useState(false);
@@ -31,6 +31,13 @@ export const GameDeEmparejamiento = ({ contenido }) => {
   const handleClick = (option) => {
     const optionsCopy = [...options];
     const optionCopy = { ...option, clicket: true };
+
+    if ( optionCopy.type ){
+      gameComplete()
+    } else {
+      console.log("Incompletado");
+    }
+
     optionsCopy.splice(option.index, 1, optionCopy);
 
     setOptions(optionsCopy);
