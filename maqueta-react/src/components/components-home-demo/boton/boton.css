@@ -3,15 +3,26 @@
 
 .box-inicio {
   /* Cuadrado Transparente Color */
-  width: 475px;
-  height: 547px;
+  width: 450px;
+  height: 450px;
   background: rgba(2, 2, 3, 0.42);
   backdrop-filter: blur(2px);
   border-radius: 32px;
-  position: absolute;
-  left: 92px;
-  top: 150px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+   justify-content: center;
+   align-items: center;
+  
+}
+
+
+
+.home-demo{
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
 }
 .img-home-demo {
   width: 236px;
@@ -97,17 +108,15 @@
 .title {
   color: white;
   font-family: "Lalezar", cursive;
-  margin-top: 40px;
 }
 
-.init {
-  position: relative;
-  text-align: center;
-  top: 30px;
-}
+
 
 .botones {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
+  text-align: center;
   flex-direction: column;
 }
