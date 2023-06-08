@@ -6,6 +6,7 @@ import ButtonCont from "./../components/components-pract-page/ButtonCont";
 import { useParams } from "react-router";
 import { contGames } from "../Contenido/ContenidoGame";
 import { UserContext } from "../context/UserProvider";
+import BotonReset from "../ModosDeJuego/BotonReset/BotonReset";
 
 export default function PractPage() {
   const { id } = useParams();
@@ -13,6 +14,8 @@ export default function PractPage() {
   const [completado, setCompletado] = useState(false);
   const [deblock, setDeblock] = useState({});
   const [contenidoDelJuego, setContenidoDelJuego] = useState({});
+  const [reset, setReset] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
 
   const { desbloquearLeccion, desbloquearModoJuego } = useContext(UserContext);
 
@@ -34,6 +37,15 @@ export default function PractPage() {
     });
   };
 
+  const reiniciarComponente = () => {
+    setReset(!reset); // Cambia el valor de 'reset' para activar el useEffect
+    setGameOver(false);
+  };
+
+  const gameOverShow = () => {
+    setGameOver(true);
+  };
+
   return (
     <div className="home-page">
       <NavBar></NavBar>
@@ -43,8 +55,11 @@ export default function PractPage() {
       <GameCont
         contJuego={contenidoDelJuego}
         handleCompleteGame={handleCompleteGame}
+        reset={reset}
+        gameOver={gameOverShow}
       ></GameCont>
       <ButtonCont links={links} completado={completado}></ButtonCont>
+      {<BotonReset gameOver={gameOver} onReset={reiniciarComponente} />}
     </div>
   );
 }
