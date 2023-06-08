@@ -8,15 +8,26 @@
   color: #ffffff;
 }
 
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
 .abc-text-home > h5 {
   font-family: "Lalezar", cursive;
   font-family: "Rubik", sans-serif;
 }
 
 .home-demo {
-  background: linear-gradient(180deg, #0B294F -7.77%, #28436B 56.75%, #514A9D 100%);
+  background: linear-gradient(
+    180deg,
+    #0b294f -7.77%,
+    #28436b 56.75%,
+    #514a9d 100%
+  );
   min-height: 100vh;
-} 
+}
 
 .home-page {
   height: 100vh;
@@ -156,7 +167,7 @@
   background-color: #151316;
   position: fixed;
   width: 100%;
-  height: 100px;
+  height: 75px;
   bottom: 0;
   z-index: 9;
 }
@@ -174,7 +185,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height:40px;
+  height: 40px;
   width: 150px;
   border-radius: 41px;
   font-weight: 600;
@@ -192,15 +203,15 @@
 
 .close-level {
   position: fixed;
-  top: 100px;
+  top: 70px;
   left: 15%;
 }
 
 .cont-top {
-  top: 75px;
+  top: 50px;
   position: fixed;
   width: 100%;
-  height: 15%;
+  height: 10%;
   z-index: 9;
 }
 
@@ -212,48 +223,64 @@
   height: 25px;
   width: 50%;
   position: fixed;
-  top: 100px;
+  top: 70px;
   left: 25%;
   background-color: #0b2950;
   border-radius: 14px;
 }
 
-.leccion-cont, .game-cont{
+.leccion-cont,
+.game-cont {
   padding: 15px;
   position: fixed;
-  left: 24%;
+  left: 18%;
   background-color: #423b5078;
-  width: 50%;
-  height: 50%;
-  top: 25%;
+  width: 60%;
+  height: 60%;
+  top: 20%;
   overflow-y: scroll;
   overflow-x: hidden;
   scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
+  scrollbar-color: #de4a97 transparent;
 }
 
-.game-cont{
+.game-cont {
   /*ADD STYLE*/
+  overflow-y: hidden;
+  width: 90%;
+  left: 5%;
+  background-color: #151316;
+  display: flex;
+  justify-content: center;
 }
 
-.leccion-cont::-webkit-scrollbar, .game-cont::-webkit-scrollbar {
-  width: 5px; /* Ajusta el ancho de la barra de desplazamiento */
+.leccion-cont::-webkit-scrollbar,
+.game-cont::-webkit-scrollbar {
+  width: 8px; /* Ajusta el ancho de la barra de desplazamiento */
 }
 
-.leccion-cont::-webkit-scrollbar-thumb, .game-cont::-webkit-scrollbar {
-  background-color: transparent; /* Establece el color de la barra de desplazamiento */
+.leccion-cont::-webkit-scrollbar-thumb,
+.game-cont::-webkit-scrollbar {
+  background-color: #de4a97;
+  border-radius: 4px;
+}
+
+.leccion-cont::-webkit-scrollbar-track,
+.game-cont::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .leccion-cont > h1 {
   position: relative;
   top: 25px;
   left: 25px;
-  font-size: 32px;
+  font-size: 38px;
+  color: #de4a97;
 }
 
 .leccion-cont > .cont-principal {
   position: relative;
-  top: 50px;
+  top: 30px;
   font-size: 22px;
   padding: 10px;
   margin: 0px 10px;
@@ -261,23 +288,55 @@
 
 .leccion-cont > .cont-secundario {
   position: relative;
-  top: 50px;
-  font-size: 22px;
+  top: 60px;
+  font-size: 20px;
   padding: 10px;
   margin: 0px 10px;
+  text-align: center;
 }
 
-.img-cont-sec{
-  width: 100px;
-  height: 100px;
+.titulo-cont-sec {
+  font-size: 32px;
 }
 
-.cont-sec-item{
+.img-cont-sec {
+  width: 420px;
+  height: 420px;
+  background-color: #423b5078;
+}
+
+.cont-sec-item {
   margin: 10px;
   display: flex;
   justify-content: space-around;
+  text-align: initial;
+  color: white;
 }
 
 .cont-sec-item > p {
   width: 50%;
+  padding: 10px;
+  font-size: 32px;
+}
+
+.reset-button {
+  z-index: 20;
+  position: fixed;
+  font-size: 38px;
+  height: 100px;
+  width: 450px;
+  background-color: #de4a97;
+  border: 5px solid #423b5078;
+  font-weight: 600;
+  top: 45%;
+  left: 35%;
+  pointer-events: none;
+  opacity: 0;
+  border-radius: 10px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.reset-button.show {
+  opacity: 1;
+  pointer-events: auto;
 }

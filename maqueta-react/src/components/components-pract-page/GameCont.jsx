@@ -4,9 +4,16 @@ import AdivinaGame from "./../../ModosDeJuego/AdivinanzaDeSeñas/AdivinaGame/Adi
 import ErrorGame from "./../../ModosDeJuego/JuegoDeIdentificacionDeErrores/ErrorGame/ErrorGame";
 import { GameDeEmparejamiento } from "../../ModosDeJuego/JuegoDeEmparejamiento/juegoDeEmparejamiento";
 
-export default function GameCont({ contJuego, handleCompleteGame }) {
+export default function GameCont({
+  contJuego,
+  handleCompleteGame,
+  reset,
+  gameOver,
+}) {
   const { modeGame } = contJuego;
   const { cont } = contJuego;
+  const { style } = contJuego;
+
   let componente;
 
   switch (modeGame) {
@@ -15,12 +22,18 @@ export default function GameCont({ contJuego, handleCompleteGame }) {
         <GameDeEmparejamiento
           contenido={cont}
           gameComplete={handleCompleteGame}
+          reset={reset}
+          gameOver={gameOver}
         ></GameDeEmparejamiento>
       );
       break;
     case "juego-de-memoria":
       componente = (
-        <Memogame contenido={cont} gameComplete={handleCompleteGame}></Memogame>
+        <Memogame
+          contenido={cont}
+          style={style}
+          gameComplete={handleCompleteGame}
+        ></Memogame>
       );
       break;
     case "adivinanza-de-señas":
@@ -28,6 +41,8 @@ export default function GameCont({ contJuego, handleCompleteGame }) {
         <AdivinaGame
           contenido={cont}
           gameComplete={handleCompleteGame}
+          gameOver={gameOver}
+          reset={reset}
         ></AdivinaGame>
       );
       break;

@@ -1,7 +1,8 @@
 import Tabla from "../Tabla/Tabla";
 import { useState, useEffect } from "react";
+import "./MemoStyle.css";
 
-export default function Memogame({ contenido, gameComplete }) {
+export default function Memogame({ contenido, gameComplete, style }) {
   const { items } = contenido;
 
   const [contenidoRevueltoDeLaTabla, setContenidoRevueltoDeLaTabla] = useState(
@@ -45,7 +46,7 @@ export default function Memogame({ contenido, gameComplete }) {
     } else if (bloqueSeleccionado.name === blocke.name) {
       setBloqueSeleccionado(null);
       if (verifictComplete(contenidoRevueltoDeLaTablaCopia)) {
-        gameComplete()
+        gameComplete();
       }
     } else {
       setAnimacion(true);
@@ -64,10 +65,19 @@ export default function Memogame({ contenido, gameComplete }) {
   };
 
   return (
-    <Tabla
-      blockes={contenidoRevueltoDeLaTabla}
-      animacion={animacion}
-      handleClick={handleClick}
-    />
+    <div className="memo-game-cont">
+      <div className="info-game">
+        <p>❕</p>
+        <span>
+          Juego de Memoria: indique la palabra con su respectiva seña.
+        </span>
+      </div>
+      <Tabla
+        blockes={contenidoRevueltoDeLaTabla}
+        animacion={animacion}
+        handleClick={handleClick}
+        style={style}
+      />
+    </div>
   );
 }

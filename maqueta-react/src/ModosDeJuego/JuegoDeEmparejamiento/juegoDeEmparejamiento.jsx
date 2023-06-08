@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Pregunta from "./pregunta";
 
-export const GameDeEmparejamiento = ({ contenido, gameComplete }) => {
+export const GameDeEmparejamiento = ({
+  contenido,
+  gameComplete,
+  reset,
+  gameOver,
+}) => {
   const [pregunta, setPregunta] = useState();
   const [options, setOptions] = useState([]);
   const [finalGame, setFinalGame] = useState(false);
@@ -18,7 +23,8 @@ export const GameDeEmparejamiento = ({ contenido, gameComplete }) => {
 
     setPregunta(text);
     setOptions(optionCopy);
-  }, []);
+    setFinalGame(false);
+  }, [reset]);
 
   const arrayRevuelto = (a) => {
     for (let i = a.length - 1; i > 0; i--) {
@@ -32,16 +38,16 @@ export const GameDeEmparejamiento = ({ contenido, gameComplete }) => {
     const optionsCopy = [...options];
     const optionCopy = { ...option, clicket: true };
 
-    if ( optionCopy.type ){
-      gameComplete()
+    if (optionCopy.type) {
+      gameComplete();
     } else {
-      console.log("Incompletado");
+      gameOver();
     }
 
     optionsCopy.splice(option.index, 1, optionCopy);
 
     setOptions(optionsCopy);
-    setFinalGame(true)
+    setFinalGame(true);
   };
 
   return (

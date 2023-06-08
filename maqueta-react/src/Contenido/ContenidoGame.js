@@ -29,14 +29,14 @@ export const contGames = [
         },
       ],
     },
-    link:{
+    link: {
       return: "/leccion/1",
-      next: "/leccion/2"
+      next: "/leccion/2",
     },
     desblock: {
       leccionID: [2],
-      modeGameID: [1]
-    }
+      modeGameID: [1],
+    },
   },
   {
     id: 1,
@@ -49,7 +49,7 @@ export const contGames = [
           type: true,
         },
         {
-          url: vocalO,
+          url: vocalU,
           type: false,
         },
         {
@@ -62,14 +62,14 @@ export const contGames = [
         },
       ],
     },
-    link:{
+    link: {
       return: "/leccion/2",
-      next: "/leccion/3"
+      next: "/leccion/3",
     },
     desblock: {
       leccionID: [3],
-      modeGameID: [2]
-    }
+      modeGameID: [2],
+    },
   },
   {
     id: 2,
@@ -79,97 +79,99 @@ export const contGames = [
         {
           item: "A",
           name: "A",
-          type: "text"
+          type: "text",
         },
         {
           item: "E",
           name: "E",
-          type: "text"
+          type: "text",
         },
         {
           item: "I",
           name: "I",
-          type: "text"
+          type: "text",
         },
         {
           item: "O",
           name: "O",
-          type: "text"
+          type: "text",
         },
         {
           item: "U",
           name: "U",
-          type: "text"
+          type: "text",
         },
         {
           item: vocalA,
           name: "A",
-          type: "img"
+          type: "img",
         },
         {
           item: vocalE,
           name: "E",
-          type: "img"
+          type: "img",
         },
         {
           item: vocalI,
           name: "I",
-          type: "img"
+          type: "img",
         },
         {
           item: vocalO,
           name: "O",
-          type: "img"
+          type: "img",
         },
         {
           item: vocalU,
           name: "U",
-          type: "img"
-        },
-        {
-          item: "⭐",
-          name: "extra",
-          type: "text"
-        },
-        {
-          item: "⭐",
-          name: "extra",
-          type: "text"
+          type: "img",
         },
       ],
     },
-    link:{
-      return: "/leccion/2",
-      next: "/mododejuego/3"
+    link: {
+      return: "/leccion/3",
+      next: "/mododejuego/3",
     },
     desblock: {
       leccionID: [],
-      modeGameID: [3]
-    }
+      modeGameID: [3],
+    },
+    style: {
+      grid_repet: 5,
+      maxWidth: "800px",
+    },
   },
   {
     id: 3,
     modeGame: "adivinanza-de-señas",
     cont: {
-      img: {
-        url: vocalO,
-        name: "O"
-      },
-      options: [
-        "A",
-        "E",
-        "I",
-        "O",
-        "U"
-      ]
+      img: [
+        {
+          url: vocalA,
+          name: "A",
+        },
+        {
+          url: vocalU,
+          name: "U",
+        },
+        {
+          url: vocalE,
+          name: "E",
+        },
+        {
+          url: vocalI,
+          name: "I",
+        }
+      ],
+      options: ["A", "E", "I", "O", "U"],
     },
-    link:{
-      return: "/mododejuego/3",
-      next: "/"
+    link: {
+      return: "/mododejuego/2",
+      next: "/",
     },
     desblock: {
       leccionID: [],
-      modeGameID: []
-    }
+      modeGameID: [],
+    },
   },
 ];
