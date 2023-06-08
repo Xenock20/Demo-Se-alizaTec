@@ -7,6 +7,8 @@ import { GameDeEmparejamiento } from "../../ModosDeJuego/JuegoDeEmparejamiento/j
 export default function GameCont({ contJuego, handleCompleteGame }) {
   const { modeGame } = contJuego;
   const { cont } = contJuego;
+  const { style } = contJuego
+
   let componente;
 
   switch (modeGame) {
@@ -20,7 +22,7 @@ export default function GameCont({ contJuego, handleCompleteGame }) {
       break;
     case "juego-de-memoria":
       componente = (
-        <Memogame contenido={cont} gameComplete={handleCompleteGame}></Memogame>
+        <Memogame contenido={cont} style={style} gameComplete={handleCompleteGame}></Memogame>
       );
       break;
     case "adivinanza-de-señas":

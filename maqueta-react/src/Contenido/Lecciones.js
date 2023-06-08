@@ -29,12 +29,12 @@ export const lecciones = [
     titulo: "“A” por mi primera seña.",
     contenido: {
       contPrincipal:
-        "Como primera señas vamos a identificar cuales son y cómo se hacen:",
+        "Como primera señas vamos a identificar cuáles son y cómo se hacen:",
       contSecundario: [
         {
           subtitulo: "Para empezar vamos a reconocer la vocal “A”.",
           img: vocalA,
-          text: "Esta seña se identifica como un puño completamente cerrado y con el pulgar casi sobresaliendo para arriba.",
+          text: "Esta seña se identifica como un puño completamente cerrado y con el pulgar casi sobresaliendo hacia arriba.",
         },
       ],
     },
@@ -48,12 +48,12 @@ export const lecciones = [
     titulo: "Siguiendo nuestra aventura",
     contenido: {
       contPrincipal:
-        "Bueno como acabas de ver ahora sabes reconocer una de las 5 vocales, en esta lección aprenderemos la que le sigue.",
+        "¡Muy bien! Ahora sabes reconocer una de las 5 vocales, en esta lección aprenderemos la que le sigue.",
       contSecundario: [
         {
           subtitulo: "Para seguirle el orden miremos la “E”",
           img: vocalE,
-          text: "Para realizar e identificarla es tener parte de la mano cerrada menos los dedos  pulgar e índice que estos estarán en forma de un arco cerca del ojo como si estuviéramos sacando una medida.",
+          text: "Para poder realizarla de manerca orre se debe tener parte de la mano cerrada, menos los dedos  pulgar e índice, éstos estarán en forma de un arco, cerca del ojo como si estuviéramos sacando una medida.",
         },
       ],
     },
@@ -67,22 +67,22 @@ export const lecciones = [
     titulo: "Completando las vocales.",
     contenido: {
       contPrincipal:
-        "Ya para dar a fin con las 3 últimas vocales I, O y U te dejaremos explotar tus habilidades adquiridas en uno retos.",
+        "Ya para dar a fin con las 3 últimas vocales I, O y U, te dejaremos demostrar tus habilidades adquiridas en los siguientes ejercicios.",
       contSecundario: [
         {
           subtitulo: "Empecemos con la “I”",
           img: vocalI,
-          text: "Con el dedo índice como si tuviéramos señalando algo lo hacemos indicando a lo q seria como el ojo.",
+          text: "Con el dedo índice como si tuviéramos señalando algo lo hacemos indicando a lo que seria como el ojo.",
         },
         {
           subtitulo: "Pasamos a la “O”",
           img: vocalO,
-          text: "Esta seña se realiza juntando el índice con el pulgar formando lo q seria un circulo mientras mantenemos los demás dedos estirado.",
+          text: "Esta seña se realiza juntando el índice con el pulgar formando lo que seria un circulo mientras mantenemos los demás dedos estirado.",
         },
         {
           subtitulo: "Y por último la “U”",
           img: vocalU,
-          text: "Para esta seña se mantiene extendidos el índice y el meñique mientras los demás están cerrados formando lo que sería como unos cuernos de toro.",
+          text: "Para esta seña se mantienen extendidos los dedos índice y el meñique, mientras que los demás permanecen cerrados formando lo que sería como unos cuernos de toro.",
         },
       ],
     },

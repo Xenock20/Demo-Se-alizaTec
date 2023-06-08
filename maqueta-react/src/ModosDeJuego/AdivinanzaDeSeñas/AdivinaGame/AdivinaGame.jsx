@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ContOptions from "../ContOptions/ContOptions";
 import ImagenAdivinaGame from "../Imagen/ImagenAdivinaGame";
+import './AdivinaGame.css'
 
 export default function AdivinaGame({ contenido, gameComplete }) {
   const [options, setOptions] = useState([]);

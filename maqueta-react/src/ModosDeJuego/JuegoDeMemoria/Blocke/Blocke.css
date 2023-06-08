@@ -36,7 +36,8 @@
 }
 
 .memo-block-back > img {
-  width: 50px;
+  width: 180px;
+  margin-bottom: 15px; 
 }
 
 .memo-block-front {

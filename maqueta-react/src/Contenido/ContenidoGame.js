@@ -126,16 +126,6 @@ export const contGames = [
           name: "U",
           type: "img"
         },
-        {
-          item: "⭐",
-          name: "extra",
-          type: "text"
-        },
-        {
-          item: "⭐",
-          name: "extra",
-          type: "text"
-        },
       ],
     },
     link:{
@@ -145,6 +135,10 @@ export const contGames = [
     desblock: {
       leccionID: [],
       modeGameID: [3]
+    },
+    style: {
+      grid_repet: 5,
+      maxWidth: "800px"
     }
   },
   {
@@ -164,7 +158,7 @@ export const contGames = [
       ]
     },
     link:{
-      return: "/mododejuego/3",
+      return: "/mododejuego/2",
       next: "/"
     },
     desblock: {
