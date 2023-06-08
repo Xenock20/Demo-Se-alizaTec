@@ -8,8 +8,10 @@
   color: #ffffff;
 }
 
-a:link, a:visited, a:active {
-  text-decoration:none;
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
 }
 
 .abc-text-home > h5 {
@@ -239,11 +241,12 @@ a:link, a:visited, a:active {
   overflow-y: scroll;
   overflow-x: hidden;
   scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
+  scrollbar-color: #de4a97 transparent;
 }
 
 .game-cont {
   /*ADD STYLE*/
+  overflow-y: hidden;
   width: 90%;
   left: 5%;
   background-color: #151316;
@@ -253,12 +256,18 @@ a:link, a:visited, a:active {
 
 .leccion-cont::-webkit-scrollbar,
 .game-cont::-webkit-scrollbar {
-  width: 5px; /* Ajusta el ancho de la barra de desplazamiento */
+  width: 8px; /* Ajusta el ancho de la barra de desplazamiento */
 }
 
 .leccion-cont::-webkit-scrollbar-thumb,
 .game-cont::-webkit-scrollbar {
-  background-color: transparent; /* Establece el color de la barra de desplazamiento */
+  background-color: #de4a97;
+  border-radius: 4px;
+}
+
+.leccion-cont::-webkit-scrollbar-track,
+.game-cont::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .leccion-cont > h1 {
@@ -286,7 +295,7 @@ a:link, a:visited, a:active {
   text-align: center;
 }
 
-.titulo-cont-sec{
+.titulo-cont-sec {
   font-size: 32px;
 }
 
