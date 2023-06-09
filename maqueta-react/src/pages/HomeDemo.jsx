@@ -2,6 +2,9 @@ import React, { useContext, useEffect } from "react";
 import { BtnInicio } from "./../components/components-home-demo/boton/boton";
 import { UserContext } from "../context/UserProvider";
 
+import 'animate.css';
+
+
 const HomeDemo = () => {
 
   const { reset } = useContext(UserContext)
@@ -11,7 +14,7 @@ const HomeDemo = () => {
   },[])
 
   return (
-    <div className="home-demo">
+    <div className="home-demo animate__animated animate__fadeIn" >
       <div className="box-inicio animate__animated animate__fadeInUp">
         <div className="box-completa">
           <div className="botones">
