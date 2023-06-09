@@ -7,7 +7,6 @@ import { useParams } from "react-router";
 import { contGames } from "../Contenido/ContenidoGame";
 import { UserContext } from "../context/UserProvider";
 import BotonReset from "../ModosDeJuego/BotonReset/BotonReset";
-import 'animate.css'; 
 export default function PractPage() {
   const { id } = useParams();
   const [links, setLinks] = useState({});
@@ -47,7 +46,7 @@ export default function PractPage() {
   };
 
   return (
-    <div className="home-page animate__animated animate__fadeIn ">
+    <div className="home-page">
       <NavBar></NavBar>
       <div className="cont-home">
         <ContTop></ContTop>
