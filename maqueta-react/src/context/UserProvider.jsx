@@ -14,7 +14,7 @@ function UserProvider({ children }) {
 
   const [barraDeProgreso, setBarraDeProgreso] = useState(() => {
     const storedBarraDeProgreso = sessionStorage.getItem("barraDeProgreso");
-    return storedBarraDeProgreso ? JSON.parse(storedBarraDeProgreso) : 0;
+    return storedBarraDeProgreso ? JSON.parse(storedBarraDeProgreso) : 12;
   })
 
   useEffect(() => {
@@ -54,8 +54,10 @@ function UserProvider({ children }) {
     setBarraDeProgreso(barraDeProgreso - 12);
   }
 
-  const resetBarra = () => {
-    setBarraDeProgreso(0)
+  const reset = () => {
+    setBarraDeProgreso(12)
+    setLeccionesDesbloqueadas([0, 1]);
+    setModosJuegoDesbloqueados([0]);
   }
 
   const userState = {
@@ -66,7 +68,7 @@ function UserProvider({ children }) {
     incrementarBarra,
     desincrementarBarra,
     barraDeProgreso,
-    resetBarra
+    reset
   };
 
   return (

@@ -4,10 +4,10 @@ import { UserContext } from "../context/UserProvider";
 
 const HomeDemo = () => {
 
-  const { resetBarra } = useContext(UserContext)
+  const { reset } = useContext(UserContext)
 
   useEffect(()=>{
-    resetBarra()
+    reset()
   },[])
 
   return (

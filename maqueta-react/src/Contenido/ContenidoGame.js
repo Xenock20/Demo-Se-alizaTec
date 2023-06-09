@@ -16,7 +16,7 @@ export const contGames = [
           type: false,
         },
         {
-          url: vocalO,
+          url: vocalU,
           type: false,
         },
         {
@@ -42,14 +42,14 @@ export const contGames = [
     id: 1,
     modeGame: "juego-de-completar",
     cont: {
-      text: "La palabra (alguna palabra con e) comienza con la vocal ___",
+      text: "Elefante comienza con la vocal ..........",
       option: [
         {
           url: vocalE,
           type: true,
         },
         {
-          url: vocalU,
+          url: vocalO,
           type: false,
         },
         {
