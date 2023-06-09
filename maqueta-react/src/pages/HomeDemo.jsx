@@ -1,6 +1,18 @@
+import React, { useContext, useEffect } from "react";
 import { BtnInicio } from "./../components/components-home-demo/boton/boton";
+
 import 'animate.css';
+import { UserContext } from "../context/UserProvider";
+
+
 const HomeDemo = () => {
+
+  const { reset } = useContext(UserContext)
+
+  useEffect(()=>{
+    reset()
+  },[])
+
   return (
     <div className="home-demo animate__animated animate__fadeIn" >
       <div className="box-inicio animate__animated animate__fadeInUp">
