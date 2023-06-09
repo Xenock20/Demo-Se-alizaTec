@@ -1,6 +1,15 @@
+import React, { useContext, useEffect } from "react";
 import { BtnInicio } from "./../components/components-home-demo/boton/boton";
+import { UserContext } from "../context/UserProvider";
 
 const HomeDemo = () => {
+
+  const { resetBarra } = useContext(UserContext)
+
+  useEffect(()=>{
+    resetBarra()
+  },[])
+
   return (
     <div className="home-demo">
       <div className="box-inicio animate__animated animate__fadeInUp">
