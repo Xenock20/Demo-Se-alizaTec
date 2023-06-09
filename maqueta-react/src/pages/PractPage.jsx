@@ -18,7 +18,7 @@ export default function PractPage() {
   const [gameOver, setGameOver] = useState(false);
 
   const { desbloquearLeccion, desbloquearModoJuego } = useContext(UserContext);
-
+ 
   useEffect(() => {
     const contGame = contGames[id];
     setContenidoDelJuego(contGame);

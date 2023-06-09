@@ -1,8 +1,8 @@
-import vocalA from "./Image/N0-Vocales/A.png";
-import vocalE from "./Image/N0-Vocales/E.png";
-import vocalI from "./Image/N0-Vocales/I.png";
-import vocalO from "./Image/N0-Vocales/O.png";
-import vocalU from "./Image/N0-Vocales/U.png";
+import vocalA from "./Image/N0-Vocales/A_v2_G.png";
+import vocalE from "./Image/N0-Vocales/E_v2_G.png";
+import vocalI from "./Image/N0-Vocales/I_v2_G.png";
+import vocalO from "./Image/N0-Vocales/O_v2_G.png";
+import vocalU from "./Image/N0-Vocales/U_v2_G.png";
 
 export const contGames = [
   {
@@ -16,7 +16,7 @@ export const contGames = [
           type: false,
         },
         {
-          url: vocalO,
+          url: vocalU,
           type: false,
         },
         {
@@ -42,14 +42,14 @@ export const contGames = [
     id: 1,
     modeGame: "juego-de-completar",
     cont: {
-      text: "La palabra (alguna palabra con e) comienza con la vocal ___",
+      text: "Elefante comienza con la vocal ..........",
       option: [
         {
           url: vocalE,
           type: true,
         },
         {
-          url: vocalU,
+          url: vocalO,
           type: false,
         },
         {

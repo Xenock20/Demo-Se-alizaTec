@@ -3,6 +3,7 @@ import Memogame from "./../../ModosDeJuego/JuegoDeMemoria/Memogame/Memogame";
 import AdivinaGame from "./../../ModosDeJuego/AdivinanzaDeSeñas/AdivinaGame/AdivinaGame";
 import ErrorGame from "./../../ModosDeJuego/JuegoDeIdentificacionDeErrores/ErrorGame/ErrorGame";
 import { GameDeEmparejamiento } from "../../ModosDeJuego/JuegoDeEmparejamiento/juegoDeEmparejamiento";
+import JuegoCompletar from "../../ModosDeJuego/JuegoDeCompletar/JuegoDeCompletar";
 
 export default function GameCont({
   contJuego,
@@ -50,7 +51,14 @@ export default function GameCont({
       componente = <div>"juego-de-ordenamiento"</div>;
       break;
     case "juego-de-completar":
-      componente = <div>"juego-de-completar"</div>;
+      componente = (
+        <JuegoCompletar
+          contenido={cont}
+          gameComplete={handleCompleteGame}
+          gameOver={gameOver}
+          reset={reset}
+        ></JuegoCompletar>
+      );
       break;
     case "juego-de-identificar-errores":
       componente = (

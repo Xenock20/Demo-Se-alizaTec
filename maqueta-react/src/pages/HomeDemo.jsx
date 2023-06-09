@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { BtnInicio } from "./../components/components-home-demo/boton/boton";
+import { UserContext } from "../context/UserProvider";
 
 import 'animate.css';
 import { UserContext } from "../context/UserProvider";
