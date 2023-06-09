@@ -12,7 +12,10 @@ function UserProvider({ children }) {
     return storedModosJuegos ? JSON.parse(storedModosJuegos) : [0];
   });
 
-  const [barraDeProgreso, setBarraDeProgreso] = useState(0)
+  const [barraDeProgreso, setBarraDeProgreso] = useState(() => {
+    const storedBarraDeProgreso = sessionStorage.getItem("barraDeProgreso");
+    return storedBarraDeProgreso ? JSON.parse(storedBarraDeProgreso) : 0;
+  })
 
   useEffect(() => {
     localStorage.setItem(
@@ -27,6 +30,13 @@ function UserProvider({ children }) {
       JSON.stringify(modosJuegoDesbloqueados)
     );
   }, [modosJuegoDesbloqueados]);
+
+  useEffect(() => {
+    sessionStorage.setItem(
+      "barraDeProgreso",
+      JSON.stringify(barraDeProgreso)
+    );
+  }, [barraDeProgreso])
 
   const desbloquearLeccion = (id) => {
     setLeccionesDesbloqueadas([...leccionesDesbloqueadas, id]);
@@ -44,6 +54,10 @@ function UserProvider({ children }) {
     setBarraDeProgreso(barraDeProgreso - 12);
   }
 
+  const resetBarra = () => {
+    setBarraDeProgreso(0)
+  }
+
   const userState = {
     leccionesDesbloqueadas,
     modosJuegoDesbloqueados,
@@ -51,7 +65,8 @@ function UserProvider({ children }) {
     desbloquearModoJuego,
     incrementarBarra,
     desincrementarBarra,
-    barraDeProgreso
+    barraDeProgreso,
+    resetBarra
   };
 
   return (
