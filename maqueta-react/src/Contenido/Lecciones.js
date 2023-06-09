@@ -10,7 +10,7 @@ export const lecciones = [
     titulo: "Empezando la aventura!!",
     contenido: {
       contPrincipal:
-        "Bienvenido a SeñalizaTec y a tu camino de nuevo conocimiento, donde aprenderás de forma divertida sobre lenguaje de señas Argentina (LSA). En esta primera lección empezaremos con lo más básico de lo básico, las vocales “A,E,I,O,U”......",
+        "Bienvenido a SeñalizaTec y a tu camino de nuevo conocimiento donde aprenderás de forma divertida sobre la lengua de señas (LSA). En esta primera lección empezaremos con lo más básico de lo básico, las vocales “A,E,I,O,U”......",
       contSecundario: [
         {
           subtitulo: null,
@@ -53,7 +53,7 @@ export const lecciones = [
         {
           subtitulo: "Para seguirle el orden miremos la “E”",
           img: vocalE,
-          text: "Para poder realizarla de manera correcta se debe tener parte de la mano cerrada, menos los dedos  pulgar e índice, éstos estarán en forma de un arco, cerca del ojo, como si estuviéramos sacando una medida.",
+          text: "Para poder realizarla de manera correcta se debe tener parte de la mano cerrada, menos los dedos  pulgar e índice, éstos estarán en forma de un arco, cerca del ojo como si estuviéramos sacando una medida.",
         },
       ],
     },
