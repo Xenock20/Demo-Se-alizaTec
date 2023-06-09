@@ -12,6 +12,8 @@ function UserProvider({ children }) {
     return storedModosJuegos ? JSON.parse(storedModosJuegos) : [0];
   });
 
+  const [barraDeProgreso, setBarraDeProgreso] = useState(0)
+
   useEffect(() => {
     localStorage.setItem(
       "leccionesDesbloqueadas",
@@ -33,6 +35,14 @@ function UserProvider({ children }) {
   const desbloquearModoJuego = (id) => {
     setModosJuegoDesbloqueados([...modosJuegoDesbloqueados, id]);
   };
+
+  const incrementarBarra = () => {
+    
+  }
+
+  const desincrementarBarra = () => {
+
+  }
 
   const userState = {
     leccionesDesbloqueadas,
