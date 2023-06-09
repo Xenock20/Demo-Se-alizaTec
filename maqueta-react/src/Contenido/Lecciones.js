@@ -10,7 +10,7 @@ export const lecciones = [
     titulo: "Empezando la aventura!!",
     contenido: {
       contPrincipal:
-        "Bienvenido a SeñalizaTec y a tu camino de nuevo conocimiento donde aprenderás de forma divertida sobre la lengua de señas (LSA). En esta primera lección empezaremos con lo más básico de lo básico, las vocales “A,E,I,O,U”......",
+        "Bienvenido a SeñalizaTec y a tu camino de nuevo conocimiento donde aprenderás de forma divertida sobre lenguaje de señas (LSA). En esta primera lección empezaremos con lo más básico de lo básico, las vocales “A,E,I,O,U”......",
       contSecundario: [
         {
           subtitulo: null,
@@ -48,12 +48,12 @@ export const lecciones = [
     titulo: "Siguiendo nuestra aventura",
     contenido: {
       contPrincipal:
-        "¡Muy bien! Ahora sabes reconocer una de las 5 vocales, en esta lección aprenderemos la que le sigue.",
+        "¡Muy bien! Ahora que sabes reconocer una de las 5 vocales, en esta lección aprenderemos la que sigue.",
       contSecundario: [
         {
           subtitulo: "Para seguirle el orden miremos la “E”",
           img: vocalE,
-          text: "Para poder realizarla de manera correcta se debe tener parte de la mano cerrada, menos los dedos  pulgar e índice, éstos estarán en forma de un arco, cerca del ojo como si estuviéramos sacando una medida.",
+          text: "Para poder realizarla de manerca orre se debe tener parte de la mano cerrada, menos los dedos  pulgar e índice, éstos estarán en forma de un arco, cerca del ojo como si estuviéramos sacando una medida.",
         },
       ],
     },
@@ -67,7 +67,7 @@ export const lecciones = [
     titulo: "Completando las vocales.",
     contenido: {
       contPrincipal:
-        "Ya para dar a fin con las 3 últimas vocales I, O y U, te dejaremos demostrar tus habilidades adquiridas en los siguientes ejercicios.",
+        "Ya para finalizar, con las 3 últimas vocales I, O y U, te dejaremos demostrar tus habilidades adquiridas en los siguientes ejercicios.",
       contSecundario: [
         {
           subtitulo: "Empecemos con la “I”",
@@ -77,7 +77,7 @@ export const lecciones = [
         {
           subtitulo: "Pasamos a la “O”",
           img: vocalO,
-          text: "Esta seña se realiza juntando el índice con el pulgar formando lo que seria un circulo mientras mantenemos los demás dedos estirado.",
+          text: "Esta seña se realiza juntando el dedo índice con el pulgar formando lo que seria un circulo mientras mantenemos los demás dedos estirado.",
         },
         {
           subtitulo: "Y por último la “U”",

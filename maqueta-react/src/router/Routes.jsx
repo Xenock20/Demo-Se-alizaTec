@@ -4,6 +4,7 @@ import PractPage from "./../pages/PractPage";
 import { useContext } from "react";
 import { UserContext } from "../context/UserProvider";
 import HomeDemo from "./../pages/HomeDemo";
+import EndPage from "../pages/EndPage";
 
 export default function Routers() {
   return (
@@ -11,6 +12,7 @@ export default function Routers() {
       <Route path="/" element={<HomeDemo />}></Route>
       <Route path="/leccion/:id" element={<LeccionPageWrapper />}></Route>
       <Route path="/mododejuego/:id" element={<PractPageWrapper />}></Route>
+      <Route path="/finaldemo" element ={<EndPage/>}></Route>
     </Routes>
   );
 }

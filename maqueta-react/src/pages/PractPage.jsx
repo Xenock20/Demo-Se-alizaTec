@@ -7,7 +7,6 @@ import { useParams } from "react-router";
 import { contGames } from "../Contenido/ContenidoGame";
 import { UserContext } from "../context/UserProvider";
 import BotonReset from "../ModosDeJuego/BotonReset/BotonReset";
-
 export default function PractPage() {
   const { id } = useParams();
   const [links, setLinks] = useState({});
