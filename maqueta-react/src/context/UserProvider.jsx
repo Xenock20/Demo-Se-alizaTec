@@ -37,11 +37,11 @@ function UserProvider({ children }) {
   };
 
   const incrementarBarra = () => {
-    
+    setBarraDeProgreso(barraDeProgreso + 12);
   }
 
   const desincrementarBarra = () => {
-
+    setBarraDeProgreso(barraDeProgreso - 12);
   }
 
   const userState = {
@@ -49,6 +49,9 @@ function UserProvider({ children }) {
     modosJuegoDesbloqueados,
     desbloquearLeccion,
     desbloquearModoJuego,
+    incrementarBarra,
+    desincrementarBarra,
+    barraDeProgreso
   };
 
   return (
