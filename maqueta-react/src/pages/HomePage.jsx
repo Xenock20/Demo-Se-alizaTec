@@ -4,7 +4,7 @@ import HomeCont from "../components/components-home-page/HomeCont";
 
 export default function HomePage() {
   return (
-    <div className="home-page">
+    <div className="home-page ">
       <NavBar></NavBar>
       <HomeCont></HomeCont>
     </div>

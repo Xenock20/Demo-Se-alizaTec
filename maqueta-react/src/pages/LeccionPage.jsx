@@ -6,6 +6,7 @@ import { useParams } from "react-router";
 import { lecciones } from "./../Contenido/Lecciones";
 import ContPrincipal from "../components/components-leccion-page/ContPrincipal";
 import ContSecundario from "../components/components-leccion-page/ContSecundario";
+import 'animate.css';
 
 export default function LeccionPage() {
   const {id} = useParams()
@@ -24,11 +25,11 @@ export default function LeccionPage() {
   }, [id]);
 
   return (
-    <div className="home-page">
+    <div className="home-page animate__animated animate__fadeIn">
       <NavBar></NavBar>
       <div className="cont-home">
         <ContTop></ContTop>
-        <div className="leccion-cont">
+        <div className="leccion-cont animate__animated animate__fadeIn">
           <h1>{titulo}</h1>
           <ContPrincipal text={contPrincipal}></ContPrincipal>
           <ContSecundario cont={contSecundario}></ContSecundario>

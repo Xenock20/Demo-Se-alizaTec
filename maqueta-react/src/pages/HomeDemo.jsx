@@ -1,8 +1,8 @@
 import { BtnInicio } from "./../components/components-home-demo/boton/boton";
-
+import 'animate.css';
 const HomeDemo = () => {
   return (
-    <div className="home-demo">
+    <div className="home-demo animate__animated animate__fadeIn" >
       <div className="box-inicio animate__animated animate__fadeInUp">
         <div className="box-completa">
           <div className="botones">
