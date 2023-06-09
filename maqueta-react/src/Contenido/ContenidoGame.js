@@ -167,7 +167,7 @@ export const contGames = [
     },
     link: {
       return: "/mododejuego/2",
-      next: "/",
+      next: "/finaldemo",
     },
     desblock: {
       leccionID: [],
