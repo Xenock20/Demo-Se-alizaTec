@@ -357,7 +357,11 @@ a:active {
   pointer-events: none;
   opacity: 0;
   border-radius: 10px;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, background-color 0.5s;
+}
+
+.reset-button:hover{
+  background-color: #cb05b7;
 }
 
 .reset-button.show {
