@@ -22,7 +22,7 @@ export const lecciones = [
     link: {
       return: "/",
       next: "/leccion/1"
-    }
+    },
   },
   {
     id: 1,

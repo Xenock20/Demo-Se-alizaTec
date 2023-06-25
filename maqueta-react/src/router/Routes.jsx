@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { UserContext } from "../context/UserProvider";
 import HomeDemo from "./../pages/HomeDemo";
 import EndPage from "../pages/EndPage";
+import CaminoNiveles from "../pages/CaminoNiveles";
 
 export default function Routers() {
   return (
@@ -13,6 +14,7 @@ export default function Routers() {
       <Route path="/leccion/:id" element={<LeccionPageWrapper />}></Route>
       <Route path="/mododejuego/:id" element={<PractPageWrapper />}></Route>
       <Route path="/finaldemo" element ={<EndPage/>}></Route>
+      <Route path="/Niveles" element ={<CaminoNiveles/>}></Route>
     </Routes>
   );
 }
