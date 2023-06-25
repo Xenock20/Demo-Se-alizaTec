@@ -9,7 +9,7 @@ export const contGames = [
     id: 0,
     modeGame: "juego-de-emparejamiento",
     cont: {
-      text: "Cual de estas señas significa 'A'?",
+      text: "¿Cual de estas señas significa 'A'?",
       option: [
         {
           url: vocalE,

@@ -10,7 +10,7 @@ export default function NextBtn({ link, completado }) {
     <Link
       to={completado ? link : null}
       className={`next-btn btn ${completado ? "" : "none" }`}
-      onClick={completado ? incrementarBarra : "#"}
+      onClick={completado ? incrementarBarra : ""}
     >
       Siguiente
       <img src={rowrigh} />
