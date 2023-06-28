@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { nivel } from "../../Contenido/Niveles";
 import { Link } from "react-router-dom";
 
-const Boton = () => {
+const BotonesLevels = () => {
   const [mostrarInfo, setMostrarInfo] = useState(false);
   const [informacion, setInformacion] = useState();
   const [link, setLink] = useState();
@@ -17,30 +17,36 @@ const Boton = () => {
   const levels = Array(nivel.length).fill(null);
   return (
     <>
-      {levels.map((e, index) => {
-        const descripcion = nivel[index].descripcion;
-        const direccion = nivel[index].link;
+      <div className="levels-path">
+        {levels.map((e, index) => {
+          const descripcion = nivel[index].descripcion;
+          const direccion = nivel[index].link;
+          const position = nivel[index].position
 
-        return (
-          <button
-            className="btn"
-            onClick={() => {
-              handleClick(descripcion, direccion);
-            }}
-            key={index}
-          >
-            {index + 1}
-          </button>
-        );
-      })}
+          return (
+            <button
+              className={`btn-niveles ${position}`}
+              onClick={() => {
+                handleClick(descripcion, direccion);
+              }}
+              key={index}
+            >
+              {index + 1}
+            </button>
+          );
+        })}
+      </div>
+
       {mostrarInfo && (
-        <div>
-          <p>{informacion}</p>
-          <Link to={link}>Empezar</Link>
+        <div className="cont-info-level">
+          <p className="cont-p-level">{informacion}</p>
+          <Link to={link} className="link-level">
+            Empezar
+          </Link>
         </div>
       )}
     </>
   );
 };
 
-export default Boton;
+export default BotonesLevels;
