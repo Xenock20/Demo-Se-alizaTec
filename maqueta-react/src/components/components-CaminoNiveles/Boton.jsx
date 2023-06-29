@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import 'animate.css';
 import { nivel } from "../../Contenido/Niveles";
 import { Link } from "react-router-dom";
 
@@ -38,9 +38,9 @@ const BotonesLevels = () => {
       </div>
 
       {mostrarInfo && (
-        <div className="cont-info-level">
+        <div className={`cont-info-level ${mostrarInfo ? "animate__animated animate__bounceInRight": ""}`}>
           <p className="cont-p-level">{informacion}</p>
-          <Link to={link} className="link-level">
+          <Link to={link} className={`link-level ${link.length === 0 ? "prox" : ""}`}>
             Empezar
           </Link>
         </div>

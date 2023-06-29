@@ -11,11 +11,11 @@ import HomePage from "../pages/HomePage";
 export default function Routers() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />}></Route>
+      <Route path="/" element={<HomeDemo />}></Route>
+      <Route path="/home" element={<HomePage></HomePage>}></Route>
       <Route path="/leccion/:id" element={<LeccionPageWrapper />}></Route>
       <Route path="/mododejuego/:id" element={<PractPageWrapper />}></Route>
       <Route path="/finaldemo" element ={<EndPage/>}></Route>
-      <Route path="/Niveles" element ={<CaminoNiveles/>}></Route>
     </Routes>
   );
 }
