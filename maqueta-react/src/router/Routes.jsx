@@ -6,6 +6,7 @@ import { UserContext } from "../context/UserProvider";
 import HomeDemo from "./../pages/HomeDemo";
 import EndPage from "../pages/EndPage";
 import CaminoNiveles from "../pages/CaminoNiveles";
+import HomePage from './../pages/HomePage';
 
 export default function Routers() {
   return (
