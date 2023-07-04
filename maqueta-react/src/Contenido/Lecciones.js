@@ -20,7 +20,7 @@ export const lecciones = [
       ],
     },
     link: {
-      return: "/",
+      return: "/home",
       next: "/leccion/1"
     },
   },

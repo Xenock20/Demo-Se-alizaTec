@@ -6,17 +6,16 @@ import { UserContext } from "../context/UserProvider";
 import HomeDemo from "./../pages/HomeDemo";
 import EndPage from "../pages/EndPage";
 import CaminoNiveles from "../pages/CaminoNiveles";
-import JuegoDePregunta from "../ModosDeJuego/JuegoDePregunta/JuegoDePregunta";
 
 export default function Routers() {
   return (
     <Routes>
       <Route path="/" element={<HomeDemo />}></Route>
+      <Route path="/home" element={<HomePage></HomePage>}></Route>
       <Route path="/leccion/:id" element={<LeccionPageWrapper />}></Route>
       <Route path="/mododejuego/:id" element={<PractPageWrapper />}></Route>
       <Route path="/finaldemo" element={<EndPage />}></Route>
       <Route path="/Niveles" element={<CaminoNiveles />}></Route>
-      <Route path="/Pregunta" element={<JuegoDePregunta />}></Route>
     </Routes>
   );
 }

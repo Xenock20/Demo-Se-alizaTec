@@ -1,11 +1,11 @@
 import React from 'react'
 import '../pages/style/CaminoNiveles.css'
-import Boton from '../components/components-CaminoNiveles/Boton'
+import BotonesLevels from '../components/components-CaminoNiveles/Boton'
 
 const CaminoNiveles = () => {
   return (
-  <div>
-    <Boton></Boton>
+  <div className='cont-levels-path'>
+    <BotonesLevels></BotonesLevels>
   </div>
   )
 }
