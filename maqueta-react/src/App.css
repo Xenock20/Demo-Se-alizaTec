@@ -247,7 +247,7 @@ a:active {
 }
 
 .leccion-cont{
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .game-cont {
@@ -268,14 +268,17 @@ a:active {
 
 
 .leccion-cont::-webkit-scrollbar-thumb,
-.game-cont::-webkit-scrollbar {
+.game-cont::-webkit-scrollbar-thumb {
   background-color: #de4a97;
-  border-radius: 50px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .leccion-cont::-webkit-scrollbar-track,
 .game-cont::-webkit-scrollbar-track {
-  background: transparent;
+  background-color: #802b57;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 
