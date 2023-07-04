@@ -23,7 +23,7 @@ const Boton = () => {
 
         return (
           <button
-            className="btn"
+            className="btn-Niveles"
             onClick={() => {
               handleClick(descripcion, direccion);
             }}
