@@ -197,7 +197,8 @@ a:active {
   background-color: #151316;
 }
 
-.none, .none:hover {
+.none,
+.none:hover {
   cursor: no-drop;
   background-color: #72475f;
   color: #afafaf;
@@ -246,7 +247,7 @@ a:active {
   scrollbar-color: #de4a97 transparent;
 }
 
-.leccion-cont{
+.leccion-cont {
   border-radius: 10px;
 }
 
@@ -260,16 +261,15 @@ a:active {
   justify-content: center;
 }
 
-
 .leccion-cont::-webkit-scrollbar,
 .game-cont::-webkit-scrollbar {
-  width: 10px; 
+  width: 12px;
 }
-
 
 .leccion-cont::-webkit-scrollbar-thumb,
 .game-cont::-webkit-scrollbar-thumb {
-  background-color: #de4a97;
+  background-color: rgb(21, 85, 168);
+  border: #010101 solid 2px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
@@ -280,7 +280,6 @@ a:active {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-
 
 .leccion-cont > h1 {
   position: relative;
@@ -332,7 +331,7 @@ a:active {
   font-size: 30px;
 }
 
-.cont-reset-button{
+.cont-reset-button {
   z-index: 50;
   position: fixed;
   width: 100%;
@@ -344,7 +343,7 @@ a:active {
   transition: opacity 0.3s ease-in-out;
 }
 
-.cont-reset-button.show{
+.cont-reset-button.show {
   opacity: 1;
   pointer-events: auto;
 }
@@ -366,7 +365,7 @@ a:active {
   transition: opacity 0.3s ease-in-out, background-color 0.5s;
 }
 
-.reset-button:hover{
+.reset-button:hover {
   background-color: #cb05b7;
 }
 
@@ -374,4 +373,3 @@ a:active {
   opacity: 1;
   pointer-events: auto;
 }
-
