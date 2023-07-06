@@ -1,6 +1,6 @@
 export const nivel = [
   {
-    nivel1: 1,
+    id: 1,
     descripcion: "En este primer nivel aprenderemos las Vocales",
     link: "/leccion/0",
     position: "center",
@@ -8,7 +8,7 @@ export const nivel = [
     cap: 1,
   },
   {
-    nivel2: 2,
+    id: 2,
     descripcion: "PROXIMAMENTE...",
     link: "",
     position: "end",
@@ -16,7 +16,7 @@ export const nivel = [
     cap: 1,
   },
   {
-    nivel1: 3,
+    id: 3,
     descripcion: "PROXIMAMENTE...",
     link: "",
     position: "center",
@@ -24,31 +24,35 @@ export const nivel = [
     cap: 1,
   },
   {
-    nivel2: 4,
+    id: 4,
     descripcion: "PROXIMAMENTE...",
     link: "",
     position: "center",
+    positionInfo: "rigth",
     cap: 2,
   },
   {
-    nivel1: 5,
+    id: 5,
     descripcion: "PROXIMAMENTE...",
     link: "",
     position: "end",
+    positionInfo: "left",
     cap: 2,
   },
   {
-    nivel2: 6,
+    id: 6,
     descripcion: "PROXIMAMENTE...",
     link: "",
     position: "center",
+    positionInfo: "rigth",
     cap: 2,
   },
   {
-    nivel1: 7,
+    id: 7,
     descripcion: "PROXIMAMENTE...",
     link: "",
     position: "center",
+    positionInfo: "rigth",
     cap: 3,
   },
 ];

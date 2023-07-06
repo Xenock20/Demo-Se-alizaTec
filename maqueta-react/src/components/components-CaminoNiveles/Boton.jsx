@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "animate.css";
 import { nivel } from "../../Contenido/Niveles";
 import { Link } from "react-router-dom";
@@ -6,16 +6,40 @@ import start from "../../assets/startOne.png";
 
 const BotonesLevels = () => {
   const [mostrarInfo, setMostrarInfo] = useState(false);
+  const [infoId, setInfoId] = useState(0);
   const [informacion, setInformacion] = useState();
   const [link, setLink] = useState();
+  const [levels, setLevels] = useState([]);
+  const [animateBack, setAnimateBack] = useState("");
+  const [animateIntro, setAnimateIntro] = useState("");
 
-  const handleClick = (descripcion, direccion) => {
-    setInformacion(descripcion);
-    setLink(direccion);
-    setMostrarInfo(true);
+  useEffect(() => {
+    setLevels(Array(nivel.length).fill(null));
+  }, []);
+
+  const handleClick = (descripcion, direccion, id, postInfo) => {
+    if (infoId !== id) {
+      if (postInfo === "rigth") {
+        setAnimateIntro("animate__bounceInRight");
+        setAnimateBack("animate__bounceOutLeft");
+      }
+
+      if (postInfo === "left") {
+        setAnimateIntro("animate__bounceInLeft");
+        setAnimateBack("animate__bounceOutRight");
+      }
+
+      setMostrarInfo(false);
+
+      setTimeout(() => {
+        setInfoId(id);
+        setMostrarInfo(true);
+        setInformacion(descripcion);
+        setLink(direccion);
+      }, 250);
+    }
   };
 
-  const levels = Array(nivel.length).fill(null);
   return (
     <>
       <div className="levels-path">
@@ -36,21 +60,27 @@ const BotonesLevels = () => {
             const position = nivel[index].position;
             const cap = nivel[index].cap;
             const positionInfo = nivel[index].positionInfo;
+            const id = nivel[index].id;
 
             if (cap === 1) {
               return (
-                <div className="btn-level-cont">
+                <div className="btn-level-cont" key={id}>
                   <button
                     className={`btn-niveles ${position}`}
                     onClick={() => {
-                      handleClick(descripcion, direccion);
+                      handleClick(descripcion, direccion, id, positionInfo);
                     }}
-                    key={index}
                   >
                     {index + 1}
                   </button>
-                  {mostrarInfo && (
-                    <div className={`cont-info-level ${positionInfo}`}>
+                  {id === infoId && (
+                    <div
+                      className={`cont-info-level ${positionInfo} animate__animated ${
+                        mostrarInfo && id === infoId
+                          ? animateIntro
+                          : animateBack
+                      }`}
+                    >
                       <p className="cont-p-level">{informacion}</p>
                       <Link
                         to={link}
@@ -84,18 +114,34 @@ const BotonesLevels = () => {
             const direccion = nivel[index].link;
             const position = nivel[index].position;
             const cap = nivel[index].cap;
+            const positionInfo = nivel[index].positionInfo;
 
             if (cap === 2) {
               return (
-                <button
-                  className={`btn-niveles ${position}`}
-                  onClick={() => {
-                    handleClick(descripcion, direccion);
-                  }}
-                  key={index}
-                >
-                  {index + 1}
-                </button>
+                <div className="btn-level-cont">
+                  <button
+                    className={`btn-niveles ${position}`}
+                    onClick={() => {
+                      handleClick(descripcion, direccion);
+                    }}
+                    key={index}
+                  >
+                    {index + 1}
+                  </button>
+                  {mostrarInfo && (
+                    <div className={`cont-info-level ${positionInfo}`}>
+                      <p className="cont-p-level">{informacion}</p>
+                      <Link
+                        to={link}
+                        className={`link-level ${
+                          link.length === 0 ? "prox" : ""
+                        }`}
+                      >
+                        Empezar
+                      </Link>
+                    </div>
+                  )}
+                </div>
               );
             }
           })}
@@ -118,18 +164,34 @@ const BotonesLevels = () => {
             const direccion = nivel[index].link;
             const position = nivel[index].position;
             const cap = nivel[index].cap;
+            const positionInfo = nivel[index].positionInfo;
 
             if (cap === 3) {
               return (
-                <button
-                  className={`btn-niveles ${position}`}
-                  onClick={() => {
-                    handleClick(descripcion, direccion);
-                  }}
-                  key={index}
-                >
-                  {index + 1}
-                </button>
+                <div className="btn-level-cont">
+                  <button
+                    className={`btn-niveles ${position}`}
+                    onClick={() => {
+                      handleClick(descripcion, direccion);
+                    }}
+                    key={index}
+                  >
+                    {index + 1}
+                  </button>
+                  {mostrarInfo && (
+                    <div className={`cont-info-level ${positionInfo}`}>
+                      <p className="cont-p-level">{informacion}</p>
+                      <Link
+                        to={link}
+                        className={`link-level ${
+                          link.length === 0 ? "prox" : ""
+                        }`}
+                      >
+                        Empezar
+                      </Link>
+                    </div>
+                  )}
+                </div>
               );
             }
           })}

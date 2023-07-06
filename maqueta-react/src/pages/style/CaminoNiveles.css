@@ -1,6 +1,6 @@
 .cont-levels-path {
   position: fixed;
-  top: 50px;
+  top: 30px;
   height: 100vh;
   width: 75%;
   left: 10%;
@@ -79,6 +79,8 @@
 }
 
 .btn-level-cont {
+  height: 165px;
+  padding-top: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -86,11 +88,12 @@
 
 .left {
   position: relative;
+  right: 50px;
 }
 
 .rigth {
   position: relative;
-  left: 200px;
+  left: 170px;
 }
 
 .cont-info-level {
@@ -118,7 +121,7 @@
 }
 
 .btn-niveles {
-  padding: 20px 30px;
+  padding: 30px 40px;
   border-radius: 160px;
   border: 0;
   background-color: #de4a97;
@@ -150,17 +153,17 @@
 }
 
 .center {
-  transform: translateX(150px);
+  transform: translateX(120px);
 }
 
 .center:hover {
   box-shadow: #b13b78 0px 7px 0px 0px;
-  transform: translateX(150px) translateY(3px);
+  transform: translateX(120px) translateY(3px);
 }
 
 .center:active {
   box-shadow: #b13b78 0px 0px 0px 0px;
-  transform: translateX(150px) translateY(10px);
+  transform: translateX(120px) translateY(10px);
   transition: 200ms;
 }
 
