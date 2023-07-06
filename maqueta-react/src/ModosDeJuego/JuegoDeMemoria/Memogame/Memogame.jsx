@@ -22,6 +22,30 @@ export default function Memogame({ contenido, gameComplete, style }) {
         type: item.type,
       }))
     );
+
+    setTimeout(() => {
+      setContenidoRevueltoDeLaTabla(
+        listaContenidoRevuelto.map((item, i) => ({
+          index: i,
+          item: item.item,
+          name: item.name,
+          flipped: true,
+          type: item.type,
+        }))
+      );
+    }, 250);
+
+    setTimeout(() => {
+      setContenidoRevueltoDeLaTabla(
+        listaContenidoRevuelto.map((item, i) => ({
+          index: i,
+          item: item.item,
+          name: item.name,
+          flipped: false,
+          type: item.type,
+        }))
+      );
+    }, 1750);
   }, []);
 
   const arrayRevuelto = (a) => {

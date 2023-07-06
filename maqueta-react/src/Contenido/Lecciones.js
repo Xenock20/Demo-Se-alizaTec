@@ -7,7 +7,7 @@ import vocalU from "./Image/N0-Vocales/U.png";
 export const lecciones = [
   {
     id: 0,
-    titulo: "Empezando la aventura!!",
+    titulo: "¡¡Empezando la aventura!!",
     contenido: {
       contPrincipal:
         "Bienvenido a SeñalizaTec y a tu camino de nuevo conocimiento donde aprenderás de forma divertida sobre la lengua de señas (LSA). En esta primera lección empezaremos con lo más básico de lo básico, las vocales “A,E,I,O,U”......",
@@ -20,9 +20,9 @@ export const lecciones = [
       ],
     },
     link: {
-      return: "/",
+      return: "/home",
       next: "/leccion/1"
-    }
+    },
   },
   {
     id: 1,

@@ -16,7 +16,7 @@ export default function ContTop() {
           maxWidth: '100%',
           width: `${barraDeProgreso}%`,
           height: '20px',
-          backgroundColor: '#de4a97',
+          backgroundColor: '#1555a8',
           borderRadius: "14px",
           margin: "2px 6px 6px 2px",
         }}

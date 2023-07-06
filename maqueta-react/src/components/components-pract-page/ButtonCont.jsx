@@ -2,7 +2,7 @@ import React from "react";
 import ReturnBtn from "./ReturnBtn";
 import NextBtn from "./NextBtn";
 
-export default function ButtonCont({ links, completado = true }) {
+export default function ButtonCont({ links, completado }) {
   return (
     <div className="button-cont">
       <div className="button-box">

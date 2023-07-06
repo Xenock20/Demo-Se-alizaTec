@@ -4,7 +4,6 @@ import { UserContext } from "../context/UserProvider";
 
 import 'animate.css';
 
-
 const HomeDemo = () => {
 
   const { reset } = useContext(UserContext)
