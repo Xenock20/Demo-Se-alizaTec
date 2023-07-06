@@ -3,10 +3,10 @@ import cross from "../../assets/cross.png";
 import { Link } from "react-router-dom";
 
 export default function CloseLevel() {
-  const link = "/";
+  const link = "/home";
   return (
     <div className="close-level">
-      <Link style={{ all: "unset" }} to={link}>
+      <Link style={{ all: "unset", cursor:"pointer" }} to={link}>
         <img src={cross} />
       </Link>
     </div>

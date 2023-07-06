@@ -115,21 +115,25 @@ const BotonesLevels = () => {
             const position = nivel[index].position;
             const cap = nivel[index].cap;
             const positionInfo = nivel[index].positionInfo;
+            const id = nivel[index].id;
 
             if (cap === 2) {
               return (
-                <div className="btn-level-cont">
+                <div className="btn-level-cont" key={id}>
                   <button
-                    className={`btn-niveles ${position}`}
+                    className={`btn-niveles ${position} block`}
                     onClick={() => {
-                      handleClick(descripcion, direccion);
+                      handleClick(descripcion, direccion, id, positionInfo);
                     }}
-                    key={index}
                   >
                     {index + 1}
                   </button>
-                  {mostrarInfo && (
-                    <div className={`cont-info-level ${positionInfo}`}>
+                  {id === infoId && (
+                    <div className={`cont-info-level ${positionInfo} animate__animated ${
+                        mostrarInfo && id === infoId
+                          ? animateIntro
+                          : animateBack
+                      }`}>
                       <p className="cont-p-level">{informacion}</p>
                       <Link
                         to={link}
@@ -165,21 +169,25 @@ const BotonesLevels = () => {
             const position = nivel[index].position;
             const cap = nivel[index].cap;
             const positionInfo = nivel[index].positionInfo;
+            const id = nivel[index].id;
 
             if (cap === 3) {
               return (
-                <div className="btn-level-cont">
+                <div className="btn-level-cont" key={id}>
                   <button
-                    className={`btn-niveles ${position}`}
+                    className={`btn-niveles ${position} block`}
                     onClick={() => {
-                      handleClick(descripcion, direccion);
+                      handleClick(descripcion, direccion, id, positionInfo);
                     }}
-                    key={index}
                   >
                     {index + 1}
                   </button>
-                  {mostrarInfo && (
-                    <div className={`cont-info-level ${positionInfo}`}>
+                  {id === infoId && (
+                    <div className={`cont-info-level ${positionInfo} animate__animated ${
+                        mostrarInfo && id === infoId
+                          ? animateIntro
+                          : animateBack
+                      }`}>
                       <p className="cont-p-level">{informacion}</p>
                       <Link
                         to={link}

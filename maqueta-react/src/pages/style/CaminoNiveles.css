@@ -17,8 +17,7 @@
   overflow-y: auto;
   padding: 10px;
 }
-.title-dif-one,
-.title-dif-two {
+.title-dif-one {
   background: linear-gradient(269.84deg, #de4a97 2.71%, #622444 123.71%);
   width: 500px;
   height: 59px;
@@ -31,7 +30,7 @@
   font-size: 24px;
 }
 
-.title-dif-tree {
+.title-dif-tree, .title-dif-two {
   background: linear-gradient(
     270.24deg,
     #8a8a8a -28.51%,
@@ -179,5 +178,20 @@
 .end:active {
   box-shadow: #b13b78 0px 0px 0px 0px;
   transform: translateX(300px) translateY(10px);
+  transition: 200ms;
+}
+
+
+.block{
+  background-color: #8a8a8a;
+  box-shadow: #585858 0px 10px 0px 0px;
+}
+
+.block:hover {
+  box-shadow: #585858 0px 7px 0px 0px;
+}
+
+.block:active {
+  box-shadow: #585858 0px 0px 0px 0px;
   transition: 200ms;
 }
