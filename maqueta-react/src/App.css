@@ -293,14 +293,14 @@ a:active {
 .leccion-cont > .cont-principal {
   position: relative;
   font-size: 28px;
-  padding: 10px;
+  padding: 5px;
   margin: 0px 10px;
 }
 
 .leccion-cont > .cont-secundario {
   position: relative;
   font-size: 20px;
-  padding: 10px;
+  padding: 5px;
   margin: 0px 10px;
 }
 
@@ -309,8 +309,8 @@ a:active {
 }
 
 .img-cont-sec {
-  width: 350px;
-  height: 350px;
+  width: 340px;
+  height: 340px;
   background-color: #423b5078;
   border: 5px solid #de4a97;
   border-radius: 15px;
