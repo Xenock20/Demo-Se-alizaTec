@@ -1,19 +1,21 @@
-.info-game{
-    display: flex;
-    position: fixed;
-    z-index: 10;
-    right: 25px;
-    width: 150px;
-    border: 1px solid #de4a97;
-    padding: 10px;
-    border-radius: 10px;
+.info-game {
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 3px solid #de4a97;
+  padding: 10px;
+  border-radius: 10px;
+  height: 200px;
 }
 
-.memo-game-cont{
-    display: flex;
-    align-items: center;
+.memo-game-cont {
+  display: flex;
+  align-items: center;
 }
 
-.info-game > p{
-    font-size: 28px;
+.info-game > p {
+  align-items: center;
+  font-size: 40px;
 }

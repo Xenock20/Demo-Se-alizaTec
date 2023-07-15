@@ -10,8 +10,16 @@ export default function Memogame({ contenido, gameComplete, style }) {
   );
   const [bloqueSeleccionado, setBloqueSeleccionado] = useState(null);
   const [animacion, setAnimacion] = useState(false);
+  const [mostrarJuego, setMostrarJuego] = useState(false);
 
   useEffect(() => {
+    setTimeout(() => {
+      iniciarJuego();
+    }, 5000);
+  }, []);
+
+  const iniciarJuego = () => {
+    setMostrarJuego(true);
     const listaContenidoRevuelto = arrayRevuelto([...items]);
     setContenidoRevueltoDeLaTabla(
       listaContenidoRevuelto.map((item, i) => ({
@@ -46,7 +54,7 @@ export default function Memogame({ contenido, gameComplete, style }) {
         }))
       );
     }, 1750);
-  }, []);
+  };
 
   const arrayRevuelto = (a) => {
     for (let i = a.length - 1; i > 0; i--) {
@@ -90,18 +98,24 @@ export default function Memogame({ contenido, gameComplete, style }) {
 
   return (
     <div className="memo-game-cont">
-      <div className="info-game">
-        <p>❕</p>
-        <span>
-          Juego de Memoria: indique la palabra con su respectiva seña.
-        </span>
-      </div>
-      <Tabla
-        blockes={contenidoRevueltoDeLaTabla}
-        animacion={animacion}
-        handleClick={handleClick}
-        style={style}
-      />
+      {!mostrarJuego && (
+        <div className="info-game">
+          {" "}
+          <p>!</p>
+          <span>
+            Juego de Memoria: indique la palabra con su respectiva seña.
+          </span>{" "}
+        </div>
+      )}
+
+      {mostrarJuego && (
+        <Tabla
+          blockes={contenidoRevueltoDeLaTabla}
+          animacion={animacion}
+          handleClick={handleClick}
+          style={style}
+        />
+      )}
     </div>
   );
 }
