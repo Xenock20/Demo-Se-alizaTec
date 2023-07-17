@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "animate.css";
 import { nivel } from "../../Contenido/Niveles";
 import { Link } from "react-router-dom";
 import start from "../../assets/startOne.png";
+import { UserContext } from "../../context/UserProvider";
 
 const BotonesLevels = () => {
   const [mostrarInfo, setMostrarInfo] = useState(false);
@@ -12,6 +13,7 @@ const BotonesLevels = () => {
   const [levels, setLevels] = useState([]);
   const [animateBack, setAnimateBack] = useState("");
   const [animateIntro, setAnimateIntro] = useState("");
+  const { nivelesDesbloqueados } = useContext(UserContext);
 
   useEffect(() => {
     setLevels(Array(nivel.length).fill(null));
@@ -61,12 +63,17 @@ const BotonesLevels = () => {
             const cap = nivel[index].cap;
             const positionInfo = nivel[index].positionInfo;
             const id = nivel[index].id;
+            const unlockLevel = nivelesDesbloqueados.includes(id);
 
             if (cap === 1) {
               return (
                 <div className="btn-level-cont" key={id}>
                   <button
-                    className={`btn-niveles ${position}`}
+                    className={
+                      unlockLevel
+                        ? `btn-niveles ${position}`
+                        : `btn-niveles ${position} block`
+                    }
                     onClick={() => {
                       handleClick(descripcion, direccion, id, positionInfo);
                     }}
@@ -116,12 +123,17 @@ const BotonesLevels = () => {
             const cap = nivel[index].cap;
             const positionInfo = nivel[index].positionInfo;
             const id = nivel[index].id;
+            const unlockLevel = nivelesDesbloqueados.includes(id);
 
             if (cap === 2) {
               return (
                 <div className="btn-level-cont" key={id}>
                   <button
-                    className={`btn-niveles ${position} block`}
+                    className={
+                      unlockLevel
+                        ? `btn-niveles ${position}`
+                        : `btn-niveles ${position} block`
+                    }
                     onClick={() => {
                       handleClick(descripcion, direccion, id, positionInfo);
                     }}
@@ -129,11 +141,13 @@ const BotonesLevels = () => {
                     {index + 1}
                   </button>
                   {id === infoId && (
-                    <div className={`cont-info-level ${positionInfo} animate__animated ${
+                    <div
+                      className={`cont-info-level ${positionInfo} animate__animated ${
                         mostrarInfo && id === infoId
                           ? animateIntro
                           : animateBack
-                      }`}>
+                      }`}
+                    >
                       <p className="cont-p-level">{informacion}</p>
                       <Link
                         to={link}
@@ -170,12 +184,17 @@ const BotonesLevels = () => {
             const cap = nivel[index].cap;
             const positionInfo = nivel[index].positionInfo;
             const id = nivel[index].id;
+            const unlockLevel = nivelesDesbloqueados.includes(id);
 
             if (cap === 3) {
               return (
                 <div className="btn-level-cont" key={id}>
                   <button
-                    className={`btn-niveles ${position} block`}
+                    className={
+                      unlockLevel
+                        ? `btn-niveles ${position}`
+                        : `btn-niveles ${position} block`
+                    }
                     onClick={() => {
                       handleClick(descripcion, direccion, id, positionInfo);
                     }}
@@ -183,11 +202,13 @@ const BotonesLevels = () => {
                     {index + 1}
                   </button>
                   {id === infoId && (
-                    <div className={`cont-info-level ${positionInfo} animate__animated ${
+                    <div
+                      className={`cont-info-level ${positionInfo} animate__animated ${
                         mostrarInfo && id === infoId
                           ? animateIntro
                           : animateBack
-                      }`}>
+                      }`}
+                    >
                       <p className="cont-p-level">{informacion}</p>
                       <Link
                         to={link}
