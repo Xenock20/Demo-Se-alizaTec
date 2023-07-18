@@ -4,6 +4,7 @@ import { nivel } from "../../Contenido/Niveles";
 import { Link } from "react-router-dom";
 import start from "../../assets/startOne.png";
 import { UserContext } from "../../context/UserProvider";
+import BlockIcon from "../../assets/BlockIcon.svg";
 
 const BotonesLevels = () => {
   const [mostrarInfo, setMostrarInfo] = useState(false);
@@ -78,7 +79,13 @@ const BotonesLevels = () => {
                       handleClick(descripcion, direccion, id, positionInfo);
                     }}
                   >
-                    {index + 1}
+                    {!unlockLevel ? (
+                      <object data={BlockIcon} className="block-icon">
+                        {" "}
+                      </object>
+                    ) : (
+                      index + 1
+                    )}
                   </button>
                   {id === infoId && (
                     <div
@@ -138,7 +145,13 @@ const BotonesLevels = () => {
                       handleClick(descripcion, direccion, id, positionInfo);
                     }}
                   >
-                    {index + 1}
+                    {!unlockLevel ? (
+                      <object data={BlockIcon} className="block-icon">
+                        {" "}
+                      </object>
+                    ) : (
+                      index + 1
+                    )}
                   </button>
                   {id === infoId && (
                     <div
@@ -199,7 +212,13 @@ const BotonesLevels = () => {
                       handleClick(descripcion, direccion, id, positionInfo);
                     }}
                   >
-                    {index + 1}
+                    {!unlockLevel ? (
+                      <object data={BlockIcon} className="block-icon">
+                        {" "}
+                      </object>
+                    ) : (
+                      index + 1
+                    )}
                   </button>
                   {id === infoId && (
                     <div
