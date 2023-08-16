@@ -1,6 +1,7 @@
 import Tabla from "../Tabla/Tabla";
 import { useState, useEffect } from "react";
 import "./MemoStyle.css";
+import PreviewMemo from "../../../assets/PreviewMemo.png";
 
 export default function Memogame({ contenido, gameComplete, style }) {
   const { items } = contenido;
@@ -11,12 +12,19 @@ export default function Memogame({ contenido, gameComplete, style }) {
   const [bloqueSeleccionado, setBloqueSeleccionado] = useState(null);
   const [animacion, setAnimacion] = useState(false);
   const [mostrarJuego, setMostrarJuego] = useState(false);
+  const [time, setTime] = useState(3);
 
   useEffect(() => {
-    setTimeout(() => {
-      iniciarJuego();
-    }, 5000);
-  }, []);
+    if (time > 0) {
+      const timer = setInterval(() => {
+        setTime(time - 1);
+      }, 1000);
+
+      return () => {
+        clearInterval(timer);
+      };
+    } else iniciarJuego();
+  }, [time]);
 
   const iniciarJuego = () => {
     setMostrarJuego(true);
@@ -99,12 +107,19 @@ export default function Memogame({ contenido, gameComplete, style }) {
   return (
     <div className="memo-game-cont">
       {!mostrarJuego && (
-        <div className="info-game">
-          {" "}
-          <p>!</p>
-          <span>
-            Juego de Memoria: indique la palabra con su respectiva seña.
-          </span>{" "}
+        <div class="blog-post">
+          <div class="blog-post_img">
+            <img src={PreviewMemo} alt="" />
+          </div>
+          <div class="blog-post_info">
+            <div>
+              <h1 class="blog-post_title">JUEGO DE MEMORIA</h1>
+            </div>
+            <p>Indique la palabra con su respectiva seña.</p>
+            <div className="time">
+              <span>{time}</span>
+            </div>
+          </div>
         </div>
       )}
 
