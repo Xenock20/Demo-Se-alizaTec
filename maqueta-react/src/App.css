@@ -17,6 +17,7 @@ a:active {
 .abc-text-home > h5 {
   font-family: "Lalezar", cursive;
   font-family: "Rubik", sans-serif;
+  font-size: 100px;
 }
 
 .home-demo {
@@ -27,10 +28,6 @@ a:active {
     #514a9d 100%
   );
   min-height: 100vh;
-}
-
-.home-page {
-  height: 100vh;
 }
 
 .nav-bar-home {
@@ -80,11 +77,20 @@ a:active {
   position: relative;
 }
 
+.caja-diccionario {
+  background-color: #de4a97;
+  height: 87px;
+  width: 74px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 13px;
+}
 .abc-home {
   position: fixed;
-  height: 60px;
-  width: 145px;
-  border: 2px solid #de4a97;
+  height: 86px;
+  width: 290px;
+  border: 3px solid #de4a97;
   border-radius: 17px;
   right: 10px;
   top: 75px;
@@ -93,8 +99,19 @@ a:active {
 
 .icon-abc-home {
   width: 60px;
+  height: 60px;
   background-color: #de4a97;
   border-radius: 10px;
+}
+
+.diccionary-book {
+  width: 43.87px;
+  height: 61.86px;
+}
+
+.boton-book {
+  width: 30px;
+  border-radius: 17px;
 }
 
 .lib-cont {
@@ -131,21 +148,31 @@ a:active {
   margin-top: 4px;
 }
 
-.abc-text-home {
-  width: 80px;
-  margin: auto 5px;
+.abc-text-abecedario {
+  width: 210px;
+  height: 40px;
+  display: flex;
+  align-items: end;
+
+  justify-content: start;
 }
 
-.abc-text-home > h5 {
-  font-weight: 400;
-  font-size: 12px;
+.abc-text-abecedario > h5 {
+  font-size: 25px;
 }
 
-.abc-text-home > p {
-  font-weight: 400;
-  font-size: 8px;
+.abc-text {
+  width: 60px;
+  display: block;
+  margin: 5px;
 }
-
+.abc-text-p {
+  width: 205px;
+  height: 46px;
+}
+.abc-text-p > p {
+  font-size: 14px;
+}
 .icon-help {
   font-size: 24px;
   border-radius: 50%;
