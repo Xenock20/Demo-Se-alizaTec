@@ -15,7 +15,23 @@ function UserProvider({ children }) {
   const [barraDeProgreso, setBarraDeProgreso] = useState(() => {
     const storedBarraDeProgreso = sessionStorage.getItem("barraDeProgreso");
     return storedBarraDeProgreso ? JSON.parse(storedBarraDeProgreso) : 12;
-  })
+  });
+
+  const [nivelesDesbloqueados, setNivelesDesbloqueados] = useState(() => {
+    const storedNivelesDesbloqueados = localStorage.getItem(
+      "nivelesDesbloqueados"
+    );
+    return storedNivelesDesbloqueados
+      ? JSON.parse(storedNivelesDesbloqueados)
+      : [1];
+  });
+
+  useEffect(() => {
+    localStorage.setItem(
+      "nivelesDesbloqueados",
+      JSON.stringify(nivelesDesbloqueados)
+    );
+  }, [nivelesDesbloqueados]);
 
   useEffect(() => {
     localStorage.setItem(
@@ -32,11 +48,8 @@ function UserProvider({ children }) {
   }, [modosJuegoDesbloqueados]);
 
   useEffect(() => {
-    sessionStorage.setItem(
-      "barraDeProgreso",
-      JSON.stringify(barraDeProgreso)
-    );
-  }, [barraDeProgreso])
+    sessionStorage.setItem("barraDeProgreso", JSON.stringify(barraDeProgreso));
+  }, [barraDeProgreso]);
 
   const desbloquearLeccion = (id) => {
     setLeccionesDesbloqueadas([...leccionesDesbloqueadas, id]);
@@ -48,17 +61,21 @@ function UserProvider({ children }) {
 
   const incrementarBarra = () => {
     setBarraDeProgreso(barraDeProgreso + 12);
-  }
+  };
 
   const desincrementarBarra = () => {
     setBarraDeProgreso(barraDeProgreso - 12);
-  }
+  };
+
+  const desbloquearNiveles = (nivel) => {
+    setNivelesDesbloqueados([...nivelesDesbloqueados, nivel]);
+  };
 
   const reset = () => {
-    setBarraDeProgreso(12)
+    setBarraDeProgreso(12);
     setLeccionesDesbloqueadas([0, 1]);
     setModosJuegoDesbloqueados([0]);
-  }
+  };
 
   const userState = {
     leccionesDesbloqueadas,
@@ -68,7 +85,9 @@ function UserProvider({ children }) {
     incrementarBarra,
     desincrementarBarra,
     barraDeProgreso,
-    reset
+    nivelesDesbloqueados,
+    desbloquearNiveles,
+    reset,
   };
 
   return (

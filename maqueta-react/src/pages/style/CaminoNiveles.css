@@ -30,7 +30,8 @@
   font-size: 24px;
 }
 
-.title-dif-tree, .title-dif-two {
+.title-dif-tree,
+.title-dif-two {
   background: linear-gradient(
     270.24deg,
     #8a8a8a -28.51%,
@@ -66,6 +67,10 @@
 
 .levels-path::-webkit-scrollbar {
   width: 8px; /* Ajusta el ancho de la barra de desplazamiento */
+}
+.block-icon {
+  width: 25px;
+  height: 25px;
 }
 
 .levels-path::-webkit-scrollbar-thumb {
@@ -181,8 +186,7 @@
   transition: 200ms;
 }
 
-
-.block{
+.block {
   background-color: #8a8a8a;
   box-shadow: #585858 0px 10px 0px 0px;
 }
