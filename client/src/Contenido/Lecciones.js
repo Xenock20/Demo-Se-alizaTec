@@ -21,15 +21,13 @@ export const lecciones = [
     },
     link: {
       return: "/home",
-      next: "/leccion/1"
+      next: "/leccion/1",
     },
   },
   {
     id: 1,
     titulo: "“A” por mi primera seña.",
     contenido: {
-      contPrincipal:
-        "Como primera señas vamos a identificar cuáles son y cómo se hacen:",
       contSecundario: [
         {
           subtitulo: "Para empezar vamos a reconocer la vocal “A”.",
@@ -40,8 +38,8 @@ export const lecciones = [
     },
     link: {
       return: "/leccion/0",
-      next: "/mododejuego/0"
-    }
+      next: "/mododejuego/0",
+    },
   },
   {
     id: 2,
@@ -59,8 +57,8 @@ export const lecciones = [
     },
     link: {
       return: "/mododejuego/0",
-      next: "/mododejuego/1"
-    }
+      next: "/mododejuego/1",
+    },
   },
   {
     id: 3,
@@ -88,7 +86,7 @@ export const lecciones = [
     },
     link: {
       return: "/mododejuego/1",
-      next: "/mododejuego/2"
-    }
+      next: "/mododejuego/2",
+    },
   },
 ];
