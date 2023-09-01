@@ -9,6 +9,7 @@ import CaminoNiveles from "../pages/CaminoNiveles";
 import HomePage from "./../pages/HomePage";
 import Abecedario from "../pages/abecedario";
 import Register from "../pages/Register";
+import Login from "../pages/Login";
 
 export default function Routers() {
   return (
@@ -21,6 +22,7 @@ export default function Routers() {
       <Route path="/Niveles" element={<CaminoNiveles />}></Route>
       <Route path="/abclib" element={<Abecedario></Abecedario>}></Route>
       <Route path="/register" element={<Register></Register>}></Route>
+      <Route path="/login" element={<Login></Login>}></Route>
     </Routes>
   );
 }
