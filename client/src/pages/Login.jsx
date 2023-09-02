@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./style/abc.css";
+import "./style/Register.css";
 
 const Login = () => {
   const [error, setError] = useState(false);
@@ -38,17 +39,44 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="container2">
       <form action="" onSubmit={handleSubmit}>
-        <label htmlFor="">Correo:</label>
-        <input type="email" name="email" onChange={handleInput} />
+        <div className="title-register">
+          <h1 className="ingresar-login">Ingresar</h1>
+        </div>
 
-        <label htmlFor="">Password:</label>
-        <input type="password" name="password" onChange={handleInput} />
+        <label htmlFor="" className="ocultar">
+          Correo:
+        </label>
+        <input
+          type="email"
+          name="email"
+          onChange={handleInput}
+          className="inputs"
+          placeholder="Correo Electronico"
+        />
 
-        <input type="submit" />
+        <label htmlFor="" className="ocultar">
+          Password:
+        </label>
+        <input
+          type="password"
+          name="password"
+          onChange={handleInput}
+          className="inputs"
+          placeholder="Contraseña"
+        />
+        {error && (
+          <div className="box-error">
+            <h1 className="error-register">ERROR AL INICIAR SESION</h1>
+          </div>
+        )}
+
+        <input type="submit" className="submit-register" id="submit" />
+        <Link to={"/register"} className="inputs" id="back">
+          <span id="span">NO TENGO UNA CUENTA</span>
+        </Link>
       </form>
-      {error && <h1>Error al inciar sesion</h1>}
     </div>
   );
 };

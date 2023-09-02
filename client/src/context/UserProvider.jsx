@@ -75,6 +75,7 @@ function UserProvider({ children }) {
     setBarraDeProgreso(12);
     setLeccionesDesbloqueadas([0, 1]);
     setModosJuegoDesbloqueados([0]);
+    setNivelesDesbloqueados([1]);
   };
 
   const userState = {

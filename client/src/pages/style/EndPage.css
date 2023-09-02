@@ -36,6 +36,17 @@ p {
   margin-bottom: 2rem;
 }
 
+.regresar-endpage {
+  font-size: 30px;
+}
+
+.box-endpage {
+  background-color: rgb(222, 74, 151);
+  padding: 3px;
+  border: solid rgb(222, 74, 151) 3px;
+  border-radius: 9px;
+}
+
 /* a {
     display: inline-block;
     padding: 0.5rem 1rem;
