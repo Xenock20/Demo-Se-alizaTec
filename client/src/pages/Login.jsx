@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./style/Register.css";
 
 const Login = () => {
   const [error, setError] = useState(false);
@@ -37,15 +39,20 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="container2">
       <form action="" onSubmit={handleSubmit}>
-        <label htmlFor="">Correo:</label>
-        <input type="email" name="email" onChange={handleInput} />
+        <h1 id="h1">Ingresar</h1>
 
-        <label htmlFor="">Password:</label>
-        <input type="password" name="password" onChange={handleInput} />
+        <label htmlFor="" className="ocultar">Correo:</label>
+        <input type="email" name="email" onChange={handleInput} className="inputs" placeholder="Correo Electronico"/>
 
-        <input type="submit" />
+        <label htmlFor="" className="ocultar">Password:</label>
+        <input type="password" name="password" onChange={handleInput} className="inputs" placeholder="Contraseña"/>
+
+        <input type="submit" className="inputs" id="submit"/>
+        <Link to={"/register"} className="inputs" id="back">
+          <span id="span">NO TENGO UNA CUENTA</span>
+        </Link>
       </form>
       {error && <h1>Error al inciar sesion</h1>}
     </div>
