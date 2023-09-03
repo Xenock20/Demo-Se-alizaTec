@@ -89,4 +89,138 @@ export const lecciones = [
       next: "/mododejuego/2",
     },
   },
+  {
+    id: 4,
+    titulo: "Empecemos con los más sencillos",
+    contenido: {
+      contPrincipal:
+        "",
+      contSecundario: [
+        {
+          subtitulo: "Para realizar el número 1",
+          img: vocalE,
+          text: "Debemos cerrar todos los dedos menos el dedo índice, dejándolo bien extendido.",
+        },
+        {
+          subtitulo: "Para el número 2",
+          img: vocalE,
+          text: "Debemos hacer exactamente lo mismo que con el 1, solo que en este caso el dedo medio también tiene que estar extendido.",
+        },
+        {
+          subtitulo: "Para el número 3",
+          img: vocalE,
+          text: "Además del índice y el medio, el pulgar también va a tener que estar extendido.",
+        },
+        {
+          subtitulo: "Para el número 4",
+          img: vocalE,
+          text: "Vamos a dejar todos los dedos extendidos, excepto el pulgar. ",
+        },
+        {
+          subtitulo: "Y por último el 5",
+          img: vocalE,
+          text: "Que se indica extendiendo todos los dedos. ",
+        },
+      ],
+    },
+    link: {
+      return: "/home",
+      next: "/mododejuego/3",
+    },
+  },
+  {
+    id: 5,
+    titulo: "Aprende a expresar el número 6",
+    contenido: {
+      contPrincipal:
+        "",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: vocalE,
+          text: "Esta seña no se realiza simplemente extendiendo alguno de los dedos, como las anteriores. Para este número debemos cerrar todos los dedos, excepto el pulgar, que en este caso va a quedar extendido. Y por último, debemos apretar los dedos que quedaron cerrados, repetidamente contra nuestra palma.",
+        },
+      ],
+    },
+    link: {
+      return: "/mododejuego/3",
+      next: "/mododejuego/4",
+    },
+  },
+  {
+    id: 6,
+    titulo: "Aprende a expresar el número 7 ",
+    contenido: {
+      contPrincipal:
+        "",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: vocalE,
+          text: "Primero debemos cerrar todos los dedos, excepto el índice que debe quedar extendido, para luego pasarlo de forma horizontal por arriba de la nariz",
+        },
+      ],
+    },
+    link: {
+      return: "/mododejuego/4",
+      next: "/mododejuego/5",
+    },
+  },
+  {
+    id: 7,
+    titulo: "Aprende a expresar el número 8",
+    contenido: {
+      contPrincipal:
+        "",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: vocalE,
+          text: "Deben estar extendidos los dedos, medio, índice y pulgar, mientras q los demás deben estar cerrados. Ya con los dedos en esa posición, por último, apoyar el pulgar a un costado de nuestro ojo.",
+        },
+      ],
+    },
+    link: {
+      return: "/mododejuego/5",
+      next: "/mododejuego/6",
+    },
+  },
+  {
+    id: 8,
+    titulo: "Aprende a expresar el número 9",
+    contenido: {
+      contPrincipal:
+        "",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: vocalE,
+          text: "La posición de los dedos debe ser la misma que la de la lección anterior, solo que en este caso, el índice y el medio, deben estar pegados. En esa posición, debemos arrastrar esos mismos dedos de arriba hacia bajo, justo por encima de nuestra ceja.",
+        },
+      ],
+    },
+    link: {
+      return: "/mododejuego/6",
+      next: "/mododejuego/7",
+    },
+  },
+  {
+    id: 9,
+    titulo: "Aprende a expresar el número 10",
+    contenido: {
+      contPrincipal:
+        "",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: vocalE,
+          text: "Para este último número, vamos a tener que dejar extendidos solamente el dedo índice y el pulgar. Luego con estos, vamos a intentar formar un circulo pero sin que las puntas se toquen, de forma que parezca la letra C. Por último, con los dedos en esa posición, solamente vamos a tener que apoyarlos a un costado de la cara, cerca del ojo.",
+        },
+      ],
+    },
+    link: {
+      return: "/mododejuego/7",
+      next: "/mododejuego/8",
+    },
+  },
 ];
