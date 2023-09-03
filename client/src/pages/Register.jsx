@@ -8,6 +8,7 @@ import NavBar from "./../components/components-pract-page/NavBar";
 
 const Register = () => {
   const navigate = useNavigate();
+  const [error, setError] = useState(false);
   const [values, setValues] = useState({
     user: "",
     email: "",
@@ -21,15 +22,21 @@ const Register = () => {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    axios
-      .post("http://localhost:3000/register", values)
-      .then((res) => {
-        console.log(res);
+
+    try {
+      const respuesta = await axios.post(
+        "http://localhost:3000/register",
+        values
+      );
+
+      if (respuesta.status === 200) {
         navigate("/login");
-      })
-      .catch((err) => console.log(err));
+      }
+    } catch (error) {
+      setError(true);
+    }
   };
 
   return (
@@ -48,6 +55,7 @@ const Register = () => {
           onChange={handleInput}
           className="inputs"
           placeholder="Nombre"
+          required
         />
 
         <label htmlFor="" className="ocultar">
@@ -59,18 +67,26 @@ const Register = () => {
           onChange={handleInput}
           className="inputs"
           placeholder="Correo Electronico"
+          required
         />
 
         <label htmlFor="" className="ocultar">
           Password:
         </label>
         <input
+          required
           type="password"
           name="password"
           onChange={handleInput}
           className="inputs"
           placeholder="Contraseña"
         />
+
+        {error && (
+          <div className="box-error">
+            <h1 className="error-register">CORREO YA EXISTENTE</h1>
+          </div>
+        )}
 
         <input type="submit" className="submit-register" id="submit" />
         <Link to={"/login"} className="inputs" id="back">

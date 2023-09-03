@@ -22,7 +22,6 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    axios.post("http://localhost:3000/login", values);
 
     try {
       const response = await axios.post("http://localhost:3000/login", values);
@@ -49,6 +48,7 @@ const Login = () => {
           Correo:
         </label>
         <input
+          required
           type="email"
           name="email"
           onChange={handleInput}
@@ -65,6 +65,7 @@ const Login = () => {
           onChange={handleInput}
           className="inputs"
           placeholder="Contraseña"
+          required
         />
         {error && (
           <div className="box-error">
