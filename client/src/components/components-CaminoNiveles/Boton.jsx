@@ -53,7 +53,7 @@ const BotonesLevels = () => {
                 <img src={start} className="start" alt="Una Estrella" />
               </div>
               <div className="sub-cont">
-                <h1 className="title-one">Facil</h1>
+                <h1 className="title-one">Fácil</h1>
               </div>
             </div>
           </div>
@@ -186,7 +186,7 @@ const BotonesLevels = () => {
                 <img src={start} alt="Tres Estrellas" />
               </div>
               <div className="sub-cont">
-                <h1 className="title-tree">Dificil</h1>
+                <h1 className="title-tree">Difícil</h1>
               </div>
             </div>
           </div>

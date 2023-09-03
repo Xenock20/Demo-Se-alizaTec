@@ -26,7 +26,6 @@ const Login = () => {
     try {
       const response = await axios.post("http://localhost:3000/login", values);
 
-      console.log("Respuesta del servidor:", response.data);
       if (response.status === 200) {
         console.log("Inicio de sesión exitoso");
         navigate("/home");
