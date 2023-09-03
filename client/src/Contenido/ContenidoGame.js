@@ -3,6 +3,16 @@ import vocalE from "./Image/N0-Vocales/E_v2_G.png";
 import vocalI from "./Image/N0-Vocales/I_v2_G.png";
 import vocalO from "./Image/N0-Vocales/O_v2_G.png";
 import vocalU from "./Image/N0-Vocales/U_v2_G.png";
+import num1 from "./Image/N1-Numeros/1.png";
+import num2 from "./Image/N1-Numeros/2.png";
+import num3 from "./Image/N1-Numeros/3.png";
+import num4 from "./Image/N1-Numeros/4.png";
+import num5 from "./Image/N1-Numeros/5.png";
+import num6 from "./Image/N1-Numeros/6.png";
+import num7 from "./Image/N1-Numeros/7.png";
+import num8 from "./Image/N1-Numeros/8.png";
+import num9 from "./Image/N1-Numeros/9.png";
+import num10 from "./Image/N1-Numeros/10.png";
 
 export const contGames = [
   {
