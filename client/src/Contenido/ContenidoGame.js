@@ -1,6 +1,6 @@
 import vocalA from "./Image/N0-Vocales/A_v2_G.png";
 import vocalE from "./Image/N0-Vocales/E_v2_G.png";
-import vocalI from "./Image/N0-Vocales/I_v2_G.png";
+import vocalI from "./Image/N0-Vocales/i-bn.png";
 import vocalO from "./Image/N0-Vocales/O_v2_G.png";
 import vocalU from "./Image/N0-Vocales/U_v2_G.png";
 import num1 from "./Image/N1-Numeros/1.png";

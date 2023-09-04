@@ -196,5 +196,5 @@ export const lecciones = [
       return: "/mododejuego/5",
       next: "/mododejuego/6",
     },
-  }
+  },
 ];
