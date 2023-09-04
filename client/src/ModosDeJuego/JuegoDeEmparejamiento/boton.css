@@ -3,22 +3,23 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  padding: 4px 16px;
+
   background-color: #423b5078;
+  border: solid #423b5078 3px;
 }
 
-.cont-ge{
+.cont-ge {
   text-align: center;
 }
 
-.btn-img-option-ge{
+.btn-img-option-ge {
   margin-top: 10px;
   display: flex;
-  justify-content: center
+  justify-content: center;
 }
 
-button > img{
-  width: 270px;
+button > img {
+  width: 260px;
   background-color: #423b5078;
 }
 
@@ -28,5 +29,4 @@ button.correcta {
 
 button.incorrecta {
   background-color: red;
-
 }

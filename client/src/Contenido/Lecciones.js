@@ -55,8 +55,6 @@ export const lecciones = [
     id: 2,
     titulo: "Siguiendo nuestra aventura",
     contenido: {
-      contPrincipal:
-        "¡Muy bien! Ahora que sabes reconocer una de las 5 vocales, en esta lección aprenderemos la que sigue.",
       contSecundario: [
         {
           subtitulo: "Para seguirle el orden miremos la “E”",
@@ -74,8 +72,6 @@ export const lecciones = [
     id: 3,
     titulo: "Completando las vocales.",
     contenido: {
-      contPrincipal:
-        "Ya para finalizar, con las 3 últimas vocales I, O y U, te dejaremos demostrar tus habilidades adquiridas en los siguientes ejercicios.",
       contSecundario: [
         {
           subtitulo: "Empecemos con la “I”",
@@ -103,8 +99,7 @@ export const lecciones = [
     id: 4,
     titulo: "Empecemos con los más sencillos",
     contenido: {
-      contPrincipal:
-        "",
+      contPrincipal: "",
       contSecundario: [
         {
           subtitulo: "Para realizar el número 1",
@@ -142,8 +137,7 @@ export const lecciones = [
     id: 5,
     titulo: "Aprende a expresar el número 6",
     contenido: {
-      contPrincipal:
-        "",
+      contPrincipal: "",
       contSecundario: [
         {
           subtitulo: "",
@@ -161,8 +155,7 @@ export const lecciones = [
     id: 6,
     titulo: "Aprende a expresar el número 7 ",
     contenido: {
-      contPrincipal:
-        "",
+      contPrincipal: "",
       contSecundario: [
         {
           subtitulo: "",
@@ -180,8 +173,7 @@ export const lecciones = [
     id: 7,
     titulo: "Aprende a expresar el número 8",
     contenido: {
-      contPrincipal:
-        "",
+      contPrincipal: "",
       contSecundario: [
         {
           subtitulo: "",
@@ -199,8 +191,7 @@ export const lecciones = [
     id: 8,
     titulo: "Aprende a expresar el número 9",
     contenido: {
-      contPrincipal:
-        "",
+      contPrincipal: "",
       contSecundario: [
         {
           subtitulo: "",
@@ -218,8 +209,7 @@ export const lecciones = [
     id: 9,
     titulo: "Aprende a expresar el número 10",
     contenido: {
-      contPrincipal:
-        "",
+      contPrincipal: "",
       contSecundario: [
         {
           subtitulo: "",
