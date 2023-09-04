@@ -18,6 +18,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+p{
+  margin-top: 10px;
+  font-size: 28px
+}
+
 .caja-completa {
   display: flex;
   flex-direction: column;
@@ -32,9 +38,11 @@ h1 {
 
 .regresar-endpage {
   font-size: 30px;
+
 }
 
 .box-endpage {
+  margin: 40px 0px;
   background-color: rgb(222, 74, 151);
   padding: 3px;
   border: solid rgb(222, 74, 151) 3px;

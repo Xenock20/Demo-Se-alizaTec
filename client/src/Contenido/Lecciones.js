@@ -180,37 +180,11 @@ export const lecciones = [
           img: num8,
           text: "Deben estar extendidos los dedos, medio, índice y pulgar, mientras q los demás deben estar cerrados. Ya con los dedos en esa posición, por último, apoyar el pulgar a un costado de nuestro ojo.",
         },
-      ],
-    },
-    link: {
-      return: "/mododejuego/5",
-      next: "/mododejuego/6",
-    },
-  },
-  {
-    id: 8,
-    titulo: "Aprende a expresar el número 9",
-    contenido: {
-      contPrincipal: "",
-      contSecundario: [
         {
           subtitulo: "9",
           img: num9,
           text: "La posición de los dedos debe ser la misma que la de la lección anterior, solo que en este caso, el índice y el medio, deben estar pegados. En esa posición, debemos arrastrar esos mismos dedos de arriba hacia bajo, justo por encima de nuestra ceja.",
         },
-      ],
-    },
-    link: {
-      return: "/mododejuego/6",
-      next: "/mododejuego/7",
-    },
-  },
-  {
-    id: 9,
-    titulo: "Aprende a expresar el número 10",
-    contenido: {
-      contPrincipal: "",
-      contSecundario: [
         {
           subtitulo: "10",
           img: num10,
@@ -222,5 +196,5 @@ export const lecciones = [
       return: "/mododejuego/5",
       next: "/mododejuego/6",
     },
-  },
+  }
 ];
