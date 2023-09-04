@@ -107,13 +107,13 @@ export default function Memogame({ contenido, gameComplete, style }) {
   return (
     <div className="memo-game-cont">
       {!mostrarJuego && (
-        <div class="blog-post">
-          <div class="blog-post_img">
+        <div className="blog-post">
+          <div className="blog-post_img">
             <img src={PreviewMemo} alt="" />
           </div>
-          <div class="blog-post_info">
+          <div className="blog-post_info">
             <div>
-              <h1 class="blog-post_title">JUEGO DE MEMORIA</h1>
+              <h1 className="blog-post_title">JUEGO DE MEMORIA</h1>
             </div>
             <p>Indique la palabra con su respectiva seña.</p>
             <div className="time">

@@ -16,8 +16,9 @@ export default function PractPage() {
   const [reset, setReset] = useState(false);
   const [gameOver, setGameOver] = useState(false);
 
-  const { desbloquearLeccion, desbloquearModoJuego } = useContext(UserContext);
- 
+  const { desbloquearLeccion, desbloquearModoJuego, desbloquearNiveles } =
+    useContext(UserContext);
+
   useEffect(() => {
     const contGame = contGames[id];
     setContenidoDelJuego(contGame);
@@ -28,12 +29,11 @@ export default function PractPage() {
 
   const handleCompleteGame = () => {
     setCompletado(true);
-    deblock.leccionID.forEach((id) => {
-      id ? desbloquearLeccion(id) : "";
-    });
-    deblock.modeGameID.forEach((id) => {
-      id ? desbloquearModoJuego(id) : "";
-    });
+    //deblock.leccionID.map((id) => console.log(id) /*desbloquearLeccion(id)*/);
+    desbloquearLeccion(deblock.leccionID)
+    desbloquearModoJuego(deblock.modeGameID)
+    //deblock.modeGameID.map((id) => desbloquearModoJuego(id));
+    deblock.levelID.map((id) => desbloquearNiveles(id));
   };
 
   const reiniciarComponente = () => {

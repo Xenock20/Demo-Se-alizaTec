@@ -1,8 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ContOptions from "../ContOptions/ContOptions";
 import ImagenAdivinaGame from "../Imagen/ImagenAdivinaGame";
 import "./AdivinaGame.css";
-import { UserContext } from "../../../context/UserProvider";
 
 export default function AdivinaGame({
   contenido,
@@ -15,8 +14,6 @@ export default function AdivinaGame({
   const [juegoTerminado, setJuegoTerminado] = useState(false);
 
   const imgRandom = Math.floor(Math.random() * 4);
-
-  const { desbloquearNiveles } = useContext(UserContext);
 
   useEffect(() => {
     const listOptionCopy = arrayRevuelto([...contenido.options]);
@@ -57,11 +54,6 @@ export default function AdivinaGame({
     setJuegoTerminado(true);
   };
 
-  useEffect(() => {
-    if (juegoTerminado) {
-      desbloquearNiveles(2);
-    }
-  }, [juegoTerminado]);
   return (
     <div className="cont-advina-game">
       <ImagenAdivinaGame img={objetoImage}></ImagenAdivinaGame>
