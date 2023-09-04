@@ -135,7 +135,7 @@ export const lecciones = [
     },
     link: {
       return: "/home",
-      next: "/mododejuego/3",
+      next: "/mododejuego/4",
     },
   },
   {
@@ -153,8 +153,8 @@ export const lecciones = [
       ],
     },
     link: {
-      return: "/mododejuego/3",
-      next: "/mododejuego/4",
+      return: "/mododejuego/4",
+      next: "/leccion/6",
     },
   },
   {
@@ -172,65 +172,37 @@ export const lecciones = [
       ],
     },
     link: {
-      return: "/mododejuego/4",
+      return: "/leccion/5",
       next: "/mododejuego/5",
     },
   },
   {
     id: 7,
-    titulo: "Aprende a expresar el número 8",
+    titulo: "Aprende a expresar el número 8, 9 y 10",
     contenido: {
       contPrincipal:
         "",
       contSecundario: [
         {
-          subtitulo: "",
+          subtitulo: "8",
           img: num8,
           text: "Deben estar extendidos los dedos, medio, índice y pulgar, mientras q los demás deben estar cerrados. Ya con los dedos en esa posición, por último, apoyar el pulgar a un costado de nuestro ojo.",
         },
-      ],
-    },
-    link: {
-      return: "/mododejuego/5",
-      next: "/mododejuego/6",
-    },
-  },
-  {
-    id: 8,
-    titulo: "Aprende a expresar el número 9",
-    contenido: {
-      contPrincipal:
-        "",
-      contSecundario: [
         {
-          subtitulo: "",
+          subtitulo: "9",
           img: num9,
           text: "La posición de los dedos debe ser la misma que la de la lección anterior, solo que en este caso, el índice y el medio, deben estar pegados. En esa posición, debemos arrastrar esos mismos dedos de arriba hacia bajo, justo por encima de nuestra ceja.",
         },
-      ],
-    },
-    link: {
-      return: "/mododejuego/6",
-      next: "/mododejuego/7",
-    },
-  },
-  {
-    id: 9,
-    titulo: "Aprende a expresar el número 10",
-    contenido: {
-      contPrincipal:
-        "",
-      contSecundario: [
         {
-          subtitulo: "",
+          subtitulo: "10",
           img: num10,
           text: "Para este último número, vamos a tener que dejar extendidos solamente el dedo índice y el pulgar. Luego con estos, vamos a intentar formar un circulo pero sin que las puntas se toquen, de forma que parezca la letra C. Por último, con los dedos en esa posición, solamente vamos a tener que apoyarlos a un costado de la cara, cerca del ojo.",
         },
       ],
     },
     link: {
-      return: "/mododejuego/7",
-      next: "/mododejuego/8",
+      return: "/mododejuego/5",
+      next: "/mododejuego/6",
     },
   },
 ];

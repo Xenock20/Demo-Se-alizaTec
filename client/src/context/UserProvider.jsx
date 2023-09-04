@@ -51,12 +51,12 @@ function UserProvider({ children }) {
     sessionStorage.setItem("barraDeProgreso", JSON.stringify(barraDeProgreso));
   }, [barraDeProgreso]);
 
-  const desbloquearLeccion = (id) => {
-    setLeccionesDesbloqueadas([...leccionesDesbloqueadas, id]);
+  const desbloquearLeccion = (ids) => {
+    setLeccionesDesbloqueadas(leccionesDesbloqueadas.concat(ids));
   };
 
-  const desbloquearModoJuego = (id) => {
-    setModosJuegoDesbloqueados([...modosJuegoDesbloqueados, id]);
+  const desbloquearModoJuego = (ids) => {
+    setModosJuegoDesbloqueados(modosJuegoDesbloqueados.concat(ids));
   };
 
   const incrementarBarra = () => {
@@ -78,6 +78,10 @@ function UserProvider({ children }) {
     setNivelesDesbloqueados([1]);
   };
 
+  const resetBarr = () => {
+    setBarraDeProgreso(12);
+  }
+
   const userState = {
     leccionesDesbloqueadas,
     modosJuegoDesbloqueados,
@@ -89,6 +93,7 @@ function UserProvider({ children }) {
     nivelesDesbloqueados,
     desbloquearNiveles,
     reset,
+    resetBarr
   };
 
   return (
