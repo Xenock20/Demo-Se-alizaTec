@@ -92,6 +92,13 @@ const Register = () => {
         <Link to={"/login"} className="inputs" id="back">
           <span id="span">YA TENGO UNA CUENTA</span>
         </Link>
+
+        <div className="box-terminos">
+          <span>
+            Al registrarse en SeñalizaTec, aceptas nuestros <b>Términos</b> y
+            <b> Política</b> de privacidad
+          </span>
+        </div>
       </form>
     </div>
   );
