@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../pages/style/login.css";
+import { UserContext, UserProvider } from "../context/UserProvider";
+import "./style/login.css";
 const Login = () => {
+  const { insertUserName, nameUser } = useContext(UserContext);
   const [error, setError] = useState(false);
   const [values, setValues] = useState({
     email: "",
@@ -26,6 +28,9 @@ const Login = () => {
       const response = await axios.post("http://localhost:3000/login", values);
 
       if (response.status === 200) {
+        const user = response.data.user;
+        insertUserName(user);
+
         console.log("Inicio de sesión exitoso");
         navigate("/home");
       }
@@ -82,8 +87,8 @@ const Login = () => {
 
         <div className="box-terminos">
           <span>
-            Al registrarse en SeñalizaTec, aceptas nuestros <b>Términos</b> y
-            <b> Política</b> de privacidad
+            Al registrarse en SeñalizaTec, aceptas nuestros <br />{" "}
+            <b>Términos</b> y<b> Política</b> de privacidad
           </span>
         </div>
       </form>

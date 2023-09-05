@@ -34,15 +34,35 @@ a:active {
   background-color: #010101;
   width: 100%;
   display: flex;
+
   flex-direction: row;
   justify-content: space-between;
   height: 50px;
   position: fixed;
   z-index: 10;
+  height: 50px;
+  justify-content: space-between;
 }
 
+.nav-link {
+  padding: 3px;
+  border: #de4a97 solid 1px;
+  border-radius: 7px;
+}
 .nav-bar-logo > img {
   height: 44px;
+}
+
+.nav-bar-user {
+  display: flex;
+  width: 10%;
+
+  align-items: center;
+}
+
+.nav-bar-user span {
+  font-size: 30px;
+  font-family: "Lalezar", cursive;
 }
 
 .nav-bar-count {
@@ -400,4 +420,3 @@ a:active {
   opacity: 1;
   pointer-events: auto;
 }
-
