@@ -1,6 +1,65 @@
 .box-terminos {
   margin-top: 60px;
-  width: 400px;
   display: flex;
   text-align: center;
+}
+
+.container2-login {
+  background-color: #151316;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 100vh; /* Opcional: ajusta la altura del contenedor */
+}
+.error {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 320px;
+  padding: 12px;
+  display: flex;
+
+  background-color: #de4a97;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px -3px #111;
+}
+.box-checked {
+  position: relative;
+  left: 480px;
+  bottom: 30px;
+}
+
+.error__icon {
+  width: 20px;
+  height: 20px;
+  transform: translateY(-2px);
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.error__icon path {
+  fill: #fff;
+}
+
+.img-checked {
+  width: 30px;
+  height: 30px;
+}
+
+.error__title {
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+}
+
+.error__close {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.error__close path {
+  fill: #fff;
 }

@@ -2,7 +2,13 @@ import React, { createContext, useState, useEffect } from "react";
 
 const UserContext = createContext();
 
+//Register
+
+//
+
 function UserProvider({ children }) {
+  const [registerExitoso, setRegister] = useState(false);
+
   const [leccionesDesbloqueadas, setLeccionesDesbloqueadas] = useState(() => {
     const storedLecciones = localStorage.getItem("leccionesDesbloqueadas");
     return storedLecciones ? JSON.parse(storedLecciones) : [0, 1];
@@ -60,6 +66,10 @@ function UserProvider({ children }) {
     sessionStorage.setItem("barraDeProgreso", JSON.stringify(barraDeProgreso));
   }, [barraDeProgreso]);
 
+  const registro = (validacion) => {
+    setRegister(validacion);
+  };
+
   const desbloquearLeccion = (ids) => {
     setLeccionesDesbloqueadas(leccionesDesbloqueadas.concat(ids));
   };
@@ -110,6 +120,8 @@ function UserProvider({ children }) {
     resetBarr,
     insertUserName,
     nameUser,
+    registro,
+    registerExitoso,
   };
 
   return (

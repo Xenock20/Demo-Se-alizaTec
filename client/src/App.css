@@ -56,8 +56,20 @@ a:active {
 .nav-bar-user {
   display: flex;
   width: 10%;
-
+  max-width: 10%;
   align-items: center;
+}
+.navbar-logo-user {
+  width: 30px;
+  margin-right: 3px;
+}
+
+.box-navbar-logo {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 3px;
+  justify-content: space-between;
 }
 
 .nav-bar-user span {
