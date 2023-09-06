@@ -190,27 +190,60 @@ export const contGames = [
   },
   {
     id: 4,
-    modeGame: "adivinanza-de-señas",
+    modeGame: "juego-de-memoria",
     cont: {
-      img: [
+      items: [
         {
-          url: num2,
-          name: "2",
-        },
-        {
-          url: num5,
+          item: "5",
           name: "5",
+          type: "text",
         },
         {
-          url: num4,
+          item: "2",
+          name: "2",
+          type: "text",
+        },
+        {
+          item: "4",
           name: "4",
+          type: "text",
         },
         {
-          url: num3,
+          item: "3",
           name: "3",
+          type: "text",
+        },
+        {
+          item: "1",
+          name: "1",
+          type: "text",
+        },
+        {
+          item: num4,
+          name: "4",
+          type: "img",
+        },
+        {
+          item: num3,
+          name: "3",
+          type: "img",
+        },
+        {
+          item: num5,
+          name: "5",
+          type: "img",
+        },
+        {
+          item: num2,
+          name: "2",
+          type: "img",
+        },
+        {
+          item: num1,
+          name: "1",
+          type: "img",
         },
       ],
-      options: ["2", "5", "4", "1", "3"],
     },
     link: {
       return: "/leccion/4",
@@ -220,6 +253,10 @@ export const contGames = [
       leccionID: [5, 6],
       modeGameID: [5],
       levelID: [],
+    },
+    style: {
+      grid_repet: 5,
+      maxWidth: "800px",
     },
   },
   {
@@ -258,60 +295,27 @@ export const contGames = [
   },
   {
     id: 6,
-    modeGame: "juego-de-memoria",
+    modeGame: "adivinanza-de-señas",
     cont: {
-      items: [
+      img: [
         {
-          item: "8",
-          name: "8",
-          type: "text",
-        },
-        {
-          item: "3",
-          name: "3",
-          type: "text",
-        },
-        {
-          item: "5",
-          name: "5",
-          type: "text",
-        },
-        {
-          item: "9",
-          name: "9",
-          type: "text",
-        },
-        {
-          item: "6",
+          url: num6,
           name: "6",
-          type: "text",
         },
         {
-          item: num8,
+          url: num8,
           name: "8",
-          type: "img",
         },
         {
-          item: num3,
-          name: "3",
-          type: "img",
-        },
-        {
-          item: num5,
-          name: "5",
-          type: "img",
-        },
-        {
-          item: num6,
-          name: "6",
-          type: "img",
-        },
-        {
-          item: num9,
+          url: num9,
           name: "9",
-          type: "img",
+        },
+        {
+          url: num7,
+          name: "7",
         },
       ],
+      options: ["6", "8", "9", "7", "10"],
     },
     link: {
       return: "/leccion/7",
@@ -322,16 +326,12 @@ export const contGames = [
       modeGameID: [7],
       levelID: [],
     },
-    style: {
-      grid_repet: 5,
-      maxWidth: "800px",
-    },
   },
   {
     id: 7,
     modeGame: "juego-de-emparejamiento",
     cont: {
-      text: '¿Cuantas letras tiene la palabra "ARGENTINA"?',
+      text: 'Cual es el resultado de 4 + 5 = ?',
       option: [
         {
           url: num1,
