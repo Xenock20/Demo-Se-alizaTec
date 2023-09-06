@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { UserContext, UserProvider } from "../context/UserProvider";
 import "./style/login.css";
 import checked from "../assets/checked.png";
+import emailicon from "../assets/email.svg";
+import passwordicon from "../assets/passwordicon.svg";
 import "animate.css";
 const Login = () => {
   const { insertUserName, nameUser, registerExitoso, registro } =
@@ -16,10 +18,12 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const handleClick = () => {
+    registro(false);
+  };
 
   const navigate = useNavigate();
   const handleInput = (event) => {
-    console.log(event.target);
     setValues((prev) => ({
       ...prev,
       [event.target.name]: event.target.value,
@@ -33,7 +37,8 @@ const Login = () => {
       const response = await axios.post("http://localhost:3000/login", values);
 
       if (response.status === 200) {
-        const user = response.data.user;
+        const user = await response.data.user;
+
         insertUserName(user);
 
         console.log("Inicio de sesión exitoso");
@@ -74,22 +79,41 @@ const Login = () => {
         <div className="title-register">
           <h1 className="ingresar-login">Ingresar</h1>
         </div>
-        <div>
-          <label htmlFor="" className="ocultar">
-            Correo:
-          </label>
-
-          <input
+        <div className="box-form">
+          <div>
+            <div class="group">
+              {/* <img className="imagen-input" src={emailicon} alt="" /> */}
+              <input
+                required
+                type="email"
+                name="email"
+                onChange={handleInput}
+                className="input"
+                placeholder="email"
+              />
+            </div>
+            {/* <input
             required
             type="email"
             name="email"
             onChange={handleInput}
             className="inputs"
             placeholder="Correo Electronico"
-          />
-        </div>
-        <div>
-          <label htmlFor="" className="ocultar">
+          /> */}
+          </div>
+          <div>
+            <div class="group">
+              {/* <img className="imagen-input" src={passwordicon} alt="" /> */}
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                onChange={handleInput}
+                required
+                className="input"
+              />
+            </div>
+            {/* <label htmlFor="" className="ocultar">
             Password:
           </label>
           <input
@@ -99,17 +123,30 @@ const Login = () => {
             className="inputs"
             placeholder="Contraseña"
             required
-          />
+          /> */}
 
-          {error && (
-            <div className="box-error">
-              <h1 className="error-register">CONTRASEÑA O EMAIL INCORRECTOS</h1>
-            </div>
-          )}
+            {error && (
+              <div className="box-error">
+                <h1 className="error-register">
+                  CONTRASEÑA O EMAIL INCORRECTOS
+                </h1>
+              </div>
+            )}
+          </div>
         </div>
         <div>
-          <input type="submit" className="submit-register" id="submit" />
-          <Link to={"/register"} className="inputs" id="back">
+          <input
+            type="submit"
+            onClick={handleClick}
+            className="submit-register"
+            id="submit"
+          />
+          <Link
+            to={"/register"}
+            onClick={handleClick}
+            className="inputs"
+            id="back"
+          >
             <span id="span">NO TENGO UNA CUENTA</span>
           </Link>
         </div>
