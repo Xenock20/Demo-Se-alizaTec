@@ -5,7 +5,7 @@ const Pregunta = ({ pregunta, opciones, onHandleClick, finalGame }) => {
     <div className="cont-ge">
       <h1>{pregunta}</h1>
       <div className="btn-img-option-ge">
-        {opciones.map((opcion) => (
+        {opciones.map((opcion, index) => (
           <button
             key={opcion.index}
             onClick={() => onHandleClick(opcion)}

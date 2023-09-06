@@ -27,11 +27,9 @@ exports.register = async (req, res) => {
           .status(409)
           .json({ error: "El correo electrónico ya está registrado." });
       } else {
-        console.log(userData);
         conexion.query("INSERT INTO users SET ?", userData, (err, result) => {
           if (err) {
-            console.log(err);
-            console.log("erro");
+            console.log("El error es" + err);
           } else {
             return res.send("CORRECTO");
           }

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import book from "../../assets/diccionary.svg";
+import "../../pages/style/abc.css";
 
 export default function AbcLib() {
   return (
@@ -15,7 +16,7 @@ export default function AbcLib() {
           <h5>Abecedario</h5>
         </div>
         <div className="abc-text-p">
-          <p>Aprende mas sobre el lenguaje de señas</p>
+          <p className="parrafo-abc">Aprende mas sobre el lenguaje de señas</p>
         </div>
       </div>
     </Link>

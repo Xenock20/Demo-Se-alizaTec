@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lalezar&family=Rubik:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
 
 form {
   display: flex;
@@ -41,7 +40,10 @@ form {
 }
 
 .ingresar-login {
-  font-size: 30px !important;
+  font-size: 40px !important;
+  font-family: "Lalezar", cursive;
+  line-height: 62.68px;
+  letter-spacing: 1px;
 }
 
 .inputs::placeholder {

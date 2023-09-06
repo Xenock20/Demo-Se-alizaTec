@@ -55,8 +55,6 @@ export const lecciones = [
     id: 2,
     titulo: "Siguiendo nuestra aventura",
     contenido: {
-      contPrincipal:
-        "¡Muy bien! Ahora que sabes reconocer una de las 5 vocales, en esta lección aprenderemos la que sigue.",
       contSecundario: [
         {
           subtitulo: "Para seguirle el orden miremos la “E”",
@@ -74,8 +72,6 @@ export const lecciones = [
     id: 3,
     titulo: "Completando las vocales.",
     contenido: {
-      contPrincipal:
-        "Ya para finalizar, con las 3 últimas vocales I, O y U, te dejaremos demostrar tus habilidades adquiridas en los siguientes ejercicios.",
       contSecundario: [
         {
           subtitulo: "Empecemos con la “I”",
@@ -103,8 +99,7 @@ export const lecciones = [
     id: 4,
     titulo: "Empecemos con los más sencillos",
     contenido: {
-      contPrincipal:
-        "",
+      contPrincipal: "",
       contSecundario: [
         {
           subtitulo: "Para realizar el número 1",
@@ -135,15 +130,14 @@ export const lecciones = [
     },
     link: {
       return: "/home",
-      next: "/mododejuego/3",
+      next: "/mododejuego/4",
     },
   },
   {
     id: 5,
     titulo: "Aprende a expresar el número 6",
     contenido: {
-      contPrincipal:
-        "",
+      contPrincipal: "",
       contSecundario: [
         {
           subtitulo: "",
@@ -153,16 +147,15 @@ export const lecciones = [
       ],
     },
     link: {
-      return: "/mododejuego/3",
-      next: "/mododejuego/4",
+      return: "/mododejuego/4",
+      next: "/leccion/6",
     },
   },
   {
     id: 6,
     titulo: "Aprende a expresar el número 7 ",
     contenido: {
-      contPrincipal:
-        "",
+      contPrincipal: "",
       contSecundario: [
         {
           subtitulo: "",
@@ -172,65 +165,36 @@ export const lecciones = [
       ],
     },
     link: {
-      return: "/mododejuego/4",
+      return: "/leccion/5",
       next: "/mododejuego/5",
     },
   },
   {
     id: 7,
-    titulo: "Aprende a expresar el número 8",
+    titulo: "Aprende a expresar el número 8, 9 y 10",
     contenido: {
-      contPrincipal:
-        "",
+      contPrincipal: "",
       contSecundario: [
         {
-          subtitulo: "",
+          subtitulo: "8",
           img: num8,
           text: "Deben estar extendidos los dedos, medio, índice y pulgar, mientras q los demás deben estar cerrados. Ya con los dedos en esa posición, por último, apoyar el pulgar a un costado de nuestro ojo.",
         },
-      ],
-    },
-    link: {
-      return: "/mododejuego/5",
-      next: "/mododejuego/6",
-    },
-  },
-  {
-    id: 8,
-    titulo: "Aprende a expresar el número 9",
-    contenido: {
-      contPrincipal:
-        "",
-      contSecundario: [
         {
-          subtitulo: "",
+          subtitulo: "9",
           img: num9,
           text: "La posición de los dedos debe ser la misma que la de la lección anterior, solo que en este caso, el índice y el medio, deben estar pegados. En esa posición, debemos arrastrar esos mismos dedos de arriba hacia bajo, justo por encima de nuestra ceja.",
         },
-      ],
-    },
-    link: {
-      return: "/mododejuego/6",
-      next: "/mododejuego/7",
-    },
-  },
-  {
-    id: 9,
-    titulo: "Aprende a expresar el número 10",
-    contenido: {
-      contPrincipal:
-        "",
-      contSecundario: [
         {
-          subtitulo: "",
+          subtitulo: "10",
           img: num10,
           text: "Para este último número, vamos a tener que dejar extendidos solamente el dedo índice y el pulgar. Luego con estos, vamos a intentar formar un circulo pero sin que las puntas se toquen, de forma que parezca la letra C. Por último, con los dedos en esa posición, solamente vamos a tener que apoyarlos a un costado de la cara, cerca del ojo.",
         },
       ],
     },
     link: {
-      return: "/mododejuego/7",
-      next: "/mododejuego/8",
+      return: "/mododejuego/5",
+      next: "/mododejuego/6",
     },
   },
 ];
