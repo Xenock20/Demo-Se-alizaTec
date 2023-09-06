@@ -1,15 +1,25 @@
 import vocalA from "./Image/N0-Vocales/A_v2_G.png";
 import vocalE from "./Image/N0-Vocales/E_v2_G.png";
-import vocalI from "./Image/N0-Vocales/I_v2_G.png";
+import vocalI from "./Image/N0-Vocales/i-bn.png";
 import vocalO from "./Image/N0-Vocales/O_v2_G.png";
 import vocalU from "./Image/N0-Vocales/U_v2_G.png";
+import num1 from "./Image/N1-Numeros/1.png";
+import num2 from "./Image/N1-Numeros/2.png";
+import num3 from "./Image/N1-Numeros/3.png";
+import num4 from "./Image/N1-Numeros/4.png";
+import num5 from "./Image/N1-Numeros/5.png";
+import num6 from "./Image/N1-Numeros/6.png";
+import num7 from "./Image/N1-Numeros/7.png";
+import num8 from "./Image/N1-Numeros/8.png";
+import num9 from "./Image/N1-Numeros/9.png";
+import num10 from "./Image/N1-Numeros/10.png";
 
 export const contGames = [
   {
     id: 0,
     modeGame: "juego-de-emparejamiento",
     cont: {
-      text: "¿Cual de estas señas significa 'A'?",
+      text: "¿Cuál de estas señas significa 'A'?",
       option: [
         {
           url: vocalE,
@@ -36,13 +46,14 @@ export const contGames = [
     desblock: {
       leccionID: [2],
       modeGameID: [1],
+      levelID: [],
     },
   },
   {
     id: 1,
     modeGame: "juego-de-completar",
     cont: {
-      text: "Elefante comienza con la vocal ..........",
+      text: "Elefante comienza con la vocal ...",
       option: [
         {
           url: vocalE,
@@ -69,6 +80,7 @@ export const contGames = [
     desblock: {
       leccionID: [3],
       modeGameID: [2],
+      levelID: [],
     },
   },
   {
@@ -135,6 +147,7 @@ export const contGames = [
     desblock: {
       leccionID: [],
       modeGameID: [3],
+      levelID: [],
     },
     style: {
       grid_repet: 5,
@@ -161,17 +174,191 @@ export const contGames = [
         {
           url: vocalI,
           name: "I",
-        }
+        },
       ],
       options: ["A", "E", "I", "O", "U"],
     },
     link: {
       return: "/mododejuego/2",
-      next: "/finaldemo",
+      next: "/home",
+    },
+    desblock: {
+      leccionID: [4],
+      modeGameID: [4],
+      levelID: [2],
+    },
+  },
+  {
+    id: 4,
+    modeGame: "adivinanza-de-señas",
+    cont: {
+      img: [
+        {
+          url: num2,
+          name: "2",
+        },
+        {
+          url: num5,
+          name: "5",
+        },
+        {
+          url: num4,
+          name: "4",
+        },
+        {
+          url: num3,
+          name: "3",
+        },
+      ],
+      options: ["2", "5", "4", "1", "3"],
+    },
+    link: {
+      return: "/leccion/4",
+      next: "/leccion/5",
+    },
+    desblock: {
+      leccionID: [5, 6],
+      modeGameID: [5],
+      levelID: [],
+    },
+  },
+  {
+    id: 5,
+    modeGame: "juego-de-emparejamiento",
+    cont: {
+      text: '¿Cuantas letras contiene la palabra "ESCUELA"?',
+      option: [
+        {
+          url: num6,
+          type: false,
+        },
+        {
+          url: num3,
+          type: false,
+        },
+        {
+          url: num1,
+          type: false,
+        },
+        {
+          url: num7,
+          type: true,
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/6",
+      next: "/leccion/7",
+    },
+    desblock: {
+      leccionID: [7],
+      modeGameID: [6],
+      levelID: [],
+    },
+  },
+  {
+    id: 6,
+    modeGame: "juego-de-memoria",
+    cont: {
+      items: [
+        {
+          item: "8",
+          name: "8",
+          type: "text",
+        },
+        {
+          item: "3",
+          name: "3",
+          type: "text",
+        },
+        {
+          item: "5",
+          name: "5",
+          type: "text",
+        },
+        {
+          item: "9",
+          name: "9",
+          type: "text",
+        },
+        {
+          item: "6",
+          name: "6",
+          type: "text",
+        },
+        {
+          item: num8,
+          name: "8",
+          type: "img",
+        },
+        {
+          item: num3,
+          name: "3",
+          type: "img",
+        },
+        {
+          item: num5,
+          name: "5",
+          type: "img",
+        },
+        {
+          item: num6,
+          name: "6",
+          type: "img",
+        },
+        {
+          item: num9,
+          name: "9",
+          type: "img",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/7",
+      next: "/mododejuego/7",
     },
     desblock: {
       leccionID: [],
+      modeGameID: [7],
+      levelID: [],
+    },
+    style: {
+      grid_repet: 5,
+      maxWidth: "800px",
+    },
+  },
+  {
+    id: 7,
+    modeGame: "juego-de-emparejamiento",
+    cont: {
+      text: '¿Cuantas letras tiene la palabra "ARGENTINA"?',
+      option: [
+        {
+          url: num1,
+          type: false,
+        },
+        {
+          url: num10,
+          type: false,
+        },
+        {
+          url: num6,
+          type: false,
+        },
+        {
+          url: num9,
+          type: true,
+        },
+      ],
+    },
+    link: {
+      return: "/mododejuego/6",
+      next: "/finaldemo",
+    },
+    desblock: {
+      leccionID: [7],
       modeGameID: [],
+      levelID: [],
     },
   },
 ];

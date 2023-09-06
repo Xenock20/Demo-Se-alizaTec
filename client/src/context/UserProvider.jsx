@@ -25,6 +25,15 @@ function UserProvider({ children }) {
       ? JSON.parse(storedNivelesDesbloqueados)
       : [1];
   });
+  const [nameUser, setNameUser] = useState(() => {
+    const storedUserName = localStorage.getItem("userName");
+
+    return storedUserName ? JSON.parse(storedUserName) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("userName", JSON.stringify(nameUser)), [nameUser];
+  });
 
   useEffect(() => {
     localStorage.setItem(
@@ -51,12 +60,12 @@ function UserProvider({ children }) {
     sessionStorage.setItem("barraDeProgreso", JSON.stringify(barraDeProgreso));
   }, [barraDeProgreso]);
 
-  const desbloquearLeccion = (id) => {
-    setLeccionesDesbloqueadas([...leccionesDesbloqueadas, id]);
+  const desbloquearLeccion = (ids) => {
+    setLeccionesDesbloqueadas(leccionesDesbloqueadas.concat(ids));
   };
 
-  const desbloquearModoJuego = (id) => {
-    setModosJuegoDesbloqueados([...modosJuegoDesbloqueados, id]);
+  const desbloquearModoJuego = (ids) => {
+    setModosJuegoDesbloqueados(modosJuegoDesbloqueados.concat(ids));
   };
 
   const incrementarBarra = () => {
@@ -71,10 +80,20 @@ function UserProvider({ children }) {
     setNivelesDesbloqueados([...nivelesDesbloqueados, nivel]);
   };
 
+  const insertUserName = (user) => {
+    setNameUser([user]);
+  };
+
   const reset = () => {
+    setNameUser([]);
     setBarraDeProgreso(12);
     setLeccionesDesbloqueadas([0, 1]);
     setModosJuegoDesbloqueados([0]);
+    setNivelesDesbloqueados([1]);
+  };
+
+  const resetBarr = () => {
+    setBarraDeProgreso(12);
   };
 
   const userState = {
@@ -88,6 +107,9 @@ function UserProvider({ children }) {
     nivelesDesbloqueados,
     desbloquearNiveles,
     reset,
+    resetBarr,
+    insertUserName,
+    nameUser,
   };
 
   return (

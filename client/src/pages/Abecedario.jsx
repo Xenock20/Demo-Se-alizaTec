@@ -24,7 +24,7 @@ const Abecedario = () => {
           {imagenesAbcCopy.map((e, i) => {
             return (
               <div className="card">
-                <img src={e} alt="" />
+                <img key={i} src={e} alt="" />
               </div>
             );
           })}

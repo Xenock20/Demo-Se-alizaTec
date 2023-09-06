@@ -9,8 +9,8 @@ export const nivel = [
   },
   {
     id: 2,
-    descripcion: "PROXIMAMENTE...",
-    link: "",
+    descripcion: "Aprende sobre numeros",
+    link: "/leccion/4",
     position: "end",
     positionInfo: "left",
     cap: 1,

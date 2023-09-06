@@ -1,3 +1,9 @@
+.link-level {
+  background-color: #de4a97;
+  border: #de4a97 solid 4px;
+  border-radius: 6px;
+}
+
 .cont-levels-path {
   position: fixed;
   height: 100%;
@@ -150,7 +156,6 @@
 
 .prox {
   cursor: no-drop;
-  background-color: #72475f;
 }
 
 .prox:hover {

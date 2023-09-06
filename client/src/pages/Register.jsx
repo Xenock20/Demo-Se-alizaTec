@@ -1,10 +1,14 @@
+import { Link } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./style/Register.css";
+import NavBar from "./../components/components-pract-page/NavBar";
 
 const Register = () => {
   const navigate = useNavigate();
+  const [error, setError] = useState(false);
   const [values, setValues] = useState({
     user: "",
     email: "",
@@ -18,30 +22,83 @@ const Register = () => {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    axios
-      .post("http://localhost:3000/register", values)
-      .then((res) => {
-        console.log(res);
+
+    try {
+      const respuesta = await axios.post(
+        "http://localhost:3000/register",
+        values
+      );
+
+      if (respuesta.status === 200) {
         navigate("/login");
-      })
-      .catch((err) => console.log(err));
+      }
+    } catch (error) {
+      setError(true);
+    }
   };
 
   return (
-    <div>
+    <div className="container2">
       <form action="" onSubmit={handleSubmit}>
-        <label htmlFor="">Cuenta Usurio:</label>
-        <input type="text" name="user" onChange={handleInput} />
+        <div className="title-login">
+          <h1 className="ingresar-login">Crear tu cuenta</h1>
+        </div>
 
-        <label htmlFor="">Correo:</label>
-        <input type="email" name="email" onChange={handleInput} />
+        <label htmlFor="" className="ocultar">
+          Cuenta Usuario:
+        </label>
+        <input
+          type="text"
+          name="user"
+          onChange={handleInput}
+          className="inputs"
+          placeholder="Nombre"
+          required
+        />
 
-        <label htmlFor="">Password:</label>
-        <input type="password" name="password" onChange={handleInput} />
+        <label htmlFor="" className="ocultar">
+          Correo:
+        </label>
+        <input
+          type="email"
+          name="email"
+          onChange={handleInput}
+          className="inputs"
+          placeholder="Correo Electronico"
+          required
+        />
 
-        <input type="submit" />
+        <label htmlFor="" className="ocultar">
+          Password:
+        </label>
+        <input
+          required
+          type="password"
+          name="password"
+          onChange={handleInput}
+          className="inputs"
+          placeholder="Contraseña"
+        />
+
+        {error && (
+          <div className="box-error">
+            <h1 className="error-register">CORREO YA EXISTENTE</h1>
+          </div>
+        )}
+
+        <input type="submit" className="submit-register" id="submit" />
+        <Link to={"/login"} className="inputs" id="back">
+          <span id="span">YA TENGO UNA CUENTA</span>
+        </Link>
+
+        <div className="box-terminos">
+          <span>
+            Al registrarse en SeñalizaTec, aceptas nuestros <b>Términos</b> y
+            <b> Política</b> de privacidad
+          </span>
+        </div>
       </form>
     </div>
   );
