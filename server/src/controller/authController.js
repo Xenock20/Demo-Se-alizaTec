@@ -66,7 +66,7 @@ exports.login = (req, res) => {
         return res.status(401).json({ error: "Credenciales incorrectas." });
       } else {
         console.log("Inicio de sesión exitoso");
-        res.status(200).json({ message: "Inicio de sesión exitoso." });
+        res.status(200).json({ user: result[0].user });
       }
     }
   );
