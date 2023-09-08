@@ -18,7 +18,7 @@ const Pregunta = ({ pregunta, opciones, onHandleClick, finalGame }) => {
             }`}
             disabled={finalGame}
           >
-            <img src={opcion.url} alt="Imagen de opción" />
+            <img className="img-emparejamiento" src={opcion.url} />
           </button>
         ))}
       </div>

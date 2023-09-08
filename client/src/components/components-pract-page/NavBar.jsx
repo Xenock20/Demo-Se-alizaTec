@@ -5,7 +5,7 @@ import start from "../../assets/Vector.png";
 import { useNavigate } from "react-router-dom";
 import { UserContext, UserProvider } from "../../context/UserProvider";
 import { Link } from "react-router-dom";
-import userlogo from "../../assets/user.svg"
+import userlogo from "../../assets/user.svg";
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -28,7 +28,12 @@ export default function NavBar() {
             INGRESAR
           </Link>
         ) : (
-          <span><img src={userlogo}></img> {nameUser[0].toUpperCase()}</span>
+          <div className="box-navbar-logo">
+            <div>
+              <img className="navbar-logo-user" src={userlogo}></img>{" "}
+            </div>
+            <span>{nameUser[0].toUpperCase()}</span>
+          </div>
         )}
       </div>
     </div>

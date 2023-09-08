@@ -183,7 +183,7 @@ export const lecciones = [
         {
           subtitulo: "9",
           img: num9,
-          text: "La posición de los dedos debe ser la misma que la de la lección anterior, solo que en este caso, el índice y el medio, deben estar pegados. En esa posición, debemos arrastrar esos mismos dedos de arriba hacia bajo, justo por encima de nuestra ceja.",
+          text: "La posición de los dedos debe ser la misma que la del numero anterior, solo que en este caso, el índice y el medio, deben estar pegados. En esa posición, debemos arrastrar sobre la cara de forma semicircular esos mismos dedos de arriba hacia bajo, justo por encima de nuestra ceja.",
         },
         {
           subtitulo: "10",
