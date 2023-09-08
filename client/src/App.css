@@ -43,7 +43,19 @@ a:active {
   height: 50px;
   justify-content: space-between;
 }
+.nav-bar-home-largo {
+  background-color: #010101;
+  width: 100%;
+  display: flex;
+  gap: -100px;
+  flex-direction: row;
 
+  height: 50px;
+  position: fixed;
+  z-index: 10;
+  height: 50px;
+  justify-content: space-between;
+}
 .nav-link {
   padding: 3px;
   border: #de4a97 solid 1px;
@@ -56,12 +68,45 @@ a:active {
 .nav-bar-user {
   display: flex;
   width: 10%;
-
+  max-width: 10%;
   align-items: center;
+}
+.nav-bar-user-largo {
+  display: flex;
+  width: 10%;
+  max-width: 10%;
+  align-items: center;
+  margin-right: 35px;
+}
+
+.navbar-logo-user {
+  width: 30px;
+  margin-right: 3px;
+}
+
+.box-navbar-logo {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 3px;
+  justify-content: space-between;
 }
 
 .nav-bar-user span {
-  font-size: 30px;
+  font-size: 25px;
+  font-family: "Lalezar", cursive;
+}
+.nav-bar-user-largo span {
+  font-size: 25px;
+  font-family: "Lalezar", cursive;
+}
+
+.navbar-logo-user-largo {
+  width: 20px;
+}
+
+.navbar-logo-user-largo span {
+  font-size: 25px;
   font-family: "Lalezar", cursive;
 }
 
