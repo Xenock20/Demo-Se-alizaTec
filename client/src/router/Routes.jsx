@@ -18,6 +18,7 @@ export default function Routers() {
       <Route path="/home" element={<HomePage></HomePage>}></Route>
       <Route path="/leccion/:id" element={<LeccionPageWrapper />}></Route>
       <Route path="/mododejuego/:id" element={<PractPageWrapper />}></Route>
+      <Route path="/mododejuegoprueba/:id" element={<PractPage />}></Route>
       <Route path="/finaldemo" element={<EndPage />}></Route>
       <Route path="/Niveles" element={<CaminoNiveles />}></Route>
       <Route path="/abclib" element={<Abecedario></Abecedario>}></Route>

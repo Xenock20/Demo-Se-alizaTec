@@ -109,7 +109,7 @@ const Register = () => {
           <span id="span">YA TENGO UNA CUENTA</span>
         </Link>
 
-        {/* <div className="temrminos-form">
+        <div className="temrminos-form">
           <div className="box-terminos">
             <span>
               Al registrarse en SeñalizaTec, aceptas nuestros <br />{" "}
@@ -117,9 +117,9 @@ const Register = () => {
             </span>
           </div>
           <div className="box-copy">
-            <img className="img-copy" src={iconcopy} alt="" />
+            {/* <img className="img-copy" src={iconcopy} alt="" /> */}
           </div>
-        </div> */}
+        </div>
       </form>
     </div>
   );
