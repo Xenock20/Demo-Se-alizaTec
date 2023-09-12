@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import "animate.css";
 import { nivel } from "../../Contenido/Niveles";
 import { Link } from "react-router-dom";
-import start from "../../assets/startOne.png";
 import { UserContext } from "../../context/UserProvider";
 import BlockIcon from "../../assets/BlockIcon.svg";
 
@@ -49,9 +48,6 @@ const BotonesLevels = () => {
         <div className="path-cap-one">
           <div className="title-dif-one">
             <div className="conjunto">
-              <div>
-                <img src={start} className="start" alt="Una Estrella" />
-              </div>
               <div className="sub-cont">
                 <h1 className="title-one">Fácil</h1>
               </div>
@@ -114,10 +110,6 @@ const BotonesLevels = () => {
         <div className="path-cap-two">
           <div className="title-dif-two">
             <div className="conjunto">
-              <div>
-                <img src={start} className="start" alt="Dos Estrellas" />
-                <img src={start} className="start" alt="Dos Estrellas" />
-              </div>
               <div className="sub-cont">
                 <h1 className="title-two">Medio</h1>
               </div>
@@ -181,11 +173,6 @@ const BotonesLevels = () => {
         <div className="path-cap-tree">
           <div className="title-dif-tree">
             <div className="conjunto">
-              <div>
-                <img src={start} alt="Tres Estrellas" />
-                <img src={start} alt="Tres Estrellas" />
-                <img src={start} alt="Tres Estrellas" />
-              </div>
               <div className="sub-cont">
                 <h1 className="title-tree">Difícil</h1>
               </div>
