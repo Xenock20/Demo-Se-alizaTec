@@ -383,20 +383,29 @@ a:active {
 }
 
 .card-hover {
+  padding: 8px;
+  display: flex;
+  text-align: center;
   border: solid #de4a97 3px;
+  flex-direction: column;
   width: 70%;
-  height: 100px;
+  height: 70px;
   border-radius: 17px;
 }
 
 .div-inicial-abc {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
   justify-content: end;
   width: 100%;
 }
 .title-card-abc {
+  display: flex;
 }
 .parrafo-card-abc {
+  width: 200px;
+
+  height: 100px;
+  display: flex;
+
+  text-align: initial;
 }
