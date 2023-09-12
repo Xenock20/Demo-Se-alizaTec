@@ -10,6 +10,7 @@ import HomePage from "./../pages/HomePage";
 import Abecedario from "../pages/abecedario";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import JuegoOperaciones from "../ModosDeJuego/JuegoOperaciones/JuegoOperaciones";
 
 export default function Routers() {
   return (
@@ -23,6 +24,10 @@ export default function Routers() {
       <Route path="/abclib" element={<Abecedario></Abecedario>}></Route>
       <Route path="/register" element={<Register></Register>}></Route>
       <Route path="/login" element={<Login></Login>}></Route>
+      <Route
+        path="/gameOperacion"
+        element={<JuegoOperaciones></JuegoOperaciones>}
+      ></Route>
     </Routes>
   );
 }

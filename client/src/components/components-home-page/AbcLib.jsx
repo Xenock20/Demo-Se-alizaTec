@@ -1,24 +1,43 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import book from "../../assets/diccionary.svg";
-import "../../pages/style/abc.css";
+import { useState } from "react";
 
 export default function AbcLib() {
-  return (
-    <Link to={"/abclib"} className="abc-home">
-      <div className="caja-diccionario">
-        <img src={book} className="diccionary-book" alt="" />
-      </div>
+  const [showCard, setShowCard] = useState(false);
 
-      <div className="abc-text">
-        <div className="abc-text-abecedario">
-          <h5>Abecedario</h5>
+  const handleHover = () => {
+    setShowCard(true);
+  };
+
+  const handleHoverOut = () => {
+    setShowCard(false);
+  };
+  return (
+    <div className="div-inicial-abc">
+      {showCard && (
+        <div className="card-hover">
+          {" "}
+          <div className="title-card-abc">
+            <h1 style={{ fontSize: "20px" }}>ABECEDARIO</h1>
+          </div>
+          <div className="parrafo-card-abc">
+            <p style={{ fontSize: "20px" }}>
+              Aprende mas sobre la lengua de señas
+            </p>
+          </div>
         </div>
-        <div className="abc-text-p">
-          <p className="parrafo-abc">Aprende mas sobre el lenguaje de señas</p>
-        </div>
+      )}
+
+      <div onMouseLeave={handleHoverOut}>
+        <Link
+          to={"/abclib"}
+          onMouseOver={handleHover}
+          className="caja-diccionario"
+        >
+          <img src={book} className="diccionary-book" alt="" />
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 }

@@ -6,23 +6,12 @@ import vocalU from "./Image/N0-Vocales/U.png";
 
 export const contenido = [
   {
+    id: 1,
     palabra: [vocalA, vocalE, vocalI, vocalO, vocalU],
     opciones: ["Perro", "Gato", "Elefante", "Jirafa"],
     respuesta: "Perro",
   },
-  {
-    palabra: "",
-    opciones: "",
-    respuesta: "",
-  },
-  {
-    palabra: "",
-    opciones: "",
-    respuesta: "",
-  },
-  {
-    palabra: "",
-    opciones: "",
-    respuesta: "",
-  },
+  { id: 1, palabra: "", opciones: "", respuesta: "" },
+  { id: 1, palabra: "", opciones: "", respuesta: "" },
+  { id: 1, palabra: "", opciones: "", respuesta: "" },
 ];

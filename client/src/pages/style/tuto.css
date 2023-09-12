@@ -1,0 +1,20 @@
+.caja2-tuto {
+  position: absolute;
+
+  width: 240px;
+  height: 130px;
+  border-radius: 35px;
+  background: white;
+}
+
+.caja1-tuto {
+  position: absolute;
+  width: 250px;
+  height: 130px;
+  border-radius: 25px;
+  background: whitesmoke;
+  color: black;
+}
+.caja1-tuto:hover + .caja1-tuto {
+  right: 0; /* Move card2 to the left when card1 is hovered */
+}

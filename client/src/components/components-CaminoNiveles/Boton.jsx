@@ -68,12 +68,12 @@ const BotonesLevels = () => {
 
             if (cap === 1) {
               return (
-                <div className="btn-level-cont" key={id}>
+                <div className={`btn-level-cont-${position}`} key={id}>
                   <button
                     className={
                       unlockLevel
-                        ? `btn-niveles ${position}`
-                        : `btn-niveles ${position} block`
+                        ? `btn-niveles-${position}`
+                        : `btn-niveles-${position} block`
                     }
                     onClick={() => {
                       handleClick(descripcion, direccion, id, positionInfo);
@@ -123,6 +123,7 @@ const BotonesLevels = () => {
               </div>
             </div>
           </div>
+
           {levels.map((e, index) => {
             const descripcion = nivel[index].descripcion;
             const direccion = nivel[index].link;
@@ -134,12 +135,12 @@ const BotonesLevels = () => {
 
             if (cap === 2) {
               return (
-                <div className="btn-level-cont" key={id}>
+                <div className={`btn-level-cont-${position}`} key={id}>
                   <button
                     className={
                       unlockLevel
-                        ? `btn-niveles ${position}`
-                        : `btn-niveles ${position} block`
+                        ? `btn-niveles-${position}`
+                        : `btn-niveles-${position} block`
                     }
                     onClick={() => {
                       handleClick(descripcion, direccion, id, positionInfo);
@@ -201,12 +202,12 @@ const BotonesLevels = () => {
 
             if (cap === 3) {
               return (
-                <div className="btn-level-cont" key={id}>
+                <div className={`btn-level-cont-${position}`} key={id}>
                   <button
                     className={
                       unlockLevel
-                        ? `btn-niveles ${position}`
-                        : `btn-niveles ${position} block`
+                        ? `btn-niveles-${position}`
+                        : `btn-niveles-${position} block`
                     }
                     onClick={() => {
                       handleClick(descripcion, direccion, id, positionInfo);
@@ -244,7 +245,6 @@ const BotonesLevels = () => {
             }
           })}
         </div>
-
         {/* {levels.map((e, index) => {
           const descripcion = nivel[index].descripcion;
           const direccion = nivel[index].link;
@@ -261,7 +261,7 @@ const BotonesLevels = () => {
               {index + 1}
             </button>
           );
-        })} */}
+        })} */}{" "}
       </div>
     </>
   );
