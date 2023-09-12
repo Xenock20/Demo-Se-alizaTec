@@ -22,19 +22,15 @@ export default function AbcLib() {
             <h1 style={{ fontSize: "20px" }}>ABECEDARIO</h1>
           </div>
           <div className="parrafo-card-abc">
-            <p style={{ fontSize: "20px" }}>
+            <p style={{ fontSize: "17px" }}>
               Aprende mas sobre la lengua de señas
             </p>
           </div>
         </div>
       )}
 
-      <div onMouseLeave={handleHoverOut}>
-        <Link
-          to={"/abclib"}
-          onMouseOver={handleHover}
-          className="caja-diccionario"
-        >
+      <div onMouseLeave={handleHoverOut} onMouseOver={handleHover}>
+        <Link to={"/abclib"} className="caja-diccionario">
           <img src={book} className="diccionary-book" alt="" />
         </Link>
       </div>

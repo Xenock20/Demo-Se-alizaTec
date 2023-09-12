@@ -132,6 +132,7 @@ const Login = () => {
                 className="input"
               />
             </div>
+
             {/* <label htmlFor="" className="ocultar">
             Password:
           </label>
@@ -160,6 +161,7 @@ const Login = () => {
             className="submit-register"
             id="submit"
           />
+
           <Link
             to={"/register"}
             onClick={handleClick}
