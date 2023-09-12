@@ -19,30 +19,30 @@ const Secciones = () => {
   return (
     <div className="div-principal">
       <div className="div-manejador-secciones">
-        <div className="secciones">
+        <a className="secciones" href="#numeros">
           <div className="borde-cian"></div>
-          <span>Números</span>
-        </div>
-        <div className="secciones">
+          <a href="#numeros">Números</a>
+        </a>
+        <a className="secciones" href="#colores">
           <div className="borde-cian"></div>
-          <span>Colores</span>
-        </div>
-        <div className="secciones" onClick={handleClick} style={estilo}>
+          <a href="#colores">Colores</a>
+        </a>
+        <a className="secciones" href="#familia" onClick={handleClick} style={estilo}>
           <div className="borde-cian"></div>
-          <span style={styleLetter}>Familia</span>
-        </div>
-        <div className="secciones">
+          <a href="#familia" style={styleLetter}>Familia</a>
+        </a>
+        <a className="secciones" href="#dias">
           <div className="borde-cian"></div>
-          <span>Días</span>
-        </div>
-        <div className="secciones">
+          <a href="#dias">Días</a>
+        </a>
+        <a className="secciones" href="#meses">
           <div className="borde-cian"></div>
-          <span>Meses</span>
-        </div>
-        <div className="secciones">
+          <a href="#meses">Meses</a>
+        </a>
+        <a className="secciones" href="#preguntasBasicas">
           <div className="borde-cian"></div>
-          <span>Preguntas Basicas</span>
-        </div>
+          <a href="#preguntasBasicas">Preguntas Basicas</a>
+        </a>
       </div>
       <div className="linea-seccion"> </div>
     </div>
