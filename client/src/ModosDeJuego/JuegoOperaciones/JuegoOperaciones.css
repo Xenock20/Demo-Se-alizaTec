@@ -1,0 +1,24 @@
+.div-inicial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #151316;
+  gap: 30px;
+}
+
+.div-seña {
+  border: solid #de4a97 3px;
+  border-radius: 10px;
+}
+
+.div-operaciones {
+  display: flex;
+}
+
+.img-operaciones {
+  width: 200px;
+  height: 200px;
+}

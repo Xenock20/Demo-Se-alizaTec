@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { UserContext, UserProvider } from "../../context/UserProvider";
 import { Link } from "react-router-dom";
 import userlogo from "../../assets/user.svg";
+import "../../pages/style/navBar.css";
 
 export default function NavBar() {
   const navigate = useNavigate();
