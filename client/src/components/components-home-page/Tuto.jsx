@@ -6,7 +6,7 @@ import "../../pages/style/tuto.css";
 const Tuto = () => {
   return (
     <Link
-      to={"/abclib"}
+      to={"/tutorial/0"}
       className="caja-diccionario"
       style={{ background: "#74A9DB" }}
     >

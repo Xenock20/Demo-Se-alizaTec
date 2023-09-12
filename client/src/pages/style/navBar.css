@@ -24,10 +24,17 @@
   justify-content: space-between;
 }
 .nav-link {
-  padding: 3px;
-  border: #de4a97 solid 1px;
+  padding: 5px;
+  border: #de4a97 solid 2px;
   border-radius: 7px;
+  font-weight: 600;
+  transition: all 0.4s;
 }
+
+.nav-link:hover{
+  background-color: #de4a97;
+}
+
 .nav-bar-logo > img {
   height: 44px;
 }

@@ -276,15 +276,14 @@ a:active {
 
 .leccion-cont::-webkit-scrollbar-thumb,
 .game-cont::-webkit-scrollbar-thumb {
-  background-color: rgb(21, 85, 168);
-
+  background-color: #BD92B8;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 
 .leccion-cont::-webkit-scrollbar-track,
 .game-cont::-webkit-scrollbar-track {
-  background-color: #0b2950;
+  background-color: #584155;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
