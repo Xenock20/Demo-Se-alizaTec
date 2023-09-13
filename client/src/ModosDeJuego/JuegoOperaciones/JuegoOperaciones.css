@@ -25,14 +25,14 @@
 .img-result-correcto {
   border: solid #7ab72e 3px;
   border-radius: 10px;
-  width: 150px;
-  height: 150px;
+  width: 240px;
+  height: 240px;
 }
 .img-result-icorrecto {
   border: solid #962222 3px;
   border-radius: 10px;
-  width: 150px;
-  height: 150px;
+  width: 240px;
+  height: 240px;
 }
 .div-signo {
   display: flex;
