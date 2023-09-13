@@ -62,11 +62,11 @@ export const nivel = [
 export const seccionLevels = [
   {
     href: "numeros",
-    titulo: "Numeros",
+    titulo: "Números",
     levels: [
       {
         id: 1,
-        descripcion: "Aprende sobre numeros",
+        descripcion: "Aprende sobre números",
         link: "/leccion/4",
         position: "izquierda",
         positionInfo: "rigth",
@@ -143,7 +143,7 @@ export const seccionLevels = [
   },
   {
     href: "dias",
-    titulo: "Dias",
+    titulo: "Días",
     levels: [
       {
         id: 10,

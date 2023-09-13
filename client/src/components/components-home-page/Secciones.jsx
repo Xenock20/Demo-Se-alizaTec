@@ -41,7 +41,7 @@ const Secciones = () => {
         </a>
         <a className="secciones" href="#preguntasBasicas">
           <div className="borde-cian"></div>
-          <a href="#preguntasBasicas">Preguntas Basicas</a>
+          <a href="#preguntasBasicas">Preguntas Básicas</a>
         </a>
       </div>
       <div className="linea-seccion"> </div>
