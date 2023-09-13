@@ -27,6 +27,10 @@ export default function PractPage() {
     setDeblock(contGame.desblock);
   }, [id]);
 
+
+/**
+ * Esta funcion desbloquea las rutas para acceder a los siguientes modos de juego, lecciones o niveles.
+ */
   const handleCompleteGame = () => {
     setCompletado(true);
     //deblock.leccionID.map((id) => console.log(id) /*desbloquearLeccion(id)*/);
