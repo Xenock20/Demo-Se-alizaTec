@@ -185,7 +185,7 @@ export const contGames = [
     desblock: {
       leccionID: [4],
       modeGameID: [4],
-      levelID: [2],
+      levelID: [],
     },
   },
   {
@@ -353,7 +353,7 @@ export const contGames = [
     },
     link: {
       return: "/mododejuego/6",
-      next: "/finaldemo",
+      next: "/home",
     },
     desblock: {
       leccionID: [7],
