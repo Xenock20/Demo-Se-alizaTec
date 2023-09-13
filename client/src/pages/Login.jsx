@@ -6,8 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { UserContext, UserProvider } from "../context/UserProvider";
 import "./style/login.css";
 import checked from "../assets/checked.png";
-import emailicon from "../assets/email.svg";
-import passwordicon from "../assets/passwordicon.svg";
+import { RiLockPasswordLine } from "react-icons/ri";
+import { MdAlternateEmail } from "react-icons/md";
+
 import "animate.css";
 const Login = () => {
   const { insertUserName, nameUser, registerExitoso, registro } =
@@ -82,7 +83,16 @@ const Login = () => {
         <div className="box-form">
           <div>
             <div class="group">
-              {/* <img className="imagen-input" src={emailicon} alt="" /> */}
+              <div
+                style={{
+                  position: "absolute",
+                  left: "20px",
+                  top: "11px",
+                  opacity: "0.50 ",
+                }}
+              >
+                <MdAlternateEmail />
+              </div>
               <input
                 required
                 type="email"
@@ -103,7 +113,16 @@ const Login = () => {
           </div>
           <div>
             <div class="group">
-              {/* <img className="imagen-input" src={passwordicon} alt="" /> */}
+              <div
+                style={{
+                  position: "absolute",
+                  left: "20px",
+                  top: "11px",
+                  opacity: "0.50",
+                }}
+              >
+                <RiLockPasswordLine></RiLockPasswordLine>
+              </div>
               <input
                 type="password"
                 name="password"
@@ -113,6 +132,7 @@ const Login = () => {
                 className="input"
               />
             </div>
+
             {/* <label htmlFor="" className="ocultar">
             Password:
           </label>
@@ -141,6 +161,7 @@ const Login = () => {
             className="submit-register"
             id="submit"
           />
+
           <Link
             to={"/register"}
             onClick={handleClick}

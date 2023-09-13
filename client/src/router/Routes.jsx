@@ -1,15 +1,14 @@
 import { Routes, Route, useParams, Navigate } from "react-router-dom";
-import LeccionPage from "../pages/LeccionPage";
-import PractPage from "./../pages/PractPage";
 import { useContext } from "react";
 import { UserContext } from "../context/UserProvider";
 import HomeDemo from "./../pages/HomeDemo";
 import EndPage from "../pages/EndPage";
-import CaminoNiveles from "../pages/CaminoNiveles";
 import HomePage from "./../pages/HomePage";
 import Abecedario from "../pages/abecedario";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import LeccionPage from "../pages/LeccionPage";
+import PractPage from "./../pages/PractPage";
 
 export default function Routers() {
   return (
@@ -18,9 +17,9 @@ export default function Routers() {
       <Route path="/home" element={<HomePage></HomePage>}></Route>
       <Route path="/leccion/:id" element={<LeccionPageWrapper />}></Route>
       <Route path="/mododejuego/:id" element={<PractPageWrapper />}></Route>
+      <Route path="/tutorial/:id" element={<LeccionPageWrapper />}></Route>
       <Route path="/mododejuegoprueba/:id" element={<PractPage />}></Route>
       <Route path="/finaldemo" element={<EndPage />}></Route>
-      <Route path="/Niveles" element={<CaminoNiveles />}></Route>
       <Route path="/abclib" element={<Abecedario></Abecedario>}></Route>
       <Route path="/register" element={<Register></Register>}></Route>
       <Route path="/login" element={<Login></Login>}></Route>

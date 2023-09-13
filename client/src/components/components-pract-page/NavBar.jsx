@@ -6,11 +6,12 @@ import { useNavigate } from "react-router-dom";
 import { UserContext, UserProvider } from "../../context/UserProvider";
 import { Link } from "react-router-dom";
 import userlogo from "../../assets/user.svg";
+import "../../pages/style/navBar.css";
 
 export default function NavBar() {
   const navigate = useNavigate();
   const { reset } = useContext(UserContext);
-  const { insertUserName, nameUser } = useContext(UserContext);
+  const { nameUser } = useContext(UserContext);
 
   const handleClick = () => {
     navigate("/");
@@ -25,7 +26,7 @@ export default function NavBar() {
       <div className="nav-bar-user">
         {typeof nameUser[0] == "undefined" ? (
           <Link className="nav-link" to={"/login"}>
-            INGRESAR
+            Ingresar
           </Link>
         ) : (
           <div className="box-navbar-logo">
