@@ -65,8 +65,9 @@ a:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 13px;
+  border-radius: 13px 0px 0px 13px;
 }
+
 .abc-home {
   position: fixed;
   height: 86px;
@@ -385,29 +386,43 @@ a:active {
   padding: 8px;
   display: flex;
   text-align: center;
+  text-align: end;
   border: solid #de4a97 3px;
   flex-direction: column;
-  width: 70%;
-  height: 70px;
+  justify-content: center;
+  width: 240px;
+  height: 65px;
   border-radius: 17px;
+  right: -260px;
+  position: fixed;
+  z-index: -6;
+  transition: all 0.4s;
 }
+
+.show-card{
+  right: 0px;
+}
+
 .block-icon {
   width: 20px;
   height: 30px;
 }
+
 .div-inicial-abc {
   display: flex;
   justify-content: end;
-  width: 100%;
+  right: 0;
+  position: fixed;
+  z-index: 10;
 }
+
 .title-card-abc {
   display: flex;
 }
+
 .parrafo-card-abc {
   width: 200px;
-
   height: 100px;
   display: flex;
-
   text-align: initial;
 }

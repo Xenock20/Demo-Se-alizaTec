@@ -2,7 +2,6 @@ import React from "react";
 import AbcLib from "./AbcLib";
 import CaminoNiveles from "../../pages/CaminoNiveles";
 import "../../pages/style/HomeCont.css";
-import { Link } from "react-router-dom";
 import Tuto from "./Tuto";
 import Secciones from "./Secciones";
 

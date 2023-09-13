@@ -1,20 +1,58 @@
-.caja2-tuto {
-  position: absolute;
+.tuto-link {
+  height: 87px;
+  width: 74px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 13px 0px 0px 13px;
+  top: 200px;
+  right: 0;
+  position: fixed;
+}
 
+.card-hover-tuto {
+  padding: 8px;
+  display: flex;
+  text-align: center;
+  text-align: end;
+  border: solid rgb(116, 169, 219) 3px;
+  flex-direction: column;
+  justify-content: center;
   width: 240px;
-  height: 130px;
-  border-radius: 35px;
-  background: white;
+  height: 65px;
+  border-radius: 17px;
+  top: 200px;
+  right: -260px;
+  position: fixed;
+  z-index: -6;
+  transition: all 0.4s;
 }
 
-.caja1-tuto {
-  position: absolute;
-  width: 250px;
-  height: 130px;
-  border-radius: 25px;
-  background: whitesmoke;
-  color: black;
+.show-card {
+  right: 0px;
 }
-.caja1-tuto:hover + .caja1-tuto {
-  right: 0; /* Move card2 to the left when card1 is hovered */
+
+.block-icon {
+  width: 20px;
+  height: 30px;
+}
+
+.div-inicial-tuto {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  right: 0;
+  position: fixed;
+  z-index: 10;
+}
+
+.title-card-tuto {
+  display: flex;
+}
+
+.parrafo-card-tuto {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  text-align: initial;
 }

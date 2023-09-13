@@ -1,14 +1,14 @@
 .div-manejador {
   /* background-color: red; */
   width: 95%;
-  margin-top: 20px;
+  margin: 40px 0px;
   display: flex;
   justify-content: end;
 }
 
 .div-camino {
   height: 100%;
-  width: 50.3%;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +22,7 @@
 .div-abc-tuto {
   /* background-color: blue; */
   height: 100%;
-  width: 33.3%;
+  width: 30%;
 }
 .cont-home {
   display: flex;
