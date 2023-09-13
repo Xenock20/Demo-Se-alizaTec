@@ -4,10 +4,14 @@ import "../JuegoOperaciones/JuegoOperaciones.css";
 import { operaciones } from "../../Contenido/contenidoOperacion";
 import { useState } from "react";
 
-const JuegoOperaciones = () => {
+const JuegoOperaciones = ({ gameComplete, reset, gameOver }) => {
   const generarNumeroAleatorio = () => {
     return Math.floor(Math.random() * operaciones.length);
   };
+
+  useEffect(() => {
+    handleReintentar();
+  }, [reset]);
   const [numberCopy, setNumberCopy] = useState(generarNumeroAleatorio());
   const [bloquearBoton, setBloquearBoton] = useState(false);
   const [correcto, setCorrecto] = useState(false);
@@ -31,13 +35,15 @@ const JuegoOperaciones = () => {
   const handleClick = (imgSeleccionada) => {
     if (imgSeleccionada == result) {
       setCorrecto(true);
+      gameComplete();
     } else {
       setIncorrecto(true);
+      gameOver();
     }
   };
 
   return (
-    <div className="div-inicial">
+    <div className="div-inicial" style={{ width: "100%", height: "100%" }}>
       <div className="div-operaciones">
         <div className="div-seña">
           <img className="img-operaciones" src={señas[0]} alt="" />
@@ -48,11 +54,18 @@ const JuegoOperaciones = () => {
         <div className="div-seña">
           <img className="img-operaciones" src={señas[1]} alt="" />
         </div>
-        <div className="div-igualdad">
+        <div className="div-signo">
           <h1>=</h1>
         </div>
         <div className="div-resultado">
-          {showImg && <img className="img-operaciones" src={imgSelect}></img>}
+          {showImg && (
+            <img
+              className={
+                inCorrecto ? "img-result-icorrecto" : "img-result-correcto"
+              }
+              src={imgSelect}
+            ></img>
+          )}
         </div>
       </div>
       <div>
@@ -73,15 +86,6 @@ const JuegoOperaciones = () => {
             </button>
           );
         })}
-      </div>
-      <div>
-        {correcto && <h1>CORRECTO!</h1>}
-        {inCorrecto && (
-          <div>
-            <h1>INCORRECTO!</h1>
-            <button onClick={handleReintentar}>Reintentar</button>
-          </div>
-        )}
       </div>
     </div>
   );

@@ -190,60 +190,11 @@ export const contGames = [
   },
   {
     id: 4,
-    modeGame: "juego-de-memoria",
+    modeGame: "juego-de-operaciones",
+
     cont: {
-      items: [
-        {
-          item: "5",
-          name: "5",
-          type: "text",
-        },
-        {
-          item: "2",
-          name: "2",
-          type: "text",
-        },
-        {
-          item: "4",
-          name: "4",
-          type: "text",
-        },
-        {
-          item: "3",
-          name: "3",
-          type: "text",
-        },
-        {
-          item: "1",
-          name: "1",
-          type: "text",
-        },
-        {
-          item: num4,
-          name: "4",
-          type: "img",
-        },
-        {
-          item: num3,
-          name: "3",
-          type: "img",
-        },
-        {
-          item: num5,
-          name: "5",
-          type: "img",
-        },
-        {
-          item: num2,
-          name: "2",
-          type: "img",
-        },
-        {
-          item: num1,
-          name: "1",
-          type: "img",
-        },
-      ],
+      text: '¿Cuantas letras contiene la palabra "ESCUELA"?',
+      items: [],
     },
     link: {
       return: "/leccion/4",
@@ -255,8 +206,7 @@ export const contGames = [
       levelID: [],
     },
     style: {
-      grid_repet: 5,
-      maxWidth: "800px",
+      with: "30px",
     },
   },
   {
@@ -331,7 +281,7 @@ export const contGames = [
     id: 7,
     modeGame: "juego-de-emparejamiento",
     cont: {
-      text: 'Cual es el resultado de 4 + 5 = ?',
+      text: "Cual es el resultado de 4 + 5 = ?",
       option: [
         {
           url: num1,

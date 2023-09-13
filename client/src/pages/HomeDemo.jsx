@@ -26,16 +26,9 @@ const HomeDemo = () => {
             <div className="box-homedemo">
               <div className="box-demo">
                 <BtnInicio
-                  path="/home"
-                  name="Iniciar Demo"
-                  estilo="btn1-inicio"
-                />
-              </div>
-              <div>
-                <BtnInicio
                   path="/login"
                   name="Iniciar Sesion"
-                  estilo="box-ingresar"
+                  estilo="btn1-inicio"
                 />
               </div>
             </div>

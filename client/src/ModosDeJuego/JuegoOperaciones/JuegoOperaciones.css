@@ -19,6 +19,23 @@
 }
 
 .img-operaciones {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
+}
+.img-result-correcto {
+  border: solid #7ab72e 3px;
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+}
+.img-result-icorrecto {
+  border: solid #962222 3px;
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+}
+.div-signo {
+  display: flex;
+  align-items: center;
+  margin: 10px;
 }

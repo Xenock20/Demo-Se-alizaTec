@@ -34,15 +34,15 @@ const Register = () => {
     if (values.user.length > 11) {
       setErrorLength(true);
     } else {
-      const respuesta = await axios.post(
-        "http://localhost:3000/register",
-        values
-      );
-      if (respuesta.data.error) {
-        setError(true);
-      } else {
+      try {
+        const respuesta = await axios.post(
+          "http://localhost:3000/register",
+          values
+        );
         navigate("/login");
         registro(true);
+      } catch (error) {
+        setError(true);
       }
     }
   };
