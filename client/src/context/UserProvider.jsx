@@ -11,13 +11,11 @@ function UserProvider({ children }) {
 
   const [leccionesDesbloqueadas, setLeccionesDesbloqueadas] = useState(() => {
     const storedLecciones = localStorage.getItem("leccionesDesbloqueadas");
-    return storedLecciones ? JSON.parse(storedLecciones) : [0, 1, 2, 3, 4, 5];
+    return storedLecciones ? JSON.parse(storedLecciones) : [0, 1];
   });
   const [modosJuegoDesbloqueados, setModosJuegoDesbloqueados] = useState(() => {
     const storedModosJuegos = localStorage.getItem("modosJuegosDesbloqueados");
-    return storedModosJuegos
-      ? JSON.parse(storedModosJuegos)
-      : [0, 1, 2, 3, 4, 5];
+    return storedModosJuegos ? JSON.parse(storedModosJuegos) : [0];
   });
 
   const [barraDeProgreso, setBarraDeProgreso] = useState(() => {
@@ -99,8 +97,8 @@ function UserProvider({ children }) {
   const reset = () => {
     setNameUser([]);
     setBarraDeProgreso(12);
-    setLeccionesDesbloqueadas([0, 1, 8, 9]);
-    setModosJuegoDesbloqueados([0, 4, 8]);
+    setLeccionesDesbloqueadas([0, 1]);
+    setModosJuegoDesbloqueados([0]);
     setNivelesDesbloqueados([0]);
   };
 
