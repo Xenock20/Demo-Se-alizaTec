@@ -87,7 +87,7 @@ function UserProvider({ children }) {
   };
 
   const desbloquearNiveles = (nivel) => {
-    setNivelesDesbloqueados([...nivelesDesbloqueados, nivel]);
+    setNivelesDesbloqueados(nivelesDesbloqueados.concat(nivel));
   };
 
   const insertUserName = (user) => {
