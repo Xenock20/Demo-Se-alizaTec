@@ -65,7 +65,7 @@ export const seccionLevels = [
     titulo: "Números",
     dificultad: [
       {
-        title: "Facil",
+        title: "Fácil",
         levels: [
           {
             id: 1,
