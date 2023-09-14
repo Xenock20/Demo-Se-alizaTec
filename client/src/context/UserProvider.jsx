@@ -11,7 +11,7 @@ function UserProvider({ children }) {
 
   const [leccionesDesbloqueadas, setLeccionesDesbloqueadas] = useState(() => {
     const storedLecciones = localStorage.getItem("leccionesDesbloqueadas");
-    return storedLecciones ? JSON.parse(storedLecciones) : [0, 1, 2, 3, 4, 5];
+    return storedLecciones ? JSON.parse(storedLecciones) : [0];
   });
   const [modosJuegoDesbloqueados, setModosJuegoDesbloqueados] = useState(() => {
     const storedModosJuegos = localStorage.getItem("modosJuegosDesbloqueados");
@@ -31,7 +31,7 @@ function UserProvider({ children }) {
     );
     return storedNivelesDesbloqueados
       ? JSON.parse(storedNivelesDesbloqueados)
-      : [0, 1, 2, 3, 4, 5];
+      : [0];
   });
   const [nameUser, setNameUser] = useState(() => {
     const storedUserName = localStorage.getItem("userName");

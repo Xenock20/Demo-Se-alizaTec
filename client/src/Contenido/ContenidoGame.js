@@ -185,7 +185,7 @@ export const contGames = [
     desblock: {
       leccionID: [4],
       modeGameID: [4],
-      levelID: [1],
+      levelID: [1, 10],
     },
   },
   {
