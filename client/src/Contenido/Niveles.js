@@ -85,7 +85,7 @@ export const seccionLevels = [
         position: "izquierda",
         positionInfo: "rigth",
       },
-    ]
+    ],
   },
   {
     href: "colores",
@@ -94,7 +94,7 @@ export const seccionLevels = [
       {
         id: 4,
         descripcion: "PROXIMAMENTE...",
-        link: "/leccion/4",
+        link: "/leccion/8",
         position: "izquierda",
         positionInfo: "rigth",
       },
@@ -112,7 +112,7 @@ export const seccionLevels = [
         position: "izquierda",
         positionInfo: "rigth",
       },
-    ]
+    ],
   },
   {
     href: "familia",
@@ -139,7 +139,7 @@ export const seccionLevels = [
         position: "izquierda",
         positionInfo: "rigth",
       },
-    ]
+    ],
   },
   {
     href: "dias",
@@ -166,7 +166,7 @@ export const seccionLevels = [
         position: "izquierda",
         positionInfo: "rigth",
       },
-    ]
+    ],
   },
   {
     href: "meses",
@@ -193,7 +193,7 @@ export const seccionLevels = [
         position: "izquierda",
         positionInfo: "rigth",
       },
-    ]
+    ],
   },
   {
     href: "preguntasBasicas",
@@ -220,6 +220,6 @@ export const seccionLevels = [
         position: "izquierda",
         positionInfo: "rigth",
       },
-    ]
+    ],
   },
 ];

@@ -185,7 +185,7 @@ export const contGames = [
     desblock: {
       leccionID: [4],
       modeGameID: [4],
-      levelID: [],
+      levelID: [1],
     },
   },
   {
@@ -308,6 +308,109 @@ export const contGames = [
     desblock: {
       leccionID: [7],
       modeGameID: [],
+      levelID: [],
+    },
+  },
+  {
+    id: 8,
+    modeGame: "juego-de-emparejamiento",
+    cont: {
+      text: "¿Qué seña representa la palabra “COLORES”?",
+      option: [
+        {
+          url: vocalE,
+          type: false,
+        },
+        {
+          url: vocalU,
+          type: false,
+        },
+        {
+          url: vocalI,
+          type: false,
+        },
+        {
+          url: vocalA,
+          type: true,
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/9",
+      next: "/leccion/10",
+    },
+    desblock: {
+      leccionID: [10],
+      modeGameID: [9],
+      levelID: [],
+    },
+  },
+
+  {
+    id: 9,
+    modeGame: "juego-de-emparejamiento",
+    cont: {
+      text: "¿De qué color suelen ser los patitos?",
+      option: [
+        {
+          url: vocalE,
+          type: false,
+        },
+        {
+          url: vocalU,
+          type: false,
+        },
+        {
+          url: vocalI,
+          type: false,
+        },
+        {
+          url: vocalA,
+          type: true,
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/10",
+      next: "/leccion/11",
+    },
+    desblock: {
+      leccionID: [11],
+      modeGameID: [10],
+      levelID: [],
+    },
+  },
+  {
+    id: 10,
+    modeGame: "juego-de-emparejamiento",
+    cont: {
+      text: "Las frutillas tienen un hermoso color (….)",
+      option: [
+        {
+          url: vocalE,
+          type: false,
+        },
+        {
+          url: vocalU,
+          type: false,
+        },
+        {
+          url: vocalI,
+          type: false,
+        },
+        {
+          url: vocalA,
+          type: true,
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/11",
+      next: "/home",
+    },
+    desblock: {
+      leccionID: [11],
+      modeGameID: [11],
       levelID: [],
     },
   },

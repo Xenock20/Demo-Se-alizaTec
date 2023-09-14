@@ -197,4 +197,77 @@ export const lecciones = [
       next: "/mododejuego/6",
     },
   },
+  {
+    id: 8,
+    titulo: "COLORES",
+    contenido: {
+      contPrincipal:
+        "Presentamos el primer nivel dedicado a la temática COLORES.",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: num8,
+          text: "Nos adentraremos en el apasionante mundo de la paleta de colores. En este punto inicial de nuestro viaje de aprendizaje, nos centraremos en uno de los conceptos fundamentales y fascinantes: los colores primarios.",
+        },
+      ],
+    },
+    link: {
+      return: "/home",
+      next: "/leccion/9",
+    },
+  },
+  {
+    id: 9,
+    titulo: "AMARILLO",
+    contenido: {
+      contPrincipal: "Como primer color, vamos a conocer el AMARILLO",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: num8,
+          text: "Se representa moviendo la mano de izquierda a derecha, con los dedos extendidos y el pulgar cerrado, con la palma hacia afuera. ¡Como si estuviéramos saludando!",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/8",
+      next: "/mododejuego/8",
+    },
+  },
+  {
+    id: 10,
+    titulo: "ROJO",
+    contenido: {
+      contPrincipal: "Es el turno del color Rojo, ¡vamos a conocerlo!",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: num8,
+          text: "Podemos observar un pequeño movimiento desde atrás hacia adelante desde nuestra barbilla, sólo extendiendo los dedos índice y pulgar.",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/9",
+      next: "/mododejuego/9",
+    },
+  },
+  {
+    id: 11,
+    titulo: "AZUL",
+    contenido: {
+      contPrincipal: "Vamos a finalizar este primer nivel con el color Azul.",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: num8,
+          text: "Vamos a extender todos los dedos, excepto el pulgar y el dedo medio, que vamos a abrir y cerrar repetidamente.",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/10",
+      next: "/mododejuego/10",
+    },
+  },
 ];
