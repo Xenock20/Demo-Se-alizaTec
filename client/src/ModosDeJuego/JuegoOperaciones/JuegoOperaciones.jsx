@@ -35,9 +35,6 @@ const JuegoOperaciones = ({ gameComplete, reset, gameOver }) => {
   };
 
   const handleDragEnd = (event) => {
-    console.log(event.active.id);
-    console.log(result);
-    console.log(event.over.id);
     if (event.active.id == result) {
       setCorrecto(true);
       gameComplete();
@@ -82,7 +79,6 @@ const JuegoOperaciones = ({ gameComplete, reset, gameOver }) => {
         </div>
         <div className="div-opciones-operaciones">
           {opciones.map((e, i) => {
-            console.log(e);
             return (
               <Draggable key={i} id={e}>
                 <button

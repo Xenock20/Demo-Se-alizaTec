@@ -153,7 +153,7 @@ export const seccionLevels = [
         levels: [
           {
             id: 10,
-            descripcion: "PROXIMAMENTE...",
+            descripcion: "Aprende los colores primarios.",
             link: "/leccion/8",
             position: "izquierda",
             positionInfo: "rigth",
