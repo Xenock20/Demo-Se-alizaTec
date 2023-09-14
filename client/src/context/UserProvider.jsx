@@ -11,7 +11,7 @@ function UserProvider({ children }) {
 
   const [leccionesDesbloqueadas, setLeccionesDesbloqueadas] = useState(() => {
     const storedLecciones = localStorage.getItem("leccionesDesbloqueadas");
-    return storedLecciones ? JSON.parse(storedLecciones) : [0];
+    return storedLecciones ? JSON.parse(storedLecciones) : [0, 1];
   });
   const [modosJuegoDesbloqueados, setModosJuegoDesbloqueados] = useState(() => {
     const storedModosJuegos = localStorage.getItem("modosJuegosDesbloqueados");
