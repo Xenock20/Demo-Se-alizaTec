@@ -4,6 +4,7 @@ import AdivinaGame from "./../../ModosDeJuego/AdivinanzaDeSeñas/AdivinaGame/Adi
 import ErrorGame from "./../../ModosDeJuego/JuegoDeIdentificacionDeErrores/ErrorGame/ErrorGame";
 import { GameDeEmparejamiento } from "../../ModosDeJuego/JuegoDeEmparejamiento/juegoDeEmparejamiento";
 import JuegoCompletar from "../../ModosDeJuego/JuegoDeCompletar/JuegoDeCompletar";
+import JuegoOperaciones from "../../ModosDeJuego/JuegoOperaciones/JuegoOperaciones";
 
 export default function GameCont({
   contJuego,
@@ -66,6 +67,15 @@ export default function GameCont({
           contenido={cont}
           gameComplete={handleCompleteGame}
         ></ErrorGame>
+      );
+      break;
+    case "juego-de-operaciones":
+      componente = (
+        <JuegoOperaciones
+          gameComplete={handleCompleteGame}
+          reset={reset}
+          gameOver={gameOver}
+        ></JuegoOperaciones>
       );
       break;
     default:

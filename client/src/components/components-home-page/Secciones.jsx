@@ -27,21 +27,17 @@ const Secciones = () => {
           <div className="borde-cian"></div>
           <a href="#colores">Colores</a>
         </a>
-        <a className="secciones" href="#familia" onClick={handleClick} style={estilo}>
+        <a className="secciones" href="#familia">
           <div className="borde-cian"></div>
-          <a href="#familia" style={styleLetter}>Familia</a>
+          <a href="#familia">Familia</a>
         </a>
         <a className="secciones" href="#dias">
           <div className="borde-cian"></div>
           <a href="#dias">Días</a>
         </a>
-        <a className="secciones" href="#meses">
-          <div className="borde-cian"></div>
-          <a href="#meses">Meses</a>
-        </a>
         <a className="secciones" href="#preguntasBasicas">
           <div className="borde-cian"></div>
-          <a href="#preguntasBasicas">Preguntas Basicas</a>
+          <a href="#preguntasBasicas">Preguntas Básicas</a>
         </a>
       </div>
       <div className="linea-seccion"> </div>
