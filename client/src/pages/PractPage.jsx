@@ -38,7 +38,8 @@ export default function PractPage() {
     desbloquearLeccion(deblock.leccionID)
     desbloquearModoJuego(deblock.modeGameID)
     //deblock.modeGameID.map((id) => desbloquearModoJuego(id));
-    deblock.levelID.map((id) => desbloquearNiveles(id));
+    desbloquearNiveles(deblock.levelID)
+    //deblock.levelID.map((id) => desbloquearNiveles(id));
   };
 
   const reiniciarComponente = () => {
