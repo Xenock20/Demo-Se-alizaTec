@@ -14,6 +14,7 @@ import num8 from "./Image/N1-Numeros/8.png";
 import num9 from "./Image/N1-Numeros/9.png";
 import num10 from "./Image/N1-Numeros/10.png";
 
+
 export const lecciones = [
   {
     id: 0,

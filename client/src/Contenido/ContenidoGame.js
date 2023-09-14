@@ -183,8 +183,8 @@ export const contGames = [
       next: "/home",
     },
     desblock: {
-      leccionID: [4],
-      modeGameID: [4],
+      leccionID: [4,8,9],
+      modeGameID: [4,8],
       levelID: [1, 10],
     },
   },
