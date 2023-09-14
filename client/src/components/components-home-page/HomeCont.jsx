@@ -15,6 +15,10 @@ export default function HomeCont() {
         <CaminoNiveles></CaminoNiveles>
       </div>
 
+      <div className="msj-tuto">
+        
+      </div>
+
       <div className="div-abc-tuto">
         <div className="div-manejador">
           <AbcLib></AbcLib>
