@@ -8,6 +8,10 @@ import siete from "../Contenido/Image/N1-Numeros/7.png";
 import ocho from "../Contenido/Image/N1-Numeros/8.png";
 import nueve from "../Contenido/Image/N1-Numeros/9.png";
 import diez from "../Contenido/Image/N1-Numeros/10.png";
+import amarillo from "../Contenido/Image/N3-Colores/amarilloB&W.png";
+import azul from "../Contenido/Image/N3-Colores/AzulB&W.png";
+import colores from "../Contenido/Image/N3-Colores/colorB&W.png";
+import rojo from "../Contenido/Image/N3-Colores/rojoB&W.png";
 
 export const operaciones = [
   {
@@ -36,10 +40,14 @@ export const operaciones = [
 export const contOrdenamiento = [
   {
     id: 0,
-    señas: [uno, dos, tres],
-    opciones: ["rojo", "azul", "amarillo"],
-    orden: ["rojo", uno, "azul", dos],
+    señas: [amarillo, azul, colores, rojo],
+    opciones: ["rojo", "azul", "amarillo", "colores"],
+    orden: ["amarillo", "azul", "colores", "rojo"],
   },
-  { id: 1, señas: "", opciones: "azul" },
-  { id: 2, señas: "", opciones: "amarillo" },
+  {
+    id: 1,
+    señas: [azul, colores, amarillo, rojo],
+    opciones: ["rojo", "azul", "amarillo", "colores"],
+    orden: ["azul", "colores", "amarillo", "rojo"],
+  },
 ];

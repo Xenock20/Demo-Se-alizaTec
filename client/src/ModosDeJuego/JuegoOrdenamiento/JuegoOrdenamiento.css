@@ -1,13 +1,45 @@
 .div-inicial-ordenamiento {
   display: flex;
   flex-direction: column;
-}
 
+  align-items: center;
+}
+.div-img-principal {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
 .div-img-ordenamiento {
   display: flex;
+  border: solid #de4a97 3px;
+  border-radius: 10px;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
 }
 
-.div-img-ordenamiento img {
-  width: 250px;
-  height: 250px;
+.img-ordenamiento {
+  width: 200px;
+  height: 200px;
+}
+
+/* botones */
+
+.div-opciones-ordenamiento button {
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #423b5078;
+  width: 302.76px;
+  height: 44px;
+  border-color: #bd92b8;
+}
+.div-opciones-ordenamiento {
+  display: flex;
+  width: 80%;
 }

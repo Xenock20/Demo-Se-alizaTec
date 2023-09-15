@@ -359,7 +359,7 @@ export const contGames = [
           url: amarillo,
           name: "AMARILLO",
         },
-       
+
         {
           url: rojo,
           name: "ROJO",
@@ -369,7 +369,7 @@ export const contGames = [
           name: "COLORES",
         },
       ],
-      options: ["COLORES", "ROJO", "AZUL", "AMARILLO", "VIOLETA"],
+      options: ["COLORES", "ROJO", "AZUL", "AMARILLO"],
     },
     link: {
       return: "/leccion/10",
@@ -383,27 +383,10 @@ export const contGames = [
   },
   {
     id: 10,
-    modeGame: "juego-de-emparejamiento",
+    modeGame: "juego-ordenamiento",
     cont: {
       text: "Las frutillas tienen un hermoso color (….)",
-      option: [
-        {
-          url: vocalE,
-          type: false,
-        },
-        {
-          url: vocalU,
-          type: false,
-        },
-        {
-          url: vocalI,
-          type: false,
-        },
-        {
-          url: vocalA,
-          type: true,
-        },
-      ],
+      option: [],
     },
     link: {
       return: "/leccion/11",
