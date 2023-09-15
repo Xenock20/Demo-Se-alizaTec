@@ -18,7 +18,7 @@ export default function Memogame({ contenido, gameComplete, style }) {
     if (time > 0) {
       const timer = setInterval(() => {
         setTime(time - 1);
-      }, 50000);
+      }, 3000);
 
       return () => {
         clearInterval(timer);
