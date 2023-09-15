@@ -372,7 +372,7 @@ export const contGames = [
           name: "COLORES",
         },
       ],
-      options: ["COLORES", "ROJO", "AZUL", "AMARILLO"],
+      options: ["COLORES", "ROJO", "AZUL", "AMARILLO", "VIOLETA"],
     },
     link: {
       return: "/leccion/10",
