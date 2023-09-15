@@ -322,19 +322,19 @@ export const contGames = [
       text: "¿Qué seña representa la palabra “COLORES”?",
       option: [
         {
-          url: vocalE,
+          url: azul,
           type: false,
         },
         {
-          url: vocalU,
+          url: rojo,
           type: false,
         },
         {
-          url: vocalI,
+          url: amarillo,
           type: false,
         },
         {
-          url: vocalA,
+          url: colores,
           type: true,
         },
       ],
@@ -352,27 +352,27 @@ export const contGames = [
 
   {
     id: 9,
-    modeGame: "juego-de-emparejamiento",
+    modeGame: "adivinanza-de-señas",
     cont: {
-      text: "¿De qué color suelen ser los patitos?",
-      option: [
+      img: [
         {
-          url: vocalE,
-          type: false,
+          url: amarillo,
+          name: "AMARILLO",
         },
         {
-          url: vocalU,
-          type: false,
+          url: azul,
+          name: "AZUL",
         },
         {
-          url: vocalI,
-          type: false,
+          url: rojo,
+          name: "ROJO",
         },
         {
-          url: vocalA,
-          type: true,
+          url: colores,
+          name: "COLORES",
         },
       ],
+      options: ["COLORES", "ROJO", "AZUL", "AMARILLO"],
     },
     link: {
       return: "/leccion/10",

@@ -205,11 +205,11 @@ export const lecciones = [
     id: 8,
     titulo: "COLORES",
     contenido: {
-      contPrincipal:
-        "Presentamos el primer nivel dedicado a la temática COLORES.",
+      contPrincipal: "",
       contSecundario: [
         {
-          subtitulo: "",
+          subtitulo:
+            "Presentamos el primer nivel dedicado a la temática COLORES.",
           img: colores,
           text: "Nos adentraremos en el apasionante mundo de la paleta de colores. En este punto inicial de nuestro viaje de aprendizaje, nos centraremos en uno de los conceptos fundamentales y fascinantes: los colores primarios.",
         },
@@ -224,10 +224,10 @@ export const lecciones = [
     id: 9,
     titulo: "AMARILLO",
     contenido: {
-      contPrincipal: "Como primer color, vamos a conocer el AMARILLO",
+      contPrincipal: "",
       contSecundario: [
         {
-          subtitulo: "",
+          subtitulo: "Como primer color, vamos a conocer el AMARILLO",
           img: amarillo,
           text: "Se representa moviendo la mano de izquierda a derecha, con los dedos extendidos y el pulgar cerrado, con la palma hacia afuera. ¡Como si estuviéramos saludando!",
         },
@@ -242,10 +242,10 @@ export const lecciones = [
     id: 10,
     titulo: "ROJO",
     contenido: {
-      contPrincipal: "Es el turno del color Rojo, ¡vamos a conocerlo!",
+      contPrincipal: "",
       contSecundario: [
         {
-          subtitulo: "",
+          subtitulo: "Es el turno del color Rojo, ¡vamos a conocerlo!",
           img: rojo,
           text: "Podemos observar un pequeño movimiento desde atrás hacia adelante desde nuestra barbilla, sólo extendiendo los dedos índice y pulgar.",
         },
@@ -260,10 +260,10 @@ export const lecciones = [
     id: 11,
     titulo: "AZUL",
     contenido: {
-      contPrincipal: "Vamos a finalizar este primer nivel con el color Azul.",
+      contPrincipal: "",
       contSecundario: [
         {
-          subtitulo: "",
+          subtitulo: "Vamos a finalizar este primer nivel con el color Azul.",
           img: azul,
           text: "Vamos a extender todos los dedos, excepto el pulgar y el dedo medio, que vamos a abrir y cerrar repetidamente.",
         },
