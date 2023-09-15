@@ -17,7 +17,9 @@
 }
 
 .secciones {
-  height: 35%;
+  height: 12%;
+  border-radius: 13px;
+  background: #2F2C34;
   display: flex;
   cursor: pointer;
   align-items: center;
