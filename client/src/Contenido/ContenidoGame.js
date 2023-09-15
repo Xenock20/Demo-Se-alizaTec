@@ -162,6 +162,7 @@ export const contGames = [
     id: 3,
     modeGame: "adivinanza-de-señas",
     cont: {
+      text: "Seleccione la vocal que corresponda",
       img: [
         {
           url: vocalA,
@@ -250,7 +251,9 @@ export const contGames = [
   {
     id: 6,
     modeGame: "adivinanza-de-señas",
+
     cont: {
+      text: "Seleccione el número que corresponda",
       img: [
         {
           url: num6,
@@ -354,6 +357,7 @@ export const contGames = [
     id: 9,
     modeGame: "adivinanza-de-señas",
     cont: {
+      text: "Seleccione el color que corresponda",
       img: [
         {
           url: amarillo,
@@ -373,7 +377,7 @@ export const contGames = [
           name: "AMARILLO",
         },
       ],
-      options: ["COLORES", "ROJO", "AZUL", "AMARILLO","VIOLETA"],
+      options: ["COLORES", "ROJO", "AZUL", "AMARILLO", "VIOLETA"],
     },
     link: {
       return: "/leccion/10",
@@ -389,7 +393,7 @@ export const contGames = [
     id: 10,
     modeGame: "juego-ordenamiento",
     cont: {
-      text: "Las frutillas tienen un hermoso color (….)",
+      text: "Seleccione el color que corresponda",
       option: [],
     },
     link: {

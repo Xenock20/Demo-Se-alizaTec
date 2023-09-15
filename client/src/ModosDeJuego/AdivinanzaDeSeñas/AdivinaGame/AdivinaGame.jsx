@@ -12,12 +12,14 @@ export default function AdivinaGame({
   const [options, setOptions] = useState([]);
   const [objetoImage, setObjetoImage] = useState({});
   const [juegoTerminado, setJuegoTerminado] = useState(false);
-
+  const [contTexto, setTexto] = useState();
   const imgRandom = Math.floor(Math.random() * 4);
 
   useEffect(() => {
     const listOptionCopy = arrayRevuelto([...contenido.options]);
     const objetoImageCopy = contenido.img[imgRandom];
+    const contText = contenido.text;
+
     setOptions(
       listOptionCopy.map((option, i) => ({
         index: i,
@@ -27,6 +29,7 @@ export default function AdivinaGame({
       }))
     );
     setObjetoImage(objetoImageCopy);
+    setTexto(contText);
     setJuegoTerminado(false);
   }, [reset]);
 
@@ -59,6 +62,7 @@ export default function AdivinaGame({
       <ImagenAdivinaGame img={objetoImage}></ImagenAdivinaGame>
 
       <ContOptions
+        text={contTexto}
         options={options}
         juegoTerminado={juegoTerminado}
         handleClick={handleClick}

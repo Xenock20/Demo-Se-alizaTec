@@ -18,6 +18,7 @@ const JuegoOrdenamiento = ({ gameComplete, reset, gameOver }) => {
   const [incorrecto, setIncorrecto] = useState(false);
   const [correcto, setCorrecto] = useState(false);
   const [blockButton, setBlockButton] = useState(false);
+  const [isClick, setIsClick] = useState([]);
 
   useEffect(() => {
     handleReintentar();
@@ -34,10 +35,12 @@ const JuegoOrdenamiento = ({ gameComplete, reset, gameOver }) => {
     const nuevoNumeroAleatorio = generarNumeroAleatorio();
     setArrayImg([]);
     setNumberCopy(nuevoNumeroAleatorio);
+    setIsClick([]);
   };
 
-  const handleClick = (imagenSelect) => {
+  const handleClick = (imagenSelect, index) => {
     setArrayImg((prevArrayImg) => [...prevArrayImg, imagenSelect]);
+    setIsClick((e) => [...e, index]);
   };
 
   const validacion = () => {
@@ -50,7 +53,14 @@ const JuegoOrdenamiento = ({ gameComplete, reset, gameOver }) => {
 
   return (
     <div className="div-inicial-ordenamiento">
-      <div style={{marginBottom:"60px"}}><h1 style={{fontSize:"45px"}}><strong>Presione las opciones de abajo según el orden de las siguientes señas:</strong></h1></div>
+      <div style={{ marginBottom: "60px" }}>
+        <h1 style={{ fontSize: "45px" }}>
+          <strong>
+            Presione las opciones de abajo según el orden de las siguientes
+            señas:
+          </strong>
+        </h1>
+      </div>
       <div className="div-img-principal">
         {señas.map((e, index) => {
           return (
@@ -64,8 +74,9 @@ const JuegoOrdenamiento = ({ gameComplete, reset, gameOver }) => {
         {opciones.map((e, index) => {
           return (
             <button
+              className={`button${isClick.includes(index) ? "Click" : ""}`}
               onClick={() => {
-                handleClick(e);
+                handleClick(e, index);
               }}
               key={index}
             >

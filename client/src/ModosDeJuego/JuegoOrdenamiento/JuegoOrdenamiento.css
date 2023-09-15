@@ -29,12 +29,23 @@
 
 /* botones */
 
-.div-opciones-ordenamiento button {
+.button {
   cursor: pointer;
   transition: all 0.4s ease;
   border-radius: 10px;
   font-size: 20px;
   background-color: #423b5078;
+  width: 300px;
+  height: 70px;
+  border-color: #bd92b8;
+}
+
+.buttonClick {
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: hwb(307 36% 24%);
   width: 300px;
   height: 70px;
   border-color: #bd92b8;
