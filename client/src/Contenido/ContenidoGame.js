@@ -359,10 +359,7 @@ export const contGames = [
           url: amarillo,
           name: "AMARILLO",
         },
-        {
-          url: azul,
-          name: "AZUL",
-        },
+       
         {
           url: rojo,
           name: "ROJO",
