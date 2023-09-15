@@ -32,3 +32,14 @@ export const operaciones = [
     opciones: [uno, tres, dos],
   },
 ];
+
+export const contOrdenamiento = [
+  {
+    id: 0,
+    señas: [uno, dos, tres],
+    opciones: ["rojo", "azul", "amarillo"],
+    orden: ["rojo", uno, "azul", dos],
+  },
+  { id: 1, señas: "", opciones: "azul" },
+  { id: 2, señas: "", opciones: "amarillo" },
+];

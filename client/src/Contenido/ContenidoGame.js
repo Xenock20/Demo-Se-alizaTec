@@ -13,6 +13,10 @@ import num7 from "./Image/N1-Numeros/7.png";
 import num8 from "./Image/N1-Numeros/8.png";
 import num9 from "./Image/N1-Numeros/9.png";
 import num10 from "./Image/N1-Numeros/10.png";
+import amarillo from "../Contenido/Image/N3-Colores/amarilloB&W.png";
+import azul from "../Contenido/Image/N3-Colores/AzulB&W.png";
+import colores from "../Contenido/Image/N3-Colores/colorB&W.png";
+import rojo from "../Contenido/Image/N3-Colores/rojoB&W.png";
 
 export const contGames = [
   {
@@ -183,8 +187,8 @@ export const contGames = [
       next: "/home",
     },
     desblock: {
-      leccionID: [4,8,9],
-      modeGameID: [4,8],
+      leccionID: [4, 8, 9],
+      modeGameID: [4, 8],
       levelID: [1, 10],
     },
   },

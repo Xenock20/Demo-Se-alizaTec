@@ -1,0 +1,13 @@
+.div-inicial-ordenamiento {
+  display: flex;
+  flex-direction: column;
+}
+
+.div-img-ordenamiento {
+  display: flex;
+}
+
+.div-img-ordenamiento img {
+  width: 250px;
+  height: 250px;
+}

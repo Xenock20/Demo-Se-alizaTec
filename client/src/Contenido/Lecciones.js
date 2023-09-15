@@ -13,7 +13,10 @@ import num7 from "./Image/N1-Numeros/7.png";
 import num8 from "./Image/N1-Numeros/8.png";
 import num9 from "./Image/N1-Numeros/9.png";
 import num10 from "./Image/N1-Numeros/10.png";
-
+import amarillo from "../Contenido/Image/N3-Colores/amarillo.png";
+import azul from "../Contenido/Image/N3-Colores/azul.png";
+import colores from "../Contenido/Image/N3-Colores/colores.png";
+import rojo from "../Contenido/Image/N3-Colores/rojo.png";
 
 export const lecciones = [
   {
@@ -207,7 +210,7 @@ export const lecciones = [
       contSecundario: [
         {
           subtitulo: "",
-          img: num8,
+          img: colores,
           text: "Nos adentraremos en el apasionante mundo de la paleta de colores. En este punto inicial de nuestro viaje de aprendizaje, nos centraremos en uno de los conceptos fundamentales y fascinantes: los colores primarios.",
         },
       ],
@@ -225,7 +228,7 @@ export const lecciones = [
       contSecundario: [
         {
           subtitulo: "",
-          img: num8,
+          img: amarillo,
           text: "Se representa moviendo la mano de izquierda a derecha, con los dedos extendidos y el pulgar cerrado, con la palma hacia afuera. ¡Como si estuviéramos saludando!",
         },
       ],
@@ -243,7 +246,7 @@ export const lecciones = [
       contSecundario: [
         {
           subtitulo: "",
-          img: num8,
+          img: rojo,
           text: "Podemos observar un pequeño movimiento desde atrás hacia adelante desde nuestra barbilla, sólo extendiendo los dedos índice y pulgar.",
         },
       ],
@@ -261,7 +264,7 @@ export const lecciones = [
       contSecundario: [
         {
           subtitulo: "",
-          img: num8,
+          img: azul,
           text: "Vamos a extender todos los dedos, excepto el pulgar y el dedo medio, que vamos a abrir y cerrar repetidamente.",
         },
       ],
