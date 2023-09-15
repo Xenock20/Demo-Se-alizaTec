@@ -23,8 +23,8 @@
 }
 
 .img-ordenamiento {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
 }
 
 /* botones */
@@ -35,8 +35,8 @@
   border-radius: 10px;
   font-size: 20px;
   background-color: #423b5078;
-  width: 302.76px;
-  height: 44px;
+  width: 300px;
+  height: 70px;
   border-color: #bd92b8;
 }
 .div-opciones-ordenamiento {

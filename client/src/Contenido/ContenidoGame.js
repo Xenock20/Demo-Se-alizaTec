@@ -361,15 +361,19 @@ export const contGames = [
         },
 
         {
-          url: rojo,
-          name: "ROJO",
+          url: amarillo,
+          name: "AMARILLO",
         },
         {
-          url: colores,
-          name: "COLORES",
+          url: amarillo,
+          name: "AMARILLO",
+        },
+        {
+          url: amarillo,
+          name: "AMARILLO",
         },
       ],
-      options: ["COLORES", "ROJO", "AZUL", "AMARILLO"],
+      options: ["COLORES", "ROJO", "AZUL", "AMARILLO","VIOLETA"],
     },
     link: {
       return: "/leccion/10",

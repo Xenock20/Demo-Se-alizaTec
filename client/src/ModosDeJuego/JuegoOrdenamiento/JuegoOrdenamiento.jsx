@@ -50,6 +50,7 @@ const JuegoOrdenamiento = ({ gameComplete, reset, gameOver }) => {
 
   return (
     <div className="div-inicial-ordenamiento">
+      <div style={{marginBottom:"60px"}}><h1 style={{fontSize:"45px"}}><strong>Presione las opciones de abajo según el orden de las siguientes señas:</strong></h1></div>
       <div className="div-img-principal">
         {señas.map((e, index) => {
           return (
