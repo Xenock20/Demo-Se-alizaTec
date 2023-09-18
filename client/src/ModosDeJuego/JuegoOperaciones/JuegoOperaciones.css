@@ -38,4 +38,16 @@
   display: flex;
   align-items: center;
   margin: 10px;
+  color: "white";
+}
+
+.div-opciones-operaciones {
+  display: flex;
+}
+
+.div-resultado {
+  border: solid #de4a97 3px;
+
+  width: 240px;
+  height: 240px;
 }

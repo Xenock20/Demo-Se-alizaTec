@@ -8,6 +8,7 @@ import "./style/login.css";
 import checked from "../assets/checked.png";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdAlternateEmail } from "react-icons/md";
+import { FaRegCopyright } from "react-icons/fa";
 
 import "animate.css";
 const Login = () => {
@@ -102,14 +103,6 @@ const Login = () => {
                 placeholder="email"
               />
             </div>
-            {/* <input
-            required
-            type="email"
-            name="email"
-            onChange={handleInput}
-            className="inputs"
-            placeholder="Correo Electronico"
-          /> */}
           </div>
           <div>
             <div class="group">
@@ -133,18 +126,6 @@ const Login = () => {
               />
             </div>
 
-            {/* <label htmlFor="" className="ocultar">
-            Password:
-          </label>
-          <input
-            type="password"
-            name="password"
-            onChange={handleInput}
-            className="inputs"
-            placeholder="Contraseña"
-            required
-          /> */}
-
             {error && (
               <div className="box-error">
                 <h1 className="error-register">
@@ -161,21 +142,25 @@ const Login = () => {
             className="submit-register"
             id="submit"
           />
-
-          <Link
-            to={"/register"}
-            onClick={handleClick}
-            className="inputs"
-            id="back"
+        </div>
+        <div>
+          <button
+            onClick={() => {
+              navigate("/register");
+            }}
+            className="button-cuenta"
           >
-            <span id="span">NO TENGO UNA CUENTA</span>
-          </Link>
+            REGISTRARSE
+          </button>
         </div>
         <div className="box-terminos">
           <span>
             Al registrarse en SeñalizaTec, aceptas nuestros <br />{" "}
             <b>Términos</b> y<b> Política</b> de privacidad
           </span>
+          <div className="box-copyright">
+            <FaRegCopyright />
+          </div>
         </div>
       </form>
     </div>

@@ -13,6 +13,10 @@ import num7 from "./Image/N1-Numeros/7.png";
 import num8 from "./Image/N1-Numeros/8.png";
 import num9 from "./Image/N1-Numeros/9.png";
 import num10 from "./Image/N1-Numeros/10.png";
+import amarillo from "../Contenido/Image/N3-Colores/amarillo.png";
+import azul from "../Contenido/Image/N3-Colores/azul.png";
+import colores from "../Contenido/Image/N3-Colores/colores.png";
+import rojo from "../Contenido/Image/N3-Colores/rojo.png";
 
 export const lecciones = [
   {
@@ -195,6 +199,79 @@ export const lecciones = [
     link: {
       return: "/mododejuego/5",
       next: "/mododejuego/6",
+    },
+  },
+  {
+    id: 8,
+    titulo: "COLORES",
+    contenido: {
+      contPrincipal: "",
+      contSecundario: [
+        {
+          subtitulo:
+            "Presentamos el primer nivel dedicado a la temática COLORES.",
+          img: colores,
+          text: "Nos adentraremos en el apasionante mundo de la paleta de colores. En este punto inicial de nuestro viaje de aprendizaje, nos centraremos en uno de los conceptos fundamentales y fascinantes: los colores primarios.",
+        },
+      ],
+    },
+    link: {
+      return: "/home",
+      next: "/leccion/9",
+    },
+  },
+  {
+    id: 9,
+    titulo: "AMARILLO",
+    contenido: {
+      contPrincipal: "",
+      contSecundario: [
+        {
+          subtitulo: "Como primer color, vamos a conocer el AMARILLO",
+          img: amarillo,
+          text: "Se representa moviendo la mano de izquierda a derecha, con los dedos extendidos y el pulgar cerrado, con la palma hacia afuera. ¡Como si estuviéramos saludando!",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/8",
+      next: "/mododejuego/8",
+    },
+  },
+  {
+    id: 10,
+    titulo: "ROJO",
+    contenido: {
+      contPrincipal: "",
+      contSecundario: [
+        {
+          subtitulo: "Es el turno del color Rojo, ¡vamos a conocerlo!",
+          img: rojo,
+          text: "Podemos observar un pequeño movimiento desde atrás hacia adelante desde nuestra barbilla, sólo extendiendo los dedos índice y pulgar.",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/9",
+      next: "/mododejuego/9",
+    },
+  },
+  {
+    id: 11,
+    titulo: "AZUL",
+    contenido: {
+      contPrincipal: "",
+      contSecundario: [
+        {
+          subtitulo: "Vamos a finalizar este primer nivel con el color Azul.",
+          img: azul,
+          text: "Vamos a extender todos los dedos, excepto el pulgar y el dedo medio, que vamos a abrir y cerrar repetidamente.",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/10",
+      next: "/mododejuego/10",
     },
   },
 ];

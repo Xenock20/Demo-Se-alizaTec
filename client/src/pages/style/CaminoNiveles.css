@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
 .link-level {
   background-color: #de4a97;
   border: #de4a97 solid 4px;
@@ -194,10 +195,12 @@
 .title-seccion{
   width: 90%;
   margin: auto;
+  letter-spacing: 2px;
   font-size: 48px;
   text-align: center;
   border-bottom: 1px solid white;
   padding: 5px 0px;
+  font-family: "Lalezar", cursive;
 }
 
 /* Diccionario */

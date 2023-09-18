@@ -13,6 +13,10 @@ import num7 from "./Image/N1-Numeros/7.png";
 import num8 from "./Image/N1-Numeros/8.png";
 import num9 from "./Image/N1-Numeros/9.png";
 import num10 from "./Image/N1-Numeros/10.png";
+import amarillo from "../Contenido/Image/N3-Colores/amarilloB&W.png";
+import azul from "../Contenido/Image/N3-Colores/AzulB&W.png";
+import colores from "../Contenido/Image/N3-Colores/colorB&W.png";
+import rojo from "../Contenido/Image/N3-Colores/rojoB&W.png";
 
 export const contGames = [
   {
@@ -158,6 +162,7 @@ export const contGames = [
     id: 3,
     modeGame: "adivinanza-de-señas",
     cont: {
+      text: "Seleccione la vocal que corresponda",
       img: [
         {
           url: vocalA,
@@ -183,9 +188,9 @@ export const contGames = [
       next: "/home",
     },
     desblock: {
-      leccionID: [4],
-      modeGameID: [4],
-      levelID: [],
+      leccionID: [4, 8, 9],
+      modeGameID: [4, 8],
+      levelID: [1, 10],
     },
   },
   {
@@ -246,7 +251,9 @@ export const contGames = [
   {
     id: 6,
     modeGame: "adivinanza-de-señas",
+
     cont: {
+      text: "Seleccione el número que corresponda",
       img: [
         {
           url: num6,
@@ -308,6 +315,94 @@ export const contGames = [
     desblock: {
       leccionID: [7],
       modeGameID: [],
+      levelID: [],
+    },
+  },
+  {
+    id: 8,
+    modeGame: "juego-de-emparejamiento",
+    cont: {
+      text: "¿Qué seña representa la palabra “COLORES”?",
+      option: [
+        {
+          url: azul,
+          type: false,
+        },
+        {
+          url: rojo,
+          type: false,
+        },
+        {
+          url: amarillo,
+          type: false,
+        },
+        {
+          url: colores,
+          type: true,
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/9",
+      next: "/leccion/10",
+    },
+    desblock: {
+      leccionID: [10],
+      modeGameID: [9],
+      levelID: [],
+    },
+  },
+
+  {
+    id: 9,
+    modeGame: "adivinanza-de-señas",
+    cont: {
+      text: "Seleccione el color que corresponda",
+      img: [
+        {
+          url: amarillo,
+          name: "AMARILLO",
+        },
+
+        {
+          url: amarillo,
+          name: "AMARILLO",
+        },
+        {
+          url: amarillo,
+          name: "AMARILLO",
+        },
+        {
+          url: amarillo,
+          name: "AMARILLO",
+        },
+      ],
+      options: ["COLORES", "ROJO", "AZUL", "AMARILLO", "VIOLETA"],
+    },
+    link: {
+      return: "/leccion/10",
+      next: "/leccion/11",
+    },
+    desblock: {
+      leccionID: [11],
+      modeGameID: [10],
+      levelID: [],
+    },
+  },
+  {
+    id: 10,
+    modeGame: "juego-ordenamiento",
+    cont: {
+      text: "Seleccione el color que corresponda",
+      option: [],
+    },
+    link: {
+      return: "/leccion/11",
+      next: "/home",
+    },
+    desblock: {
+      leccionID: [11],
+      modeGameID: [11],
       levelID: [],
     },
   },

@@ -65,7 +65,7 @@ export const seccionLevels = [
     titulo: "Números",
     dificultad: [
       {
-        title: "Facil",
+        title: "Fácil",
         levels: [
           {
             id: 1,
@@ -117,7 +117,7 @@ export const seccionLevels = [
         ],
       },
       {
-        title: "Dificil",
+        title: "Difícil",
         levels: [
           {
             id: 7,
@@ -149,12 +149,12 @@ export const seccionLevels = [
     titulo: "Colores",
     dificultad: [
       {
-        title: "Facil",
+        title: "Fácil",
         levels: [
           {
             id: 10,
-            descripcion: "PROXIMAMENTE...",
-            link: "",
+            descripcion: "Aprende los colores primarios.",
+            link: "/leccion/8",
             position: "izquierda",
             positionInfo: "rigth",
           },
@@ -201,7 +201,7 @@ export const seccionLevels = [
         ],
       },
       {
-        title: "Dificil",
+        title: "Difícil",
         levels: [
           {
             id: 16,
@@ -233,7 +233,7 @@ export const seccionLevels = [
     titulo: "Familia",
     dificultad: [
       {
-        title: "Facil",
+        title: "Fácil",
         levels: [
           {
             id: 19,
@@ -285,7 +285,7 @@ export const seccionLevels = [
         ],
       },
       {
-        title: "Dificil",
+        title: "Difícil",
         levels: [
           {
             id: 25,
@@ -317,7 +317,7 @@ export const seccionLevels = [
     titulo: "Días y Meses",
     dificultad: [
       {
-        title: "Facil",
+        title: "Fácil",
         levels: [
           {
             id: 28,
@@ -369,7 +369,7 @@ export const seccionLevels = [
         ],
       },
       {
-        title: "Dificil",
+        title: "Difícil",
         levels: [
           {
             id: 34,
@@ -453,7 +453,7 @@ export const seccionLevels = [
         ],
       },
       {
-        title: "Dificil",
+        title: "Difícil",
         levels: [
           {
             id: 43,

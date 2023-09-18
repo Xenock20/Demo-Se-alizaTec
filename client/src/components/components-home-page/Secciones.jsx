@@ -33,7 +33,7 @@ const Secciones = () => {
         </a>
         <a className="secciones" href="#dias">
           <div className="borde-cian"></div>
-          <a href="#dias">Días</a>
+          <a href="#dias">Días y Meses</a>
         </a>
         <a className="secciones" href="#preguntasBasicas">
           <div className="borde-cian"></div>

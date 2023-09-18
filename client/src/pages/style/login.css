@@ -2,6 +2,8 @@
   margin-top: 60px;
   display: flex;
   text-align: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .container2-login {
@@ -119,4 +121,16 @@ input:hover {
 
   justify-content: center;
   display: flex;
+}
+
+.button-cuenta {
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border-radius: 41px;
+  font-size: 20px;
+  background-color: #151316;
+
+  width: 302.76px;
+  height: 44px;
+  border-color: #de4a97;
 }

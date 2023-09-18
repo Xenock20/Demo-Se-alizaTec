@@ -5,6 +5,7 @@ import ErrorGame from "./../../ModosDeJuego/JuegoDeIdentificacionDeErrores/Error
 import { GameDeEmparejamiento } from "../../ModosDeJuego/JuegoDeEmparejamiento/juegoDeEmparejamiento";
 import JuegoCompletar from "../../ModosDeJuego/JuegoDeCompletar/JuegoDeCompletar";
 import JuegoOperaciones from "../../ModosDeJuego/JuegoOperaciones/JuegoOperaciones";
+import JuegoOrdenamiento from "../../ModosDeJuego/JuegoOrdenamiento/JuegoOrdenamiento";
 
 export default function GameCont({
   contJuego,
@@ -78,6 +79,16 @@ export default function GameCont({
         ></JuegoOperaciones>
       );
       break;
+    case "juego-ordenamiento":
+      componente = (
+        <JuegoOrdenamiento
+          gameComplete={handleCompleteGame}
+          reset={reset}
+          gameOver={gameOver}
+        ></JuegoOrdenamiento>
+      );
+      break;
+
     default:
       componente = null;
       break;

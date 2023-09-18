@@ -4,12 +4,12 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./style/Register.css";
-import NavBar from "./../components/components-pract-page/NavBar";
 import { useContext } from "react";
 import { UserContext } from "../context/UserProvider";
-import emailicon from "../assets/email.svg";
-import passwordicon from "../assets/passwordicon.svg";
-import iconcopy from "../assets/iconcopy.svg";
+import { MdAlternateEmail } from "react-icons/md";
+import { RiLockPasswordLine } from "react-icons/ri";
+import { LiaUserSolid } from "react-icons/lia";
+import { FaRegCopyright } from "react-icons/fa";
 
 const Register = () => {
   const { registro } = useContext(UserContext);
@@ -55,7 +55,16 @@ const Register = () => {
         <div className="box-form">
           <div>
             <div class="group">
-              {/* <img className="imagen-input" src={passwordicon} alt="" /> */}
+              <div
+                style={{
+                  position: "absolute",
+                  left: "20px",
+                  top: "11px",
+                  opacity: "0.50 ",
+                }}
+              >
+                <LiaUserSolid />
+              </div>
               <input
                 type="text"
                 name="user"
@@ -68,7 +77,16 @@ const Register = () => {
           </div>
           <div>
             <div class="group">
-              {/* <img className="imagen-input" src={emailicon} alt="" /> */}
+              <div
+                style={{
+                  position: "absolute",
+                  left: "20px",
+                  top: "11px",
+                  opacity: "0.50 ",
+                }}
+              >
+                <MdAlternateEmail />
+              </div>
               <input
                 required
                 type="email"
@@ -81,7 +99,16 @@ const Register = () => {
           </div>
           <div>
             <div class="group">
-              {/* <img className="imagen-input" src={passwordicon} alt="" /> */}
+              <div
+                style={{
+                  position: "absolute",
+                  left: "20px",
+                  top: "11px",
+                  opacity: "0.50",
+                }}
+              >
+                <RiLockPasswordLine />
+              </div>
               <input
                 type="password"
                 name="password"
@@ -105,9 +132,16 @@ const Register = () => {
         )}
 
         <input type="submit" className="submit-register" id="submit" />
-        <Link to={"/login"} className="inputs" id="back">
-          <span id="span">YA TENGO UNA CUENTA</span>
-        </Link>
+        <div>
+          <button
+            onClick={() => {
+              navigate("/login");
+            }}
+            className="button-cuenta"
+          >
+            YA TENGO CUENTA
+          </button>
+        </div>
 
         <div className="temrminos-form">
           <div className="box-terminos">
@@ -116,8 +150,8 @@ const Register = () => {
               <b>Términos</b> y<b> Política</b> de privacidad
             </span>
           </div>
-          <div className="box-copy">
-            {/* <img className="img-copy" src={iconcopy} alt="" /> */}
+          <div className="box-copyright">
+            <FaRegCopyright />
           </div>
         </div>
       </form>

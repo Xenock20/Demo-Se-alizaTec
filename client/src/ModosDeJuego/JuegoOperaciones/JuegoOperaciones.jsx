@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import "../JuegoOperaciones/JuegoOperaciones.css";
-
 import { operaciones } from "../../Contenido/contenidoOperacion";
 import { useState } from "react";
+import { DndContext } from "@dnd-kit/core";
+import Draggable from "../../components/components-dragDrop/Draggable";
+import DropContainer from "../../components/components-dragDrop/DropContainer";
 
 const JuegoOperaciones = ({ gameComplete, reset, gameOver }) => {
   const generarNumeroAleatorio = () => {
@@ -21,7 +23,7 @@ const JuegoOperaciones = ({ gameComplete, reset, gameOver }) => {
   const opciones = operacionesCopy.opciones;
   const result = operacionesCopy.resultado;
 
-  const [showImg, setShowImg] = useState(false);
+  const [showImg, setShowImg] = useState();
   const [imgSelect, setImgSelect] = useState("");
 
   const handleReintentar = () => {
@@ -32,10 +34,11 @@ const JuegoOperaciones = ({ gameComplete, reset, gameOver }) => {
     setShowImg(false);
   };
 
-  const handleClick = (imgSeleccionada) => {
-    if (imgSeleccionada == result) {
+  const handleDragEnd = (event) => {
+    if (event.active.id == result) {
       setCorrecto(true);
       gameComplete();
+      setShowImg(true);
     } else {
       setIncorrecto(true);
       gameOver();
@@ -43,51 +46,59 @@ const JuegoOperaciones = ({ gameComplete, reset, gameOver }) => {
   };
 
   return (
-    <div className="div-inicial" style={{ width: "100%", height: "100%" }}>
-      <div className="div-operaciones">
-        <div className="div-seña">
-          <img className="img-operaciones" src={señas[0]} alt="" />
-        </div>
-        <div className="div-signo">
-          <h1 style={{ color: "white" }}>{operacionesCopy.signo}</h1>
-        </div>
-        <div className="div-seña">
-          <img className="img-operaciones" src={señas[1]} alt="" />
-        </div>
-        <div className="div-signo">
-          <h1>=</h1>
-        </div>
-        <div className="div-resultado">
-          {showImg && (
-            <img
-              className={
-                inCorrecto ? "img-result-icorrecto" : "img-result-correcto"
-              }
-              src={imgSelect}
-            ></img>
+    <DndContext onDragEnd={handleDragEnd}>
+      <div className="div-inicial" style={{ width: "100%", height: "100%" }}>
+        <div className="div-operaciones">
+          <div className="div-seña">
+            <img className="img-operaciones" src={señas[0]} alt="" />
+          </div>
+          <div className="div-signo">
+            <h1>{operacionesCopy.signo}</h1>
+          </div>
+          <div className="div-seña">
+            <img className="img-operaciones" src={señas[1]} alt="" />
+          </div>
+          <div className="div-signo">
+            <h1>=</h1>
+          </div>
+
+          {!showImg ? (
+            <div className="div-resultado">
+              <DropContainer id={result}></DropContainer>
+            </div>
+          ) : (
+            <div className="div-resultado" style={{ border: "none" }}>
+              <img
+                className={
+                  inCorrecto ? "img-result-icorrecto" : "img-result-correcto"
+                }
+                src={result}
+              ></img>
+            </div>
           )}
         </div>
+        <div className="div-opciones-operaciones">
+          {opciones.map((e, i) => {
+            return (
+              <Draggable key={i} id={e}>
+                <button
+                  onClick={() => {
+                    if (!bloquearBoton) {
+                      setBloquearBoton(true);
+                      setImgSelect(e);
+                      setShowImg(true);
+                      handleClick(e);
+                    } else return;
+                  }}
+                >
+                  <img src={e}></img>
+                </button>
+              </Draggable>
+            );
+          })}
+        </div>
       </div>
-      <div>
-        {opciones.map((e, i) => {
-          return (
-            <button
-              key={i}
-              onClick={() => {
-                if (!bloquearBoton) {
-                  setBloquearBoton(true);
-                  setImgSelect(e);
-                  setShowImg(true);
-                  handleClick(e);
-                } else return;
-              }}
-            >
-              <img className="img-operaciones" src={e}></img>
-            </button>
-          );
-        })}
-      </div>
-    </div>
+    </DndContext>
   );
 };
 
