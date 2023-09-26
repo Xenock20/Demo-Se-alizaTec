@@ -12,7 +12,7 @@ import { FaRegCopyright } from "react-icons/fa";
 
 import "animate.css";
 const Login = () => {
-  const { insertUserName, nameUser, registerExitoso, registro } =
+  const { insertUserName, registerExitoso, registro, desbloquearNiveles } =
     useContext(UserContext);
   const [salir, setSalir] = useState(false);
   const [error, setError] = useState(false);
@@ -36,15 +36,28 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3000/login", values);
+      const response = await axios.post("http://localhost:3000/login", values, {
+        withCredentials: true,
+      });
 
+      console.log(response);
       if (response.status === 200) {
-        const user = await response.data.user;
-
-        insertUserName(user);
-
-        console.log("Inicio de sesión exitoso");
         navigate("/home");
+        // const user = await response.data.data.user;
+
+        // const progreso = await response.data.data.progreso;
+
+        // if (progreso == null) {
+        //   insertUserName(user);
+
+        //   navigate("/home");
+        // } else {
+        //   const niveles = await progreso.niveles;
+        //   insertUserName(user);
+        //   desbloquearNiveles(niveles);
+
+        //   navigate("/home");
+        // }
       }
     } catch (err) {
       console.error("Error al iniciar sesión:", err);
@@ -73,7 +86,7 @@ const Login = () => {
             <div class="error__icon">
               <img className={"img-checked "} src={checked} alt="" />
             </div>
-            <div class="error__title">Se ha registrado Correctamente</div>
+            <div className="error__title">Se ha registrado Correctamente</div>
           </div>
         </div>
       )}
@@ -83,7 +96,7 @@ const Login = () => {
         </div>
         <div className="box-form">
           <div>
-            <div class="group">
+            <div className="group">
               <div
                 style={{
                   position: "absolute",
@@ -105,7 +118,7 @@ const Login = () => {
             </div>
           </div>
           <div>
-            <div class="group">
+            <div className="group">
               <div
                 style={{
                   position: "absolute",
