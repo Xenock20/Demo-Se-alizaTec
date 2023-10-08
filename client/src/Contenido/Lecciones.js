@@ -274,4 +274,99 @@ export const lecciones = [
       next: "/mododejuego/10",
     },
   },
+  {
+    id: 12,
+    titulo: "Conceptos básicos sobre la Familia en LSA",
+    contenido: {
+      contPrincipal: "En este primer nivel de la categoría “Familia”, vamos a conocer algunas señas básicas y cómo realizar las variaciones según el género.",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: azul,
+          text: "Para representar la palabra Familia, se realiza con ambas manos una forma de “montito” tocando todos los dedos entre sí hacia adentro. Dejando una mano fija abajo y la otra por encima girando sobre ésta última.",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/10",
+      next: "/mododejuego/10",
+    },
+  },
+  {
+    id: 13,
+    titulo: "Mamá",
+    contenido: {
+      contPrincipal: "Vamos a aprender a decir “Mamá” en lengua de señas.",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: azul,
+          text: "Se realiza tocándose levemente debajo de los hombros, en este caso, de izquierda a derecha.",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/10",
+      next: "/mododejuego/10",
+    },
+  },
+  {
+    id: 14,
+    titulo: "Papá",
+    contenido: {
+      contPrincipal: "¿Cómo decir “Papá” en LSA?",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: azul,
+          text: "Vamos a tocar repetidamente la nariz con nuestro dedo pulgar apoyado, y presionando con el dedo índice.",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/10",
+      next: "/mododejuego/10",
+    },
+  },
+  {
+    id: 15,
+    titulo: "Vamos a hablar sobre cómo definir el género para la familia en LSA.",
+    contenido: {
+      contPrincipal: "Para ello, primero se presenta la seña que vamos a utilizar y al final se aclara el género, utilizando la seña de la vocal A, como femenino y la vocal O, como masculino. Vamos a recordar estas últimas señas..",
+      contSecundario: [
+        {
+          subtitulo: "Vocal “A”.",
+          img: vocalA,
+          text: "",
+        },
+        {
+          subtitulo: "Vocal “O”.",
+          img: vocalO,
+          text: "",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/10",
+      next: "/mododejuego/10",
+    },
+  },
+  {
+    id: 16,
+    titulo: "Hij@",
+    contenido: {
+      contPrincipal: "Para finalizar este primer nivel vamos a aprender a decir “Hijo”",
+      contSecundario: [
+        {
+          subtitulo: "Hijo",
+          img: vocalA,
+          text: "Para realizar la seña, simplemente debemos sacar nuestra mano desde abajo de la barbilla hacia adelante, con el puño cerrado y extendiendo sólo los dedos índice y medio.",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/10",
+      next: "/mododejuego/10",
+    },
+  },
 ];
