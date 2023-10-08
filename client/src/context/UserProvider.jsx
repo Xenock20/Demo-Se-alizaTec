@@ -29,7 +29,7 @@ function UserProvider({ children }) {
     );
     return storedNivelesDesbloqueados
       ? JSON.parse(storedNivelesDesbloqueados)
-      : [1];
+      : [0];
   });
   const [nameUser, setNameUser] = useState(() => {
     const storedUserName = localStorage.getItem("userName");
@@ -87,7 +87,7 @@ function UserProvider({ children }) {
   };
 
   const desbloquearNiveles = (nivel) => {
-    setNivelesDesbloqueados([...nivelesDesbloqueados, nivel]);
+    setNivelesDesbloqueados(nivelesDesbloqueados.concat(nivel));
   };
 
   const insertUserName = (user) => {
@@ -99,7 +99,7 @@ function UserProvider({ children }) {
     setBarraDeProgreso(12);
     setLeccionesDesbloqueadas([0, 1]);
     setModosJuegoDesbloqueados([0]);
-    setNivelesDesbloqueados([1]);
+    setNivelesDesbloqueados([0]);
   };
 
   const resetBarr = () => {

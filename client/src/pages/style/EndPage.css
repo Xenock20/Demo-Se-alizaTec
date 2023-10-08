@@ -1,11 +1,11 @@
-body {
+/* body {
   background: linear-gradient(
     180deg,
     #0b294f -7.77%,
     #28436b 56.75%,
     #514a9d 100%
   );
-}
+} */
 .caja-fondo {
   width: 1100px;
   height: 450px;
@@ -19,9 +19,9 @@ body {
   align-items: center;
 }
 
-p{
+p {
   margin-top: 10px;
-  font-size: 28px
+  font-size: 28px;
 }
 
 .caja-completa {
@@ -38,7 +38,6 @@ h1 {
 
 .regresar-endpage {
   font-size: 30px;
-
 }
 
 .box-endpage {

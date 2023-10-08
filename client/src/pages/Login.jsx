@@ -6,8 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { UserContext, UserProvider } from "../context/UserProvider";
 import "./style/login.css";
 import checked from "../assets/checked.png";
-import emailicon from "../assets/email.svg";
-import passwordicon from "../assets/passwordicon.svg";
+import { RiLockPasswordLine } from "react-icons/ri";
+import { MdAlternateEmail } from "react-icons/md";
+import { FaRegCopyright } from "react-icons/fa";
+
 import "animate.css";
 const Login = () => {
   const { insertUserName, nameUser, registerExitoso, registro } =
@@ -82,7 +84,16 @@ const Login = () => {
         <div className="box-form">
           <div>
             <div class="group">
-              {/* <img className="imagen-input" src={emailicon} alt="" /> */}
+              <div
+                style={{
+                  position: "absolute",
+                  left: "20px",
+                  top: "11px",
+                  opacity: "0.50 ",
+                }}
+              >
+                <MdAlternateEmail />
+              </div>
               <input
                 required
                 type="email"
@@ -92,18 +103,19 @@ const Login = () => {
                 placeholder="email"
               />
             </div>
-            {/* <input
-            required
-            type="email"
-            name="email"
-            onChange={handleInput}
-            className="inputs"
-            placeholder="Correo Electronico"
-          /> */}
           </div>
           <div>
             <div class="group">
-              {/* <img className="imagen-input" src={passwordicon} alt="" /> */}
+              <div
+                style={{
+                  position: "absolute",
+                  left: "20px",
+                  top: "11px",
+                  opacity: "0.50",
+                }}
+              >
+                <RiLockPasswordLine></RiLockPasswordLine>
+              </div>
               <input
                 type="password"
                 name="password"
@@ -113,17 +125,6 @@ const Login = () => {
                 className="input"
               />
             </div>
-            {/* <label htmlFor="" className="ocultar">
-            Password:
-          </label>
-          <input
-            type="password"
-            name="password"
-            onChange={handleInput}
-            className="inputs"
-            placeholder="Contraseña"
-            required
-          /> */}
 
             {error && (
               <div className="box-error">
@@ -141,20 +142,25 @@ const Login = () => {
             className="submit-register"
             id="submit"
           />
-          <Link
-            to={"/register"}
-            onClick={handleClick}
-            className="inputs"
-            id="back"
+        </div>
+        <div>
+          <button
+            onClick={() => {
+              navigate("/register");
+            }}
+            className="button-cuenta"
           >
-            <span id="span">NO TENGO UNA CUENTA</span>
-          </Link>
+            REGISTRARSE
+          </button>
         </div>
         <div className="box-terminos">
           <span>
             Al registrarse en SeñalizaTec, aceptas nuestros <br />{" "}
             <b>Términos</b> y<b> Política</b> de privacidad
           </span>
+          <div className="box-copyright">
+            <FaRegCopyright />
+          </div>
         </div>
       </form>
     </div>

@@ -7,6 +7,7 @@ import { useParams } from "react-router";
 import { contGames } from "../Contenido/ContenidoGame";
 import { UserContext } from "../context/UserProvider";
 import BotonReset from "../ModosDeJuego/BotonReset/BotonReset";
+
 export default function PractPage() {
   const { id } = useParams();
   const [links, setLinks] = useState({});
@@ -27,13 +28,18 @@ export default function PractPage() {
     setDeblock(contGame.desblock);
   }, [id]);
 
+
+/**
+ * Esta funcion desbloquea las rutas para acceder a los siguientes modos de juego, lecciones o niveles.
+ */
   const handleCompleteGame = () => {
     setCompletado(true);
     //deblock.leccionID.map((id) => console.log(id) /*desbloquearLeccion(id)*/);
     desbloquearLeccion(deblock.leccionID)
     desbloquearModoJuego(deblock.modeGameID)
     //deblock.modeGameID.map((id) => desbloquearModoJuego(id));
-    deblock.levelID.map((id) => desbloquearNiveles(id));
+    desbloquearNiveles(deblock.levelID)
+    //deblock.levelID.map((id) => desbloquearNiveles(id));
   };
 
   const reiniciarComponente = () => {

@@ -18,7 +18,7 @@ export default function Memogame({ contenido, gameComplete, style }) {
     if (time > 0) {
       const timer = setInterval(() => {
         setTime(time - 1);
-      }, 1000);
+      }, 3000);
 
       return () => {
         clearInterval(timer);
@@ -107,17 +107,20 @@ export default function Memogame({ contenido, gameComplete, style }) {
   return (
     <div className="memo-game-cont">
       {!mostrarJuego && (
-        <div className="blog-post">
-          <div className="blog-post_img">
-            <img src={PreviewMemo} alt="" />
-          </div>
-          <div className="blog-post_info">
-            <div>
-              <h1 className="blog-post_title">JUEGO DE MEMORIA</h1>
-            </div>
-            <p>Indique la palabra con su respectiva seña.</p>
-            <div className="time">
-              <span>{time}</span>
+        <div className="div-inicial">
+          <div className="blog-post">
+            <div className="blog-post_info">
+              <div className="blog-title">
+                <h1 className="blog-post_title">JUEGO DE MEMORIA</h1>
+              </div>
+              <div style={{ width: "100%", textAlign: "center" }}>
+                <p style={{ fontSize: "25px" }}>
+                  Indique la imagen con su respectiva seña.
+                </p>
+              </div>
+              <div className="time">
+                <span>{time}</span>
+              </div>
             </div>
           </div>
         </div>
