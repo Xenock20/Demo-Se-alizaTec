@@ -409,21 +409,8 @@ export const contGames = [
   },
   {
     id: 11,
-    modeGame: "adivinanza-de-señas",
-    cont: {
-      text: "Seleccione el familiar que corresponda",
-      img: [
-        {
-          url: papa,
-          name: "PAPA",
-        },
-        {
-          url: mama,
-          name: "MAMA",
-        },
-      ],
-      options: ["MAMA", "PAPA", "HIJO", "FAMILIA"],
-    },
+    modeGame: "flechas-game",
+    cont: {},
     link: {
       return: "/leccion/14",
       next: "/leccion/15",

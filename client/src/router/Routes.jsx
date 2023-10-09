@@ -9,9 +9,8 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import LeccionPage from "../pages/LeccionPage";
 import PractPage from "./../pages/PractPage";
-
 import JuegoOrdenamiento from "../ModosDeJuego/JuegoOrdenamiento/JuegoOrdenamiento";
-import FamiliaGame from "./../ModosDeJuego/FamiliaGame/FamiliaGame";
+import FlechasGame from "../ModosDeJuego/FlechasGame/FlechasGame";
 
 export default function Routers() {
   return (
@@ -22,7 +21,7 @@ export default function Routers() {
       <Route path="/mododejuego/:id" element={<PractPageWrapper />}></Route>
       <Route path="/tutorial/:id" element={<LeccionPageWrapper />}></Route>
       <Route path="/mododejuegoprueba/:id" element={<PractPage />}></Route>
-      <Route path="/mododejuegoprueb" element={<FamiliaGame />}></Route>
+      <Route path="/mododejuegoprueb" element={<FlechasGame />}></Route>
       <Route path="/finaldemo" element={<EndPage />}></Route>
       <Route path="/abclib" element={<Abecedario></Abecedario>}></Route>
       <Route path="/register" element={<Register></Register>}></Route>
