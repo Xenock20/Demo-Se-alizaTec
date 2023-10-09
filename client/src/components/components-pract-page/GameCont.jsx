@@ -6,6 +6,7 @@ import { GameDeEmparejamiento } from "../../ModosDeJuego/JuegoDeEmparejamiento/j
 import JuegoCompletar from "../../ModosDeJuego/JuegoDeCompletar/JuegoDeCompletar";
 import JuegoOperaciones from "../../ModosDeJuego/JuegoOperaciones/JuegoOperaciones";
 import JuegoOrdenamiento from "../../ModosDeJuego/JuegoOrdenamiento/JuegoOrdenamiento";
+import FamiliaGame from "../../ModosDeJuego/FamiliaGame/FamiliaGame";
 
 export default function GameCont({
   contJuego,
@@ -30,6 +31,15 @@ export default function GameCont({
         ></GameDeEmparejamiento>
       );
       break;
+    case "familia-game":
+      componente = (
+        <FamiliaGame
+          gameComplete={handleCompleteGame}
+          reset={reset}
+          gameOver={gameOver}
+        ></FamiliaGame>
+      );
+      break;
     case "juego-de-memoria":
       componente = (
         <Memogame
@@ -48,9 +58,6 @@ export default function GameCont({
           reset={reset}
         ></AdivinaGame>
       );
-      break;
-    case "juego-de-ordenamiento":
-      componente = <div>"juego-de-ordenamiento"</div>;
       break;
     case "juego-de-completar":
       componente = (
