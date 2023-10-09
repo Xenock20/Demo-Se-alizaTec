@@ -85,31 +85,30 @@ exports.isAuthenticated = async (req, res) => {
   }
 };
 
-// exports.logout = (req, res) => {
-//   res.clearCookie("jwt");
-//   return res.redirect("http://localhost:5173");
-// };
-
 exports.progreso = async (req, res) => {
   const niveles = req.body;
 
-  // const token = await req.cookies.jwt;
-  // const user = await queries.authenticated(token);
+  const token = await req.cookies.jwt;
+  const user = await queries.authenticated(token);
+  const stringLevel = JSON.stringify(niveles);
 
-  console.log(niveles);
+  conexion.query(
+    "UPDATE niveles SET nivel = ? WHERE id_usersfk = ?",
+    [stringLevel, user.id_users], // Ajustar el orden de los parámetros
+    (err) => {
+      if (err) {
+        console.log("FALLO AL ENVIAR");
+        console.error(err);
+        res.status(500).json({ mensaje: "Error al actualizar el progreso" });
+        return;
+      }
+      console.log("Envío exitoso");
+      res.status(200).json({ mensaje: "Progreso actualizado correctamente" });
+    }
+  );
+};
 
-  // conexion.query(
-  //   "UPDATE niveles SET nivel = ? WHERE id_usersfk = ?",
-  //   [niveles, user.id_users], // Ajustar el orden de los parámetros
-  //   (err) => {
-  //     if (err) {
-  //       console.log("FALLO AL ENVIAR");
-  //       console.error(err);
-  //       res.status(500).json({ mensaje: "Error al actualizar el progreso" });
-  //     } else {
-  //       console.log("Envío exitoso");
-  //       res.status(200).json({ mensaje: "Progreso actualizado correctamente" });
-  //     }
-  //   }
-  // );
+exports.logout = (req, res) => {
+  res.clearCookie("jwt");
+  return res.redirect("http://localhost:5173");
 };

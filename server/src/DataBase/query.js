@@ -11,33 +11,31 @@ const createUser = (newUser) => {
           status: 409,
           error: "El correo electrónico ya está registrado.",
         };
-      } else {
-        conexion.query("INSERT INTO users SET ?", newUser, (err, result) => {
-          if (err) {
-            return {
-              status: 400,
-              message: "Error al almacenar Usuario",
-            };
-          }
-
-          userId = result.insertId;
-
-          conexion.query(
-            "INSERT INTO niveles (id_usersfk, nivel, numeroProgreso, coloresProgreso, familiaProgreso, diasMesesProgreso, PreguntasBasicasProgreso) VALUES (?, ?, ?, ?, ?, ?, ?)",
-            [userId, "[]", 0, 0, 0, 0, 0],
-            (err, result) => {
-              if (err) {
-                return {
-                  status: 400,
-                  message: "Error al almacenar Usuario",
-                };
-              }
-              console.log("Usuario creado exitosamente");
-              return;
-            }
-          );
-        });
       }
+      conexion.query("INSERT INTO users SET ?", newUser, (err, result) => {
+        if (err) {
+          return {
+            status: 400,
+            message: "Error al almacenar Usuario",
+          };
+        }
+
+        userId = result.insertId;
+
+        conexion.query(
+          "INSERT INTO niveles (id_usersfk, nivel, numeroProgreso, coloresProgreso, familiaProgreso, diasMesesProgreso, PreguntasBasicasProgreso) VALUES (?, ?, ?, ?, ?, ?, ?)",
+          [userId, null, 0, 0, 0, 0, 0],
+          (err, result) => {
+            if (err) {
+              return {
+                status: 400,
+                message: "Error al almacenar Usuario",
+              };
+            }
+            return;
+          }
+        );
+      });
     }
   );
 };

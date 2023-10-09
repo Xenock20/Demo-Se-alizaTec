@@ -27,6 +27,7 @@ function UserProvider({ children }) {
       ? JSON.parse(storedNivelesDesbloqueados)
       : [0];
   });
+
   const [nameUser, setNameUser] = useState(() => {
     const storedUserName = localStorage.getItem("userName");
 

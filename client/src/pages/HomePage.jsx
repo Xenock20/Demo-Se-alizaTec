@@ -24,14 +24,15 @@ export default function HomePage() {
       return;
     }
     insertUserName(dataUser.data.user);
-    const niveles = JSON.parse(dataUser.data.nivel);
-    niveles.map((nivel) => {
-      if (nivel > 0) {
-        return desbloquearNiveles(nivel);
-      }
 
-      return;
-    });
+    const niveles = dataUser.data.nivel;
+    const levelParse = JSON.parse(niveles);
+
+    if (!levelParse) {
+      return setIsAuthenticated(true);
+    }
+
+    desbloquearNiveles(levelParse);
 
     return setIsAuthenticated(true);
   };
