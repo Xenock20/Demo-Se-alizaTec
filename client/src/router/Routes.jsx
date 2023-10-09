@@ -9,12 +9,9 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import LeccionPage from "../pages/LeccionPage";
 import PractPage from "./../pages/PractPage";
-<<<<<<< HEAD
 
-=======
->>>>>>> ba7a58d403ec7daf0c327cbc750a4c28aa496bad
 import JuegoOrdenamiento from "../ModosDeJuego/JuegoOrdenamiento/JuegoOrdenamiento";
-import FamiliaGame from './../ModosDeJuego/FamiliaGame/FamiliaGame';
+import FamiliaGame from "./../ModosDeJuego/FamiliaGame/FamiliaGame";
 
 export default function Routers() {
   return (
