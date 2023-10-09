@@ -9,7 +9,7 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import LeccionPage from "../pages/LeccionPage";
 import PractPage from "./../pages/PractPage";
-import JuegoEmparejar from "../ModosDeJuego/JuegoEmparejar/JuegoEmparejar";
+
 import JuegoOrdenamiento from "../ModosDeJuego/JuegoOrdenamiento/JuegoOrdenamiento";
 
 export default function Routers() {

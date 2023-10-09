@@ -1,5 +1,5 @@
 const conexion = require("./db");
-const color = require("colors");
+const jwt = require("jsonwebtoken");
 const bcrypts = require("bcrypt");
 const createUser = (newUser) => {
   conexion.query(
@@ -12,14 +12,30 @@ const createUser = (newUser) => {
           error: "El correo electrónico ya está registrado.",
         };
       } else {
-        conexion.query("INSERT INTO users SET ?", newUser, (err) => {
+        conexion.query("INSERT INTO users SET ?", newUser, (err, result) => {
           if (err) {
             return {
               status: 400,
               message: "Error al almacenar Usuario",
             };
           }
-          return;
+
+          userId = result.insertId;
+
+          conexion.query(
+            "INSERT INTO niveles (id_usersfk, nivel, numeroProgreso, coloresProgreso, familiaProgreso, diasMesesProgreso, PreguntasBasicasProgreso) VALUES (?, ?, ?, ?, ?, ?, ?)",
+            [userId, "[]", 0, 0, 0, 0, 0],
+            (err, result) => {
+              if (err) {
+                return {
+                  status: 400,
+                  message: "Error al almacenar Usuario",
+                };
+              }
+              console.log("Usuario creado exitosamente");
+              return;
+            }
+          );
         });
       }
     }
@@ -27,37 +43,75 @@ const createUser = (newUser) => {
 };
 
 const validateUser = async (userData) => {
-  const validacion = new Promise((resolve, reject) => {
-    conexion.query(
-      "SELECT * FROM users WHERE email = ?",
-      [userData.email],
-      async (err, result) => {
-        if (err) {
-          console.error(err);
-          return res
-            .status(500)
-            .json({ error: "Error en la consulta de la base de datos." });
-        }
+  try {
+    return new Promise((resolve, reject) => {
+      conexion.query(
+        "SELECT * FROM users WHERE email = ?",
+        [userData.email],
+        async (err, result) => {
+          if (err) {
+            console.error(err);
+            reject({
+              statusCode: 500,
+              code: "SERVER_ERROR",
+              message: "Server error",
+            });
+            return;
+          }
+          if (
+            result?.length === 0 ||
+            !(await bcrypts.compare(userData.password, result.at(0).password))
+          ) {
+            console.log("Credenciales incorrectas");
+            reject({
+              statusCode: 400,
+              code: "BAD_CREDENTIALS",
+              message: "Credenciales incorrectas",
+            });
+            return;
+          }
 
-        if (
-          result.length === 0 ||
-          !(await bcrypts.compare(userData.password, result[0].password))
-        ) {
-          console.log("Credenciales incorrectas");
-          return { error: "Credenciales incorrectas." };
-        } else {
-          console.log("Inicio de sesión exitoso");
-          console.log(result[0]);
-          resolve({ id: result[0].id });
+          resolve({ id: result[0].id_users });
         }
-      }
-    );
-  });
+      );
+    });
+  } catch (error) {
+    throw error;
+  }
+};
 
-  return validacion;
+const authenticated = async (token) => {
+  try {
+    const authdata = await jwt.verify(token, process.env.JWT_SECRET);
+
+    const user = new Promise((resolve, reject) => {
+      conexion.query(
+        "SELECT * FROM users JOIN niveles ON users.id_users = niveles.id_usersfk WHERE users.id_users = ?",
+        [authdata.id],
+        async (err, resultData) => {
+          if (err) {
+            console.error("Error en la consulta SQL:", err);
+            reject({
+              statusCode: 400,
+              code: "Error_query",
+              message: "Error query Select",
+            });
+          }
+
+          const datos = await resultData[0];
+          resolve(datos);
+        }
+      );
+    });
+
+    return user;
+  } catch (error) {
+    throw error;
+  }
 };
 
 module.exports = {
   createUser,
   validateUser,
+  authenticated,
 };

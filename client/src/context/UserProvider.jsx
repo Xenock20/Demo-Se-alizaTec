@@ -2,10 +2,6 @@ import React, { createContext, useState, useEffect } from "react";
 
 const UserContext = createContext();
 
-//Register
-
-//
-
 function UserProvider({ children }) {
   const [registerExitoso, setRegister] = useState(false);
 

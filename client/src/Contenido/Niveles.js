@@ -398,10 +398,10 @@ export const seccionLevels = [
   },
   {
     href: "preguntasBasicas",
-    titulo: "Preguntas Basicas",
+    titulo: "Preguntas Básicas",
     dificultad: [
       {
-        title: "Facil",
+        title: "Fácil",
         levels: [
           {
             id: 37,
