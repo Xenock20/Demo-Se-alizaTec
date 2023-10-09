@@ -7,6 +7,7 @@ import JuegoCompletar from "../../ModosDeJuego/JuegoDeCompletar/JuegoDeCompletar
 import JuegoOperaciones from "../../ModosDeJuego/JuegoOperaciones/JuegoOperaciones";
 import JuegoOrdenamiento from "../../ModosDeJuego/JuegoOrdenamiento/JuegoOrdenamiento";
 import FamiliaGame from "../../ModosDeJuego/FamiliaGame/FamiliaGame";
+import FlechasGame from "../../ModosDeJuego/FlechasGame/FlechasGame";
 
 export default function GameCont({
   contJuego,
@@ -21,6 +22,15 @@ export default function GameCont({
   let componente;
 
   switch (modeGame) {
+    case "flechas-game":
+      componente = (
+        <FlechasGame
+          gameComplete={handleCompleteGame}
+          reset={reset}
+          gameOver={gameOver}
+        ></FlechasGame>
+      );
+      break;
     case "juego-de-emparejamiento":
       componente = (
         <GameDeEmparejamiento
