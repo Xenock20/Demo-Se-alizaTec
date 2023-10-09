@@ -33,7 +33,7 @@ export default function NavBar() {
             <div>
               <img className="navbar-logo-user" src={userlogo}></img>{" "}
             </div>
-            <span>{nameUser[0].toUpperCase()}</span>
+            <span>{nameUser[0]}</span>
           </div>
         )}
       </div>

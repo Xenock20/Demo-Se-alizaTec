@@ -2,10 +2,6 @@ import React, { createContext, useState, useEffect } from "react";
 
 const UserContext = createContext();
 
-//Register
-
-//
-
 function UserProvider({ children }) {
   const [registerExitoso, setRegister] = useState(false);
 
@@ -31,6 +27,7 @@ function UserProvider({ children }) {
       ? JSON.parse(storedNivelesDesbloqueados)
       : [0];
   });
+
   const [nameUser, setNameUser] = useState(() => {
     const storedUserName = localStorage.getItem("userName");
 

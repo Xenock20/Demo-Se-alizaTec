@@ -200,7 +200,7 @@ export const contGames = [
     modeGame: "juego-de-operaciones",
 
     cont: {
-      text: '¿Cuantas letras contiene la palabra "ESCUELA"?',
+      text: '¿Cuántas letras contiene la palabra "ESCUELA"?',
       items: [],
     },
     link: {
@@ -220,7 +220,7 @@ export const contGames = [
     id: 5,
     modeGame: "juego-de-emparejamiento",
     cont: {
-      text: '¿Cuantas letras contiene la palabra "ESCUELA"?',
+      text: '¿Cuántas letras contiene la palabra "ESCUELA"?',
       option: [
         {
           url: num6,
@@ -290,7 +290,7 @@ export const contGames = [
     id: 7,
     modeGame: "juego-de-emparejamiento",
     cont: {
-      text: "Cual es el resultado de 4 + 5 = ?",
+      text: "¿Cuál es el resultado de 4 + 5 = ?",
       option: [
         {
           url: num1,

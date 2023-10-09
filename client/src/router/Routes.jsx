@@ -10,7 +10,6 @@ import Login from "../pages/Login";
 import LeccionPage from "../pages/LeccionPage";
 import PractPage from "./../pages/PractPage";
 import JuegoOrdenamiento from "../ModosDeJuego/JuegoOrdenamiento/JuegoOrdenamiento";
-import FamiliaGame from './../ModosDeJuego/FamiliaGame/FamiliaGame';
 import FlechasGame from "../ModosDeJuego/FlechasGame/FlechasGame";
 
 export default function Routers() {

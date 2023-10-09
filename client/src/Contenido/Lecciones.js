@@ -67,7 +67,7 @@ export const lecciones = [
         {
           subtitulo: "Para seguirle el orden miremos la “E”",
           img: vocalE,
-          text: "Para poder realizarla de manera correcta se debe tener parte de la mano cerrada, menos los dedos  pulgar e índice, éstos estarán en forma de un arco, cerca del ojo como si estuviéramos sacando una medida.",
+          text: "Para poder realizarla de manera correcta se debe tener parte de la mano cerrada, menos los dedos pulgar e índice, estos estarán en forma de un arco, cerca del ojo como si estuviéramos sacando una medida.",
         },
       ],
     },
@@ -84,12 +84,12 @@ export const lecciones = [
         {
           subtitulo: "Empecemos con la “I”",
           img: vocalI,
-          text: "Con el dedo índice como si tuviéramos señalando algo lo hacemos indicando a lo que seria como el ojo.",
+          text: "Con el dedo índice como si tuviéramos señalando algo lo hacemos indicando a lo que sería como el ojo.",
         },
         {
           subtitulo: "Pasamos a la “O”",
           img: vocalO,
-          text: "Esta seña se realiza juntando el dedo índice con el pulgar formando lo que seria un circulo mientras mantenemos los demás dedos estirado.",
+          text: "Esta seña se realiza juntando el dedo índice con el pulgar formando lo que sería un circulo mientras mantenemos los demás dedos estirado.",
         },
         {
           subtitulo: "Y por último la “U”",
@@ -168,7 +168,7 @@ export const lecciones = [
         {
           subtitulo: "",
           img: num7,
-          text: "Primero debemos cerrar todos los dedos, excepto el índice que debe quedar extendido, para luego pasarlo de forma horizontal por arriba de la nariz",
+          text: "Primero debemos cerrar todos los dedos, excepto el índice que debe quedar extendido, para luego pasarlo de forma horizontal por arriba de la naríz",
         },
       ],
     },
@@ -191,7 +191,7 @@ export const lecciones = [
         {
           subtitulo: "9",
           img: num9,
-          text: "La posición de los dedos debe ser la misma que la del numero anterior, solo que en este caso, el índice y el medio, deben estar pegados. En esa posición, debemos arrastrar sobre la cara de forma semicircular esos mismos dedos de arriba hacia bajo, justo por encima de nuestra ceja.",
+          text: "La posición de los dedos debe ser la misma que la del número anterior, solo que en este caso, el índice y el medio, deben estar pegados. En esa posición, debemos arrastrar sobre la cara de forma semicircular esos mismos dedos de arriba hacia bajo, justo por encima de nuestra ceja.",
         },
         {
           subtitulo: "10",

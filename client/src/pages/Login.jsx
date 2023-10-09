@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
 import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { UserContext, UserProvider } from "../context/UserProvider";
+import { UserContext } from "../context/UserProvider";
 import "./style/login.css";
 import checked from "../assets/checked.png";
 import { RiLockPasswordLine } from "react-icons/ri";
@@ -12,14 +11,28 @@ import { FaRegCopyright } from "react-icons/fa";
 
 import "animate.css";
 const Login = () => {
-  const { insertUserName, nameUser, registerExitoso, registro } =
-    useContext(UserContext);
+  const { registerExitoso, registro } = useContext(UserContext);
   const [salir, setSalir] = useState(false);
-  const [error, setError] = useState(false);
+  const [alertError, setAlertError] = useState(false);
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
+  const login = async () => {
+    try {
+      const { data } = await axios.post("http://localhost:3000/login", values, {
+        withCredentials: true,
+      });
+      if (data) {
+        navigate("/home");
+      } else {
+        throw new Error("Error al iniciar sesión");
+      }
+    } catch (error) {
+      setAlertError(true);
+    }
+  };
+
   const handleClick = () => {
     registro(false);
   };
@@ -32,24 +45,36 @@ const Login = () => {
     }));
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
-    try {
-      const response = await axios.post("http://localhost:3000/login", values);
+    login();
 
-      if (response.status === 200) {
-        const user = await response.data.user;
+    // try {
 
-        insertUserName(user);
+    //   console.log(response);
+    //   if (response.status === 200) {
 
-        console.log("Inicio de sesión exitoso");
-        navigate("/home");
-      }
-    } catch (err) {
-      console.error("Error al iniciar sesión:", err);
-      setError(true);
-    }
+    //     // const user = await response.data.data.user;
+
+    //     // const progreso = await response.data.data.progreso;
+
+    //     // if (progreso == null) {
+    //     //   insertUserName(user);
+
+    //     //   navigate("/home");
+    //     // } else {
+    //     //   const niveles = await progreso.niveles;
+    //     //   insertUserName(user);
+    //     //   desbloquearNiveles(niveles);
+
+    //     //   navigate("/home");
+    //     // }
+    //   }
+    // } catch (err) {
+    //   console.error("Error al iniciar sesión:", err);
+    //   setError(true);
+    // }
   };
   useEffect(() => {
     setTimeout(() => {
@@ -73,7 +98,7 @@ const Login = () => {
             <div class="error__icon">
               <img className={"img-checked "} src={checked} alt="" />
             </div>
-            <div class="error__title">Se ha registrado Correctamente</div>
+            <div className="error__title">Se ha registrado Correctamente</div>
           </div>
         </div>
       )}
@@ -83,7 +108,7 @@ const Login = () => {
         </div>
         <div className="box-form">
           <div>
-            <div class="group">
+            <div className="group">
               <div
                 style={{
                   position: "absolute",
@@ -105,7 +130,7 @@ const Login = () => {
             </div>
           </div>
           <div>
-            <div class="group">
+            <div className="group">
               <div
                 style={{
                   position: "absolute",
@@ -126,7 +151,7 @@ const Login = () => {
               />
             </div>
 
-            {error && (
+            {alertError && (
               <div className="box-error">
                 <h1 className="error-register">
                   CONTRASEÑA O EMAIL INCORRECTOS
