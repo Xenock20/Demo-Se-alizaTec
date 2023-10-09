@@ -6,7 +6,7 @@ import { DndContext } from "@dnd-kit/core";
 import Draggable from "../../components/components-dragDrop/Draggable";
 import DropContainer from "../../components/components-dragDrop/DropContainer";
 
-const JuegoOperaciones = ({ gameComplete, reset, gameOver }) => {
+const JuegoOperaciones = ({ gameComplete, reset, gameOver, cont }) => {
   const generarNumeroAleatorio = () => {
     return Math.floor(Math.random() * operaciones.length);
   };

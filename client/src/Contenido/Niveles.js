@@ -237,8 +237,8 @@ export const seccionLevels = [
         levels: [
           {
             id: 19,
-            descripcion: "PROXIMAMENTE...",
-            link: "",
+            descripcion: "Aprende sobre la Familia",
+            link: "/leccion/12",
             position: "izquierda",
             positionInfo: "rigth",
           },
