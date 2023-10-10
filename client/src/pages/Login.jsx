@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from "react";
-import { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserProvider";
@@ -9,33 +8,15 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { MdAlternateEmail } from "react-icons/md";
 import { FaRegCopyright } from "react-icons/fa";
 
-import "animate.css";
 const Login = () => {
   const { registerExitoso, registro } = useContext(UserContext);
   const [salir, setSalir] = useState(false);
   const [alertError, setAlertError] = useState(false);
+
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
-  const login = async () => {
-    try {
-      const { data } = await axios.post("http://localhost:3000/login", values, {
-        withCredentials: true,
-      });
-      if (data) {
-        navigate("/home");
-      } else {
-        throw new Error("Error al iniciar sesión");
-      }
-    } catch (error) {
-      setAlertError(true);
-    }
-  };
-
-  const handleClick = () => {
-    registro(false);
-  };
 
   const navigate = useNavigate();
   const handleInput = (event) => {
@@ -45,48 +26,33 @@ const Login = () => {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    login();
+    try {
+      const response = await axios.post("http://localhost:3000/login", values, {
+        withCredentials: true,
+      });
 
-    // try {
-
-    //   console.log(response);
-    //   if (response.status === 200) {
-
-    //     // const user = await response.data.data.user;
-
-    //     // const progreso = await response.data.data.progreso;
-
-    //     // if (progreso == null) {
-    //     //   insertUserName(user);
-
-    //     //   navigate("/home");
-    //     // } else {
-    //     //   const niveles = await progreso.niveles;
-    //     //   insertUserName(user);
-    //     //   desbloquearNiveles(niveles);
-
-    //     //   navigate("/home");
-    //     // }
-    //   }
-    // } catch (err) {
-    //   console.error("Error al iniciar sesión:", err);
-    //   setError(true);
-    // }
+      if (response.status === 200) {
+        navigate("/home");
+      } else {
+        setAlertError(true);
+      }
+    } catch (error) {
+      setAlertError(true);
+    }
   };
+
   useEffect(() => {
     setTimeout(() => {
       setSalir(true);
-      () => {
-        registro(false);
-      };
+      registro(false);
     }, 3000);
   }, [registerExitoso]);
 
   return (
-    <div className="container2-login animate__animated ">
+    <div className="container2-login animate__animated">
       {registerExitoso && (
         <div
           className={
@@ -94,8 +60,8 @@ const Login = () => {
             (!salir ? "animate__fadeInDown" : "animate__fadeOutDown")
           }
         >
-          <div class="error">
-            <div class="error__icon">
+          <div className="error">
+            <div className="error__icon">
               <img className={"img-checked "} src={checked} alt="" />
             </div>
             <div className="error__title">Se ha registrado Correctamente</div>
@@ -109,16 +75,6 @@ const Login = () => {
         <div className="box-form">
           <div>
             <div className="group">
-              <div
-                style={{
-                  position: "absolute",
-                  left: "20px",
-                  top: "11px",
-                  opacity: "0.50 ",
-                }}
-              >
-                <MdAlternateEmail />
-              </div>
               <input
                 required
                 type="email"
@@ -131,16 +87,6 @@ const Login = () => {
           </div>
           <div>
             <div className="group">
-              <div
-                style={{
-                  position: "absolute",
-                  left: "20px",
-                  top: "11px",
-                  opacity: "0.50",
-                }}
-              >
-                <RiLockPasswordLine></RiLockPasswordLine>
-              </div>
               <input
                 type="password"
                 name="password"
@@ -163,7 +109,7 @@ const Login = () => {
         <div>
           <input
             type="submit"
-            onClick={handleClick}
+            onClick={handleSubmit}
             className="submit-register"
             id="submit"
           />
@@ -191,4 +137,5 @@ const Login = () => {
     </div>
   );
 };
+
 export default Login;
