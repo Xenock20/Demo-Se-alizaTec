@@ -30,14 +30,16 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3000/login", values, {
-        withCredentials: true,
-      });
+      const { status } = await axios.post(
+        "http://localhost:3000/login",
+        values,
+        {
+          withCredentials: true,
+        }
+      );
 
-      if (response.status === 200) {
+      if (status === 200) {
         navigate("/home");
-      } else {
-        setAlertError(true);
       }
     } catch (error) {
       setAlertError(true);
@@ -57,7 +59,7 @@ const Login = () => {
         <div
           className={
             "box-checked animate__animated " +
-            (!salir ? "animate__fadeInDown" : "animate__fadeOutDown")
+            (salir ? "animate__fadeOutDown" : "animate__fadeInDown")
           }
         >
           <div className="error">
