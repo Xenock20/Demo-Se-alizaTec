@@ -7,11 +7,14 @@ import checked from "../assets/checked.png";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdAlternateEmail } from "react-icons/md";
 import { FaRegCopyright } from "react-icons/fa";
+import { usePost } from "../hooks/useFetch";
+import { API_URL_LOGIN } from "../APIS/apisURL";
 
 const Login = () => {
   const { registerExitoso, registro } = useContext(UserContext);
   const [salir, setSalir] = useState(false);
   const [alertError, setAlertError] = useState(false);
+  const { postData } = usePost();
 
   const [values, setValues] = useState({
     email: "",
@@ -28,15 +31,8 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     try {
-      const { status } = await axios.post(
-        "http://localhost:3000/login",
-        values,
-        {
-          withCredentials: true,
-        }
-      );
+      const { status } = await postData(API_URL_LOGIN, values);
 
       if (status === 200) {
         navigate("/home");

@@ -23,3 +23,21 @@ export const useGet = (url) => {
 
   return { data, loading, error };
 };
+
+export const usePost = () => {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  const postData = async (url, values) => {
+    try {
+      const { data, status } = await axios.post(url, values, {
+        withCredentials: true,
+      });
+      return { data, status };
+    } catch (err) {
+      setError(err);
+    }
+  };
+
+  return { postData, error };
+};
