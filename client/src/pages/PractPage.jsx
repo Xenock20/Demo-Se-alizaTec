@@ -7,6 +7,7 @@ import { useParams } from "react-router";
 import { contGames } from "../Contenido/ContenidoGame";
 import { UserContext } from "../context/UserProvider";
 import BotonReset from "../ModosDeJuego/BotonReset/BotonReset";
+import axios from "axios";
 
 export default function PractPage() {
   const { id } = useParams();
@@ -17,28 +18,34 @@ export default function PractPage() {
   const [reset, setReset] = useState(false);
   const [gameOver, setGameOver] = useState(false);
 
-  const { desbloquearLeccion, desbloquearModoJuego, desbloquearNiveles } =
-    useContext(UserContext);
+  const {
+    desbloquearLeccion,
+    desbloquearModoJuego,
+    desbloquearNiveles,
+    nameUser,
+  } = useContext(UserContext);
 
   useEffect(() => {
     const contGame = contGames[id];
     setContenidoDelJuego(contGame);
     setLinks(contGame.link);
     setCompletado(false);
-    setDeblock(contGame.desblock);
+    setDeblock(contGame.desblock, nameUser);
   }, [id]);
 
-
-/**
- * Esta funcion desbloquea las rutas para acceder a los siguientes modos de juego, lecciones o niveles.
- */
+  /**
+   * Esta funcion desbloquea las rutas para acceder a los siguientes modos de juego, lecciones o niveles.
+   */
   const handleCompleteGame = () => {
     setCompletado(true);
     //deblock.leccionID.map((id) => console.log(id) /*desbloquearLeccion(id)*/);
-    desbloquearLeccion(deblock.leccionID)
-    desbloquearModoJuego(deblock.modeGameID)
+    desbloquearLeccion(deblock.leccionID);
+    desbloquearModoJuego(deblock.modeGameID);
     //deblock.modeGameID.map((id) => desbloquearModoJuego(id));
-    desbloquearNiveles(deblock.levelID)
+    desbloquearNiveles(deblock.levelID);
+    axios.post("http://localhost:3000/progreso", deblock.levelID, {
+      withCredentials: true,
+    });
     //deblock.levelID.map((id) => desbloquearNiveles(id));
   };
 

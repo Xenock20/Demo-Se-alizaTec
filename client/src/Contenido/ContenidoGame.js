@@ -17,6 +17,8 @@ import amarillo from "../Contenido/Image/N3-Colores/amarilloB&W.png";
 import azul from "../Contenido/Image/N3-Colores/AzulB&W.png";
 import colores from "../Contenido/Image/N3-Colores/colorB&W.png";
 import rojo from "../Contenido/Image/N3-Colores/rojoB&W.png";
+import mama from "../Contenido/Image/N4-Familia/mama.png";
+import papa from "../Contenido/Image/N4-Familia/papa.png";
 
 export const contGames = [
   {
@@ -188,9 +190,9 @@ export const contGames = [
       next: "/home",
     },
     desblock: {
-      leccionID: [4, 8, 9],
-      modeGameID: [4, 8],
-      levelID: [1, 10],
+      leccionID: [4, 8, 9, 12, 13, 14],
+      modeGameID: [4, 8, 11],
+      levelID: [1, 10, 19],
     },
   },
   {
@@ -198,7 +200,7 @@ export const contGames = [
     modeGame: "juego-de-operaciones",
 
     cont: {
-      text: '¿Cuantas letras contiene la palabra "ESCUELA"?',
+      text: '¿Cuántas letras contiene la palabra "ESCUELA"?',
       items: [],
     },
     link: {
@@ -218,7 +220,7 @@ export const contGames = [
     id: 5,
     modeGame: "juego-de-emparejamiento",
     cont: {
-      text: '¿Cuantas letras contiene la palabra "ESCUELA"?',
+      text: '¿Cuántas letras contiene la palabra "ESCUELA"?',
       option: [
         {
           url: num6,
@@ -288,7 +290,7 @@ export const contGames = [
     id: 7,
     modeGame: "juego-de-emparejamiento",
     cont: {
-      text: "Cual es el resultado de 4 + 5 = ?",
+      text: "¿Cuál es el resultado de 4 + 5 = ?",
       option: [
         {
           url: num1,
@@ -352,7 +354,6 @@ export const contGames = [
       levelID: [],
     },
   },
-
   {
     id: 9,
     modeGame: "adivinanza-de-señas",
@@ -401,8 +402,36 @@ export const contGames = [
       next: "/home",
     },
     desblock: {
+      leccionID: [],
+      modeGameID: [],
+      levelID: [],
+    },
+  },
+  {
+    id: 11,
+    modeGame: "flechas-game",
+    cont: {},
+    link: {
+      return: "/leccion/14",
+      next: "/leccion/15",
+    },
+    desblock: {
+      leccionID: [15, 16],
+      modeGameID: [12],
+      levelID: [],
+    },
+  },
+  {
+    id: 12,
+    modeGame: "familia-game",
+    cont: {},
+    link: {
+      return: "/leccion/16",
+      next: "/home",
+    },
+    desblock: {
       leccionID: [11],
-      modeGameID: [11],
+      modeGameID: [10],
       levelID: [],
     },
   },

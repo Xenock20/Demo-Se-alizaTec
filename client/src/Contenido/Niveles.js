@@ -237,8 +237,8 @@ export const seccionLevels = [
         levels: [
           {
             id: 19,
-            descripcion: "PROXIMAMENTE...",
-            link: "",
+            descripcion: "Aprende sobre la Familia",
+            link: "/leccion/12",
             position: "izquierda",
             positionInfo: "rigth",
           },
@@ -398,10 +398,10 @@ export const seccionLevels = [
   },
   {
     href: "preguntasBasicas",
-    titulo: "Preguntas Basicas",
+    titulo: "Preguntas Básicas",
     dificultad: [
       {
-        title: "Facil",
+        title: "Fácil",
         levels: [
           {
             id: 37,
