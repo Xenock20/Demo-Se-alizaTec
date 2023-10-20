@@ -1,12 +1,14 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import logo from "./../../assets/log.png";
-import profile from "../../assets/profile.png";
-import start from "../../assets/Vector.png";
 import { useNavigate } from "react-router-dom";
-import { UserContext, UserProvider } from "../../context/UserProvider";
+import { UserContext } from "../../context/UserProvider";
 import { Link } from "react-router-dom";
 import userlogo from "../../assets/user.svg";
 import "../../pages/style/navBar.css";
+import { FiLogOut } from "react-icons/fi";
+
+import { BASE_URL_LOGOUT } from "../../APIS/apisURL";
+import axios from "axios";
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -18,13 +20,19 @@ export default function NavBar() {
     reset();
   };
 
+  const handleLogOut = () => {
+    axios.get(BASE_URL_LOGOUT);
+    navigate("/");
+    reset();
+  };
+
   return (
     <div className="nav-bar-home">
       <div className="nav-bar-logo">
         <img src={logo} onClick={handleClick} />
       </div>
       <div className="nav-bar-user">
-        {typeof nameUser[0] == "undefined" ? (
+        {!nameUser ? (
           <Link className="nav-link" to={"/login"}>
             Ingresar
           </Link>
@@ -33,7 +41,8 @@ export default function NavBar() {
             <div>
               <img className="navbar-logo-user" src={userlogo}></img>{" "}
             </div>
-            <span>{nameUser[0]}</span>
+            <span>{nameUser}</span>
+            <FiLogOut className="navbar-logout" onClick={handleLogOut} />
           </div>
         )}
       </div>

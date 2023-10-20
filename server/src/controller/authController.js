@@ -2,10 +2,12 @@ const conexion = require("../DataBase/db");
 const queries = require("../DataBase/query");
 const { addHash } = require("./hashing");
 const { generateToken } = require("../auth/authToken");
+const logger = require("../debug/logger");
 exports.register = async (req, res) => {
   const { body } = req;
 
   if (!body.user || !body.email || !body.password) {
+    logger.warn("Uno de los campos estas vacio");
     return res.status(400).json({
       status: "FAILED",
       data: { error: "Uno de los campos estas vacio" },
@@ -28,9 +30,9 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
   try {
     const { body } = req;
-    console.log(body);
 
     if (!body.email || !body.password) {
+      logger.warn("Uno de los campos estas vacio");
       return res.status(400).json({
         status: "FAILED",
         data: { error: "Uno de los campos estas vacio" },
@@ -64,7 +66,6 @@ exports.login = async (req, res) => {
 exports.isAuthenticated = async (req, res) => {
   try {
     const token = await req.cookies.jwt;
-    console.log(token);
 
     const user = await queries.authenticated(token);
 
@@ -81,6 +82,10 @@ exports.isAuthenticated = async (req, res) => {
       },
     });
   } catch (error) {
+    logger.error(error);
+
+    logger.warn("Token no valido");
+
     res.status(400).send({ status: "Failed", data: error });
   }
 };
@@ -94,21 +99,22 @@ exports.progreso = async (req, res) => {
 
   conexion.query(
     "UPDATE niveles SET nivel = ? WHERE id_usersfk = ?",
-    [stringLevel, user.id_users], // Ajustar el orden de los parámetros
+    [stringLevel, user.id_users],
     (err) => {
       if (err) {
-        console.log("FALLO AL ENVIAR");
-        console.error(err);
+        logger.error("Error al actualizar el progreso");
+
         res.status(500).json({ mensaje: "Error al actualizar el progreso" });
         return;
       }
-      console.log("Envío exitoso");
+      logger.info("Progreso Actualizado Correctamente");
       res.status(200).json({ mensaje: "Progreso actualizado correctamente" });
     }
   );
 };
 
 exports.logout = (req, res) => {
+  logger.info("Cerrando sesion");
   res.clearCookie("jwt");
-  return res.redirect("http://localhost:5173");
+  res.status(200).json({ mensaje: "Sesion cerrada correctamente" });
 };

@@ -19,7 +19,7 @@ export const useGet = (url) => {
     };
 
     getData();
-  }, [url]);
+  }, []);
 
   return { data, loading, error };
 };

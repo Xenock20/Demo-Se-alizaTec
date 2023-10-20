@@ -7,6 +7,7 @@ import { useGet } from "../hooks/useFetch";
 import UnAuthenticated from "../components/unAuthenticated/unAuthenticated";
 import { useState } from "react";
 
+import { BASE_URL_DATA } from "../APIS/apisURL";
 export default function HomePage() {
   const { resetBarr, insertUserName, desbloquearNiveles } =
     useContext(UserContext);
@@ -17,7 +18,7 @@ export default function HomePage() {
     resetBarr();
   }, [resetBarr]);
 
-  const { data, error } = useGet("http://localhost:3000/datos");
+  const { data, error } = useGet(BASE_URL_DATA);
 
   const verifyAuthenticated = (dataUser) => {
     if (!dataUser) {

@@ -19,6 +19,13 @@ function UserProvider({ children }) {
     return storedBarraDeProgreso ? JSON.parse(storedBarraDeProgreso) : 12;
   });
 
+  //Create user useState Local Storage
+
+  const [dataUser, setDataUser] = useState({
+    userName: null,
+    unlockedLevels: null,
+  });
+
   const [nivelesDesbloqueados, setNivelesDesbloqueados] = useState(() => {
     const storedNivelesDesbloqueados = localStorage.getItem(
       "nivelesDesbloqueados"
@@ -31,9 +38,10 @@ function UserProvider({ children }) {
   const [nameUser, setNameUser] = useState(() => {
     const storedUserName = localStorage.getItem("userName");
 
-    return storedUserName ? JSON.parse(storedUserName) : [];
+    return storedUserName ? JSON.parse(storedUserName) : "";
   });
 
+  //Set and create in Local Storage
   useEffect(() => {
     localStorage.setItem("userName", JSON.stringify(nameUser)), [nameUser];
   });
@@ -75,20 +83,23 @@ function UserProvider({ children }) {
     setModosJuegoDesbloqueados(modosJuegoDesbloqueados.concat(ids));
   };
 
-  const incrementarBarra = () => {
-    setBarraDeProgreso(barraDeProgreso + 12);
-  };
+  const incrementarBarra = () => setBarraDeProgreso(barraDeProgreso + 12);
 
-  const desincrementarBarra = () => {
-    setBarraDeProgreso(barraDeProgreso - 12);
-  };
+  const desincrementarBarra = () => setBarraDeProgreso(barraDeProgreso - 12);
+
+  const addData = (newData) => setDataUser(newData); //Add data of users to state dataUser
 
   const desbloquearNiveles = (nivel) => {
-    setNivelesDesbloqueados(nivelesDesbloqueados.concat(nivel));
+    nivel.map((item) => {
+      if (nivelesDesbloqueados.includes(item)) {
+        return;
+      }
+      setNivelesDesbloqueados(nivelesDesbloqueados.concat(nivel));
+    });
   };
 
   const insertUserName = (user) => {
-    setNameUser([user]);
+    setNameUser(user.toUpperCase());
   };
 
   const reset = () => {
