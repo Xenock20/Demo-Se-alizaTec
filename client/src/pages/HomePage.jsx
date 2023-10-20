@@ -9,8 +9,13 @@ import { useState } from "react";
 
 import { BASE_URL_DATA } from "../APIS/apisURL";
 export default function HomePage() {
-  const { resetBarr, insertUserName, desbloquearNiveles } =
-    useContext(UserContext);
+  const {
+    resetBarr,
+    insertUserName,
+    desbloquearNiveles,
+    desbloquearLeccion,
+    desbloquearModoJuego,
+  } = useContext(UserContext);
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -26,14 +31,17 @@ export default function HomePage() {
     }
     insertUserName(dataUser.data.user);
 
-    const niveles = dataUser.data.nivel;
-    const levelParse = JSON.parse(niveles);
+    const levelsUnlocked = JSON.parse(dataUser.data.nivel);
+    const lessonsUnlocked = JSON.parse(dataUser.data.lecciones);
+    const modeGameUnlocked = JSON.parse(dataUser.data.modoJuego);
 
-    if (!levelParse) {
+    if (!levelsUnlocked) {
       return setIsAuthenticated(true);
     }
 
-    desbloquearNiveles(levelParse);
+    desbloquearNiveles(levelsUnlocked);
+    desbloquearLeccion(lessonsUnlocked);
+    desbloquearModoJuego(modeGameUnlocked);
 
     return setIsAuthenticated(true);
   };

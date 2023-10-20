@@ -41,8 +41,6 @@ exports.login = async (req, res) => {
 
     const result = await queries.validateUser(body);
 
-    console.log(result);
-
     const id = await result.id;
 
     const token = await generateToken(id);
@@ -74,6 +72,8 @@ exports.isAuthenticated = async (req, res) => {
       data: {
         user: user.user,
         nivel: user.nivel,
+        lecciones: user.lecciones,
+        modoJuego: user.modoJuego,
         numeroProgreso: user.numeroProgreso,
         coloresProgreso: user.colorProgreso,
         familiaProgreso: user.familiaProgreso,
@@ -91,15 +91,25 @@ exports.isAuthenticated = async (req, res) => {
 };
 
 exports.progreso = async (req, res) => {
-  const niveles = req.body;
+  const { body } = req;
 
+  if (!body.niveles || !body.lecciones || !body.modoJuego) {
+    logger.warn("[PROGRESO] - Uno de los campos estas vacio en ");
+    return res.status(400).json({
+      status: "FAILED",
+      data: { error: "Uno de los campos estas vacio" },
+    });
+  }
   const token = await req.cookies.jwt;
   const user = await queries.authenticated(token);
-  const stringLevel = JSON.stringify(niveles);
+
+  const level = JSON.stringify(body.niveles);
+  const lesson = JSON.stringify(body.lecciones);
+  const modeGame = JSON.stringify(body.modoJuego);
 
   conexion.query(
-    "UPDATE niveles SET nivel = ? WHERE id_usersfk = ?",
-    [stringLevel, user.id_users],
+    "UPDATE niveles SET nivel = ?,lecciones = ?,modoJuego = ?  WHERE id_usersfk = ?",
+    [level, lesson, modeGame, user.id_users],
     (err) => {
       if (err) {
         logger.error("Error al actualizar el progreso");

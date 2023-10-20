@@ -42,10 +42,19 @@ export default function PractPage() {
     desbloquearLeccion(deblock.leccionID);
     desbloquearModoJuego(deblock.modeGameID);
     //deblock.modeGameID.map((id) => desbloquearModoJuego(id));
+
     desbloquearNiveles(deblock.levelID);
-    axios.post("http://localhost:3000/progreso", deblock.levelID, {
-      withCredentials: true,
-    });
+    axios.post(
+      "http://localhost:3000/progreso",
+      {
+        niveles: deblock.levelID,
+        lecciones: deblock.leccionID,
+        modoJuego: deblock.modeGameID,
+      },
+      {
+        withCredentials: true,
+      }
+    );
     //deblock.levelID.map((id) => desbloquearNiveles(id));
   };
 
