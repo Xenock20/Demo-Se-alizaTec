@@ -12,13 +12,7 @@ import axios from "axios";
 
 export default function NavBar() {
   const navigate = useNavigate();
-  const { reset } = useContext(UserContext);
-  const { nameUser } = useContext(UserContext);
-
-  const handleClick = () => {
-    navigate("/");
-    reset();
-  };
+  const { reset, nameUser } = useContext(UserContext);
 
   const handleLogOut = () => {
     axios.get(BASE_URL_LOGOUT);
@@ -29,7 +23,7 @@ export default function NavBar() {
   return (
     <div className="nav-bar-home">
       <div className="nav-bar-logo">
-        <img src={logo} onClick={handleClick} />
+        <img src={logo} />
       </div>
       <div className="nav-bar-user">
         {!nameUser ? (

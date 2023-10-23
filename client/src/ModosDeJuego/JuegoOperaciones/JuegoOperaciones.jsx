@@ -24,7 +24,7 @@ const JuegoOperaciones = ({ gameComplete, reset, gameOver, cont }) => {
   const result = operacionesCopy.resultado;
 
   const [showImg, setShowImg] = useState();
-  const [imgSelect, setImgSelect] = useState("");
+  const [imgSelect, setImgSelect] = useState([]);
 
   const handleReintentar = () => {
     const nuevoNumeroAleatorio = generarNumeroAleatorio();
@@ -35,19 +35,23 @@ const JuegoOperaciones = ({ gameComplete, reset, gameOver, cont }) => {
   };
 
   const handleDragEnd = (event) => {
-    if (event.active.id == result) {
+    const { id } = event.active;
+    setImgSelect([id]);
+    if (id == result) {
       setCorrecto(true);
       gameComplete();
       setShowImg(true);
+      setBloquearBoton(true);
     } else {
       setIncorrecto(true);
+      setImgSelect([]);
       gameOver();
     }
   };
 
   return (
-    <DndContext onDragEnd={handleDragEnd}>
-      <div className="div-inicial" style={{ width: "100%", height: "100%" }}>
+    <DndContext onDragEnd={bloquearBoton ? "" : handleDragEnd}>
+      <div className="div-inicial">
         <div className="div-operaciones">
           <div className="div-seña">
             <img className="img-operaciones" src={señas[0]} alt="" />
@@ -77,20 +81,13 @@ const JuegoOperaciones = ({ gameComplete, reset, gameOver, cont }) => {
             </div>
           )}
         </div>
+
         <div className="div-opciones-operaciones">
           {opciones.map((e, i) => {
+            if (imgSelect.includes(e)) return;
             return (
               <Draggable key={i} id={e}>
-                <button
-                  onClick={() => {
-                    if (!bloquearBoton) {
-                      setBloquearBoton(true);
-                      setImgSelect(e);
-                      setShowImg(true);
-                      handleClick(e);
-                    } else return;
-                  }}
-                >
+                <button>
                   <img src={e}></img>
                 </button>
               </Draggable>
