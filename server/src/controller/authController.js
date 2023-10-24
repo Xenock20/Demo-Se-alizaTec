@@ -124,7 +124,7 @@ exports.progreso = async (req, res) => {
 };
 
 exports.logout = (req, res) => {
-  logger.info("Cerrando sesion");
   res.clearCookie("jwt");
   res.status(200).json({ mensaje: "Sesion cerrada correctamente" });
+  logger.info("Cerrando sesion");
 };

@@ -15,9 +15,9 @@ export default function NavBar() {
   const { reset, nameUser } = useContext(UserContext);
 
   const handleLogOut = () => {
-    axios.get(BASE_URL_LOGOUT);
-    navigate("/");
-    reset();
+    axios
+      .get(BASE_URL_LOGOUT, { withCredentials: true })
+      .then(navigate("/"), reset());
   };
 
   return (
@@ -26,19 +26,13 @@ export default function NavBar() {
         <img src={logo} />
       </div>
       <div className="nav-bar-user">
-        {!nameUser ? (
-          <Link className="nav-link" to={"/login"}>
-            Ingresar
-          </Link>
-        ) : (
-          <div className="box-navbar-logo">
-            <div>
-              <img className="navbar-logo-user" src={userlogo}></img>{" "}
-            </div>
-            <span>{nameUser}</span>
-            <FiLogOut className="navbar-logout" onClick={handleLogOut} />
+        <div className="box-navbar-logo">
+          <div>
+            <img className="navbar-logo-user" src={userlogo}></img>
           </div>
-        )}
+          <span>{nameUser}</span>
+          <FiLogOut className="navbar-logout" onClick={handleLogOut} />
+        </div>
       </div>
     </div>
   );
