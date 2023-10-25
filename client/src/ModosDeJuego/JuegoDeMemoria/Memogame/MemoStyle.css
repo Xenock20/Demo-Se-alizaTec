@@ -26,9 +26,7 @@
 .info-game > p {
   font-size: 40px;
 }
-.div-inicial {
-  background-color: violet;
-}
+
 .blog-post {
   display: flex;
   align-items: center;
@@ -36,7 +34,7 @@
   height: 300px;
   width: 800px;
   border: solid 3px rgb(252, 7, 93);
-  background: linear-gradient(23, 3, 0);
+
   padding: 0.7rem;
 
   box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, 0.2);

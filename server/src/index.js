@@ -1,5 +1,4 @@
 const express = require("express");
-const { color } = require("colors");
 const cookieParser = require("cookie-parser");
 require("dotenv").config({ path: "./.env" });
 const cors = require("cors");
@@ -9,7 +8,7 @@ const app = express();
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: true,
     credentials: true,
   })
 );

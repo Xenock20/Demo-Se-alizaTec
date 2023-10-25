@@ -78,14 +78,14 @@ const validateUser = async (userData) => {
   }
 };
 
-const authenticated = async (token) => {
+const getUserData = async (token) => {
   try {
-    const authdata = await jwt.verify(token, process.env.JWT_SECRET);
+    const dataDecoded = await jwt.verify(token, process.env.JWT_SECRET);
 
     const user = new Promise((resolve, reject) => {
       conexion.query(
         "SELECT * FROM users JOIN niveles ON users.id_users = niveles.id_usersfk WHERE users.id_users = ?",
-        [authdata.id],
+        [dataDecoded.id],
         async (err, resultData) => {
           if (err) {
             console.error("Error en la consulta SQL:", err);
@@ -96,8 +96,8 @@ const authenticated = async (token) => {
             });
           }
 
-          const datos = await resultData[0];
-          resolve(datos);
+          const dataUser = await resultData[0];
+          resolve(dataUser);
         }
       );
     });
@@ -111,5 +111,5 @@ const authenticated = async (token) => {
 module.exports = {
   createUser,
   validateUser,
-  authenticated,
+  getUserData,
 };

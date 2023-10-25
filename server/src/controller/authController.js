@@ -1,7 +1,7 @@
 const conexion = require("../DataBase/db");
 const queries = require("../DataBase/query");
 const { addHash } = require("./hashing");
-const { generateToken } = require("../auth/authToken");
+const { generateToken } = require("../auth/generateToken");
 const logger = require("../debug/logger");
 exports.register = async (req, res) => {
   const { body } = req;
@@ -61,31 +61,15 @@ exports.login = async (req, res) => {
       .send({ status: error.code, data: error.message });
   }
 };
-exports.isAuthenticated = async (req, res) => {
+exports.authenticated = async (req, res) => {
   try {
     const token = await req.cookies.jwt;
 
-    const user = await queries.authenticated(token);
+    const data = await queries.getUserData(token);
 
-    res.send({
-      status: "OK",
-      data: {
-        user: user.user,
-        nivel: user.nivel,
-        lecciones: user.lecciones,
-        modoJuego: user.modoJuego,
-        numeroProgreso: user.numeroProgreso,
-        coloresProgreso: user.colorProgreso,
-        familiaProgreso: user.familiaProgreso,
-        diasMesesProgreso: user.diasMesesProgreso,
-        preguntasProgreso: user.PreguntasBasicasProgreso,
-      },
-    });
+    res.send({ status: "OK", data: data });
   } catch (error) {
     logger.error(error);
-
-    logger.warn("Token no valido");
-
     res.status(400).send({ status: "Failed", data: error });
   }
 };
