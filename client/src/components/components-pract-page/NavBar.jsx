@@ -2,11 +2,9 @@ import React, { useContext } from "react";
 import logo from "./../../assets/log.png";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserProvider";
-import { Link } from "react-router-dom";
 import userlogo from "../../assets/user.svg";
 import "../../pages/style/navBar.css";
 import { FiLogOut } from "react-icons/fi";
-
 import { BASE_URL_LOGOUT } from "../../APIS/apisURL";
 import axios from "axios";
 

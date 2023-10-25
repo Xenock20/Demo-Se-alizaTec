@@ -51,45 +51,38 @@ const JuegoOperaciones = ({ gameComplete, reset, gameOver, cont }) => {
 
   return (
     <DndContext onDragEnd={bloquearBoton ? "" : handleDragEnd}>
-      <div className="div-inicial">
-        <div className="div-operaciones">
-          <div className="div-seña">
-            <img className="img-operaciones" src={señas[0]} alt="" />
-          </div>
-          <div className="div-signo">
-            <h1>{operacionesCopy.signo}</h1>
-          </div>
-          <div className="div-seña">
-            <img className="img-operaciones" src={señas[1]} alt="" />
-          </div>
-          <div className="div-signo">
-            <h1>=</h1>
-          </div>
+      <div className="cont-home-operaciones">
+        <div className="operations">
+          <img className="img-operaciones" src={señas[0]} alt="" />
+
+          <span className="signo">{operacionesCopy.signo}</span>
+
+          <img className="img-operaciones" src={señas[1]} alt="" />
+
+          <span className="signo">=</span>
 
           {!showImg ? (
-            <div className="div-resultado">
+            <div className="img-operaciones">
               <DropContainer id={result}></DropContainer>
             </div>
           ) : (
-            <div className="div-resultado" style={{ border: "none" }}>
-              <img
-                className={
-                  inCorrecto ? "img-result-icorrecto" : "img-result-correcto"
-                }
-                src={result}
-              ></img>
-            </div>
+            <img
+              className={
+                inCorrecto
+                  ? "img-result-icorrecto img-operaciones"
+                  : "img-result-correcto img-operaciones"
+              }
+              src={result}
+            ></img>
           )}
         </div>
 
-        <div className="div-opciones-operaciones">
+        <div className="options">
           {opciones.map((e, i) => {
             if (imgSelect.includes(e)) return;
             return (
               <Draggable key={i} id={e}>
-                <button>
-                  <img src={e}></img>
-                </button>
+                <img className="img-options" src={e}></img>
               </Draggable>
             );
           })}
