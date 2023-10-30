@@ -377,4 +377,61 @@ export const lecciones = [
       next: "/mododejuego/12",
     },
   },
+  {
+    id: 17,
+    titulo: "Conceptos básicos sobre el tiempo en LSA.",
+    contenido: {
+      contPrincipal:
+        "Como primer nivel en esta sección, vamos a conocer algunos conceptos sobre días, semana y los meses del año.",
+      contSecundario: [
+        {
+          subtitulo: "Conozcamos la palabra “Día”.",
+          img: hijo,
+          text: "Se realiza arrastrando sobre la mejilla el dedo indice, y luego se forma con el puño cerrado y el pulgar sobresaliendo levemente hacia arriba, como la vocal “A”",
+        },
+      ],
+    },
+    link: {
+      return: "/home",
+      next: "/leccion/18",
+    },
+  },
+  {
+    id: 18,
+    titulo: "Aprenderemos cómo representar la palabra “Semana” en LSA.",
+    contenido: {
+      contPrincipal:
+        "",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: hijo,
+          text: "Con el dedo índice extendido se arrastra sobre el aire desde derecha a izquierda hasta llegar al hombro.",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/17",
+      next: "/mododejuego/13",
+    },
+  },
+  {
+    id: 19,
+    titulo: "Mes",
+    contenido: {
+      contPrincipal:
+        "Ahora aprenderemos a cómo representar la palabra “Mes”",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: hijo,
+          text: "Esta empezará por arriba como si fuese una “A” y hará un recorrido hacia abajo como si estuviésemos golpeando con un martillo.",
+        },
+      ],
+    },
+    link: {
+      return: "/mododejuego/13",
+      next: "/mododejuego/14",
+    },
+  },
 ];

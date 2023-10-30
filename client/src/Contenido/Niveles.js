@@ -76,7 +76,7 @@ export const seccionLevels = [
           },
           {
             id: 2,
-            descripcion: "PROXIMAMENTE...",
+            descripcion: "Numeros del 10 - 20",
             link: "",
             position: "derecha",
             positionInfo: "left",
@@ -244,7 +244,7 @@ export const seccionLevels = [
           },
           {
             id: 20,
-            descripcion: "PROXIMAMENTE...",
+            descripcion: "Más miembros de la familia",
             link: "",
             position: "derecha",
             positionInfo: "left",
@@ -321,8 +321,8 @@ export const seccionLevels = [
         levels: [
           {
             id: 28,
-            descripcion: "PROXIMAMENTE...",
-            link: "",
+            descripcion: "Conceptos básicos sobre el tiempo en LSA.",
+            link: "/leccion/17",
             position: "izquierda",
             positionInfo: "rigth",
           },
@@ -398,14 +398,14 @@ export const seccionLevels = [
   },
   {
     href: "preguntasBasicas",
-    titulo: "Preguntas Básicas",
+    titulo: "Preguntas Básicas y Presentación",
     dificultad: [
       {
         title: "Fácil",
         levels: [
           {
             id: 37,
-            descripcion: "PROXIMAMENTE...",
+            descripcion: "Realizar una presentación básica en LSA.",
             link: "",
             position: "izquierda",
             positionInfo: "rigth",

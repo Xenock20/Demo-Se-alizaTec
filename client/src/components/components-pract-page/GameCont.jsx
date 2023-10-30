@@ -8,6 +8,8 @@ import JuegoOperaciones from "../../ModosDeJuego/JuegoOperaciones/JuegoOperacion
 import JuegoOrdenamiento from "../../ModosDeJuego/JuegoOrdenamiento/JuegoOrdenamiento";
 import FamiliaGame from "../../ModosDeJuego/FamiliaGame/FamiliaGame";
 import FlechasGame from "../../ModosDeJuego/FlechasGame/FlechasGame";
+import GameRPL from "../../ModosDeJuego/JuegoPRLetras/GameRPL";
+import ImageGame from "../../ModosDeJuego/ImageGame/ImageGame";
 
 export default function GameCont({
   contJuego,
@@ -105,7 +107,26 @@ export default function GameCont({
         ></JuegoOrdenamiento>
       );
       break;
-
+    case "juego-pr-letras":
+      componente = (
+        <GameRPL
+          cont={cont}
+          gameComplete={handleCompleteGame}
+          gameOver={gameOver}
+          reset={reset}
+        ></GameRPL>
+      );
+      break;
+    case "image-game":
+      componente = (
+        <ImageGame
+          cont={cont}
+          gameComplete={handleCompleteGame}
+          gameOver={gameOver}
+          reset={reset}
+        ></ImageGame>
+      );
+      break;
     default:
       componente = null;
       break;
