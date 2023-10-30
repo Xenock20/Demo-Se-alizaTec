@@ -76,10 +76,12 @@ function UserProvider({ children }) {
   };
 
   const desbloquearLeccion = (ids) => {
+    if (!ids) return;
     setLeccionesDesbloqueadas(leccionesDesbloqueadas.concat(ids));
   };
 
   const desbloquearModoJuego = (ids) => {
+    if (!ids) return;
     setModosJuegoDesbloqueados(modosJuegoDesbloqueados.concat(ids));
   };
 
@@ -87,15 +89,20 @@ function UserProvider({ children }) {
 
   const desincrementarBarra = () => setBarraDeProgreso(barraDeProgreso - 12);
 
-  const addData = (newData) => setDataUser(newData); //Add data of users to state dataUser
+  const addData = (newData) => {
+    setDataUser((prev) => ({
+      ...prev,
+      unlockedLevels: newData.nivel,
+      userName: newData.user,
+    }));
+  }; //Add data of users to state dataUser
 
   const desbloquearNiveles = (nivel) => {
-    nivel.map((item) => {
-      if (nivelesDesbloqueados.includes(item)) {
-        return;
-      }
-      setNivelesDesbloqueados(nivelesDesbloqueados.concat(nivel));
-    });
+    if (nivelesDesbloqueados.includes(nivel)) {
+      return;
+    }
+
+    setNivelesDesbloqueados(nivelesDesbloqueados.concat(nivel));
   };
 
   const insertUserName = (user) => {
@@ -130,6 +137,8 @@ function UserProvider({ children }) {
     nameUser,
     registro,
     registerExitoso,
+    addData,
+    dataUser,
   };
 
   return (

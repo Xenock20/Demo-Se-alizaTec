@@ -67,7 +67,20 @@ exports.authenticated = async (req, res) => {
 
     const data = await queries.getUserData(token);
 
-    res.send({ status: "OK", data: data });
+    res.send({
+      status: "OK",
+      data: {
+        user: data.user,
+        nivel: data.nivel,
+        lecciones: data.lecciones,
+        modoJuego: data.modoJuego,
+        numeroProgreso: data.numeroProgreso,
+        coloresProgreso: data.colorProgreso,
+        familiaProgreso: data.familiaProgreso,
+        diasMesesProgreso: data.diasMesesProgreso,
+        preguntasProgreso: data.PreguntasBasicasProgreso,
+      },
+    });
   } catch (error) {
     logger.error(error);
     res.status(400).send({ status: "Failed", data: error });
@@ -85,7 +98,8 @@ exports.progreso = async (req, res) => {
     });
   }
   const token = await req.cookies.jwt;
-  const user = await queries.authenticated(token);
+  const data = await queries.getUserData(token);
+  console.log(data);
 
   const level = JSON.stringify(body.niveles);
   const lesson = JSON.stringify(body.lecciones);
@@ -93,7 +107,7 @@ exports.progreso = async (req, res) => {
 
   conexion.query(
     "UPDATE niveles SET nivel = ?,lecciones = ?,modoJuego = ?  WHERE id_usersfk = ?",
-    [level, lesson, modeGame, user.id_users],
+    [level, lesson, modeGame, data.id_users],
     (err) => {
       if (err) {
         logger.error("Error al actualizar el progreso");
