@@ -1,28 +1,25 @@
-import { Link } from "react-router-dom";
-import React, { useContext, useEffect } from "react";
-import { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { UserContext, UserProvider } from "../context/UserProvider";
+import { UserContext } from "../context/UserProvider";
 import "./style/login.css";
 import checked from "../assets/checked.png";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdAlternateEmail } from "react-icons/md";
 import { FaRegCopyright } from "react-icons/fa";
+import { usePost } from "../hooks/useFetch";
+import { API_URL_LOGIN } from "../APIS/apisURL";
 
-import "animate.css";
 const Login = () => {
-  const { insertUserName, nameUser, registerExitoso, registro } =
-    useContext(UserContext);
+  const { registerExitoso, registro } = useContext(UserContext);
   const [salir, setSalir] = useState(false);
-  const [error, setError] = useState(false);
+  const [alertError, setAlertError] = useState(false);
+  const { postData } = usePost();
+
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
-  const handleClick = () => {
-    registro(false);
-  };
 
   const navigate = useNavigate();
   const handleInput = (event) => {
@@ -34,46 +31,38 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     try {
-      const response = await axios.post("http://localhost:3000/login", values);
+      const { status } = await postData(API_URL_LOGIN, values);
 
-      if (response.status === 200) {
-        const user = await response.data.user;
-
-        insertUserName(user);
-
-        console.log("Inicio de sesión exitoso");
+      if (status === 200) {
         navigate("/home");
       }
-    } catch (err) {
-      console.error("Error al iniciar sesión:", err);
-      setError(true);
+    } catch (error) {
+      setAlertError(true);
     }
   };
+
   useEffect(() => {
     setTimeout(() => {
       setSalir(true);
-      () => {
-        registro(false);
-      };
+      registro(false);
     }, 3000);
   }, [registerExitoso]);
 
   return (
-    <div className="container2-login animate__animated ">
+    <div className="container2-login animate__animated">
       {registerExitoso && (
         <div
           className={
             "box-checked animate__animated " +
-            (!salir ? "animate__fadeInDown" : "animate__fadeOutDown")
+            (salir ? "animate__fadeOutDown" : "animate__fadeInDown")
           }
         >
-          <div class="error">
-            <div class="error__icon">
+          <div className="error">
+            <div className="error__icon">
               <img className={"img-checked "} src={checked} alt="" />
             </div>
-            <div class="error__title">Se ha registrado Correctamente</div>
+            <div className="error__title">Se ha registrado Correctamente</div>
           </div>
         </div>
       )}
@@ -83,17 +72,7 @@ const Login = () => {
         </div>
         <div className="box-form">
           <div>
-            <div class="group">
-              <div
-                style={{
-                  position: "absolute",
-                  left: "20px",
-                  top: "11px",
-                  opacity: "0.50 ",
-                }}
-              >
-                <MdAlternateEmail />
-              </div>
+            <div className="group">
               <input
                 required
                 type="email"
@@ -105,17 +84,7 @@ const Login = () => {
             </div>
           </div>
           <div>
-            <div class="group">
-              <div
-                style={{
-                  position: "absolute",
-                  left: "20px",
-                  top: "11px",
-                  opacity: "0.50",
-                }}
-              >
-                <RiLockPasswordLine></RiLockPasswordLine>
-              </div>
+            <div className="group">
               <input
                 type="password"
                 name="password"
@@ -126,7 +95,7 @@ const Login = () => {
               />
             </div>
 
-            {error && (
+            {alertError && (
               <div className="box-error">
                 <h1 className="error-register">
                   CONTRASEÑA O EMAIL INCORRECTOS
@@ -138,7 +107,7 @@ const Login = () => {
         <div>
           <input
             type="submit"
-            onClick={handleClick}
+            onClick={handleSubmit}
             className="submit-register"
             id="submit"
           />
@@ -166,4 +135,5 @@ const Login = () => {
     </div>
   );
 };
+
 export default Login;

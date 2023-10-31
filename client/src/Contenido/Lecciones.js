@@ -17,6 +17,10 @@ import amarillo from "../Contenido/Image/N3-Colores/amarillo.png";
 import azul from "../Contenido/Image/N3-Colores/azul.png";
 import colores from "../Contenido/Image/N3-Colores/colores.png";
 import rojo from "../Contenido/Image/N3-Colores/rojo.png";
+import familia from "../Contenido/Image/N4-Familia/familia.png";
+import mama from "../Contenido/Image/N4-Familia/mama.png";
+import hijo from "../Contenido/Image/N4-Familia/hijo.png";
+import papa from "../Contenido/Image/N4-Familia/papa.png";
 
 export const lecciones = [
   {
@@ -63,7 +67,7 @@ export const lecciones = [
         {
           subtitulo: "Para seguirle el orden miremos la “E”",
           img: vocalE,
-          text: "Para poder realizarla de manera correcta se debe tener parte de la mano cerrada, menos los dedos  pulgar e índice, éstos estarán en forma de un arco, cerca del ojo como si estuviéramos sacando una medida.",
+          text: "Para poder realizarla de manera correcta se debe tener parte de la mano cerrada, menos los dedos pulgar e índice, estos estarán en forma de un arco, cerca del ojo como si estuviéramos sacando una medida.",
         },
       ],
     },
@@ -80,12 +84,12 @@ export const lecciones = [
         {
           subtitulo: "Empecemos con la “I”",
           img: vocalI,
-          text: "Con el dedo índice como si tuviéramos señalando algo lo hacemos indicando a lo que seria como el ojo.",
+          text: "Con el dedo índice como si tuviéramos señalando algo lo hacemos indicando a lo que sería como el ojo.",
         },
         {
           subtitulo: "Pasamos a la “O”",
           img: vocalO,
-          text: "Esta seña se realiza juntando el dedo índice con el pulgar formando lo que seria un circulo mientras mantenemos los demás dedos estirado.",
+          text: "Esta seña se realiza juntando el dedo índice con el pulgar formando lo que sería un circulo mientras mantenemos los demás dedos estirado.",
         },
         {
           subtitulo: "Y por último la “U”",
@@ -164,7 +168,7 @@ export const lecciones = [
         {
           subtitulo: "",
           img: num7,
-          text: "Primero debemos cerrar todos los dedos, excepto el índice que debe quedar extendido, para luego pasarlo de forma horizontal por arriba de la nariz",
+          text: "Primero debemos cerrar todos los dedos, excepto el índice que debe quedar extendido, para luego pasarlo de forma horizontal por arriba de la naríz",
         },
       ],
     },
@@ -187,7 +191,7 @@ export const lecciones = [
         {
           subtitulo: "9",
           img: num9,
-          text: "La posición de los dedos debe ser la misma que la del numero anterior, solo que en este caso, el índice y el medio, deben estar pegados. En esa posición, debemos arrastrar sobre la cara de forma semicircular esos mismos dedos de arriba hacia bajo, justo por encima de nuestra ceja.",
+          text: "La posición de los dedos debe ser la misma que la del número anterior, solo que en este caso, el índice y el medio, deben estar pegados. En esa posición, debemos arrastrar sobre la cara de forma semicircular esos mismos dedos de arriba hacia bajo, justo por encima de nuestra ceja.",
         },
         {
           subtitulo: "10",
@@ -272,6 +276,162 @@ export const lecciones = [
     link: {
       return: "/leccion/10",
       next: "/mododejuego/10",
+    },
+  },
+  {
+    id: 12,
+    titulo: "Conceptos básicos sobre la Familia en LSA",
+    contenido: {
+      contPrincipal:
+        "En este primer nivel de la categoría “Familia”, vamos a conocer algunas señas básicas y cómo realizar las variaciones según el género.",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: familia,
+          text: "Para representar la palabra Familia, se realiza con ambas manos una forma de “montito” tocando todos los dedos entre sí hacia adentro. Dejando una mano fija abajo y la otra por encima girando sobre ésta última.",
+        },
+      ],
+    },
+    link: {
+      return: "/home",
+      next: "/leccion/13",
+    },
+  },
+  {
+    id: 13,
+    titulo: "Mamá",
+    contenido: {
+      contPrincipal: "Vamos a aprender a decir “Mamá” en lengua de señas.",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: mama,
+          text: "Se realiza tocándose levemente debajo de los hombros, en este caso, de izquierda a derecha.",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/12",
+      next: "/leccion/14",
+    },
+  },
+  {
+    id: 14,
+    titulo: "Papá",
+    contenido: {
+      contPrincipal: "¿Cómo decir “Papá” en LSA?",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: papa,
+          text: "Vamos a tocar repetidamente la nariz con nuestro dedo pulgar apoyado, y presionando con el dedo índice.",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/13",
+      next: "/mododejuego/11",
+    },
+  },
+  {
+    id: 15,
+    titulo:
+      "Vamos a hablar sobre cómo definir el género para la familia en LSA.",
+    contenido: {
+      contPrincipal:
+        "Para ello, primero se presenta la seña que vamos a utilizar y al final se aclara el género, utilizando la seña de la vocal A, como femenino y la vocal O, como masculino. Vamos a recordar estas últimas señas..",
+      contSecundario: [
+        {
+          subtitulo: "Vocal “A”.",
+          img: vocalA,
+          text: "Esta seña se identifica como un puño completamente cerrado y con el pulgar casi sobresaliendo hacia arriba.",
+        },
+        {
+          subtitulo: "Vocal “O”.",
+          img: vocalO,
+          text: "Esta seña se realiza juntando el dedo índice con el pulgar formando lo que seria un circulo mientras mantenemos los demás dedos estirado.",
+        },
+      ],
+    },
+    link: {
+      return: "/mododejuego/11",
+      next: "/leccion/16",
+    },
+  },
+  {
+    id: 16,
+    titulo: "Hij@",
+    contenido: {
+      contPrincipal:
+        "Para finalizar este primer nivel vamos a aprender a decir “Hijo”",
+      contSecundario: [
+        {
+          subtitulo: "Hijo",
+          img: hijo,
+          text: "Para realizar la seña, simplemente debemos sacar nuestra mano desde abajo de la barbilla hacia adelante, con el puño cerrado y extendiendo sólo los dedos índice y medio.",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/15",
+      next: "/mododejuego/12",
+    },
+  },
+  {
+    id: 17,
+    titulo: "Conceptos básicos sobre el tiempo en LSA.",
+    contenido: {
+      contPrincipal:
+        "Como primer nivel en esta sección, vamos a conocer algunos conceptos sobre días, semana y los meses del año.",
+      contSecundario: [
+        {
+          subtitulo: "Conozcamos la palabra “Día”.",
+          img: hijo,
+          text: "Se realiza arrastrando sobre la mejilla el dedo indice, y luego se forma con el puño cerrado y el pulgar sobresaliendo levemente hacia arriba, como la vocal “A”",
+        },
+      ],
+    },
+    link: {
+      return: "/home",
+      next: "/leccion/18",
+    },
+  },
+  {
+    id: 18,
+    titulo: "Aprenderemos cómo representar la palabra “Semana” en LSA.",
+    contenido: {
+      contPrincipal:
+        "",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: hijo,
+          text: "Con el dedo índice extendido se arrastra sobre el aire desde derecha a izquierda hasta llegar al hombro.",
+        },
+      ],
+    },
+    link: {
+      return: "/leccion/17",
+      next: "/mododejuego/13",
+    },
+  },
+  {
+    id: 19,
+    titulo: "Mes",
+    contenido: {
+      contPrincipal:
+        "Ahora aprenderemos a cómo representar la palabra “Mes”",
+      contSecundario: [
+        {
+          subtitulo: "",
+          img: hijo,
+          text: "Esta empezará por arriba como si fuese una “A” y hará un recorrido hacia abajo como si estuviésemos golpeando con un martillo.",
+        },
+      ],
+    },
+    link: {
+      return: "/mododejuego/13",
+      next: "/mododejuego/14",
     },
   },
 ];

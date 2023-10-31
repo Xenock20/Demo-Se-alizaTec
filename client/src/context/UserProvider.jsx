@@ -2,10 +2,6 @@ import React, { createContext, useState, useEffect } from "react";
 
 const UserContext = createContext();
 
-//Register
-
-//
-
 function UserProvider({ children }) {
   const [registerExitoso, setRegister] = useState(false);
 
@@ -23,6 +19,13 @@ function UserProvider({ children }) {
     return storedBarraDeProgreso ? JSON.parse(storedBarraDeProgreso) : 12;
   });
 
+  //Create user useState Local Storage
+
+  const [dataUser, setDataUser] = useState({
+    userName: null,
+    unlockedLevels: null,
+  });
+
   const [nivelesDesbloqueados, setNivelesDesbloqueados] = useState(() => {
     const storedNivelesDesbloqueados = localStorage.getItem(
       "nivelesDesbloqueados"
@@ -31,12 +34,14 @@ function UserProvider({ children }) {
       ? JSON.parse(storedNivelesDesbloqueados)
       : [0];
   });
+
   const [nameUser, setNameUser] = useState(() => {
     const storedUserName = localStorage.getItem("userName");
 
-    return storedUserName ? JSON.parse(storedUserName) : [];
+    return storedUserName ? JSON.parse(storedUserName) : "";
   });
 
+  //Set and create in Local Storage
   useEffect(() => {
     localStorage.setItem("userName", JSON.stringify(nameUser)), [nameUser];
   });
@@ -71,27 +76,37 @@ function UserProvider({ children }) {
   };
 
   const desbloquearLeccion = (ids) => {
+    if (!ids) return;
     setLeccionesDesbloqueadas(leccionesDesbloqueadas.concat(ids));
   };
 
   const desbloquearModoJuego = (ids) => {
+    if (!ids) return;
     setModosJuegoDesbloqueados(modosJuegoDesbloqueados.concat(ids));
   };
 
-  const incrementarBarra = () => {
-    setBarraDeProgreso(barraDeProgreso + 12);
-  };
+  const incrementarBarra = () => setBarraDeProgreso(barraDeProgreso + 12);
 
-  const desincrementarBarra = () => {
-    setBarraDeProgreso(barraDeProgreso - 12);
-  };
+  const desincrementarBarra = () => setBarraDeProgreso(barraDeProgreso - 12);
+
+  const addData = (newData) => {
+    setDataUser((prev) => ({
+      ...prev,
+      unlockedLevels: newData.nivel,
+      userName: newData.user,
+    }));
+  }; //Add data of users to state dataUser
 
   const desbloquearNiveles = (nivel) => {
+    if (nivelesDesbloqueados.includes(nivel)) {
+      return;
+    }
+
     setNivelesDesbloqueados(nivelesDesbloqueados.concat(nivel));
   };
 
   const insertUserName = (user) => {
-    setNameUser([user]);
+    setNameUser(user.toUpperCase());
   };
 
   const reset = () => {
@@ -122,6 +137,8 @@ function UserProvider({ children }) {
     nameUser,
     registro,
     registerExitoso,
+    addData,
+    dataUser,
   };
 
   return (
