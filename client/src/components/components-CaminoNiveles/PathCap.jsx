@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/UserProvider";
 import "animate.css";
 import { Link } from "react-router-dom";
+import next from "../../assets/sounds/next.wav";
 import BlockIcon from "../../assets/BlockIcon.svg";
 
 export default function PathCap({ seccion }) {
@@ -23,6 +24,8 @@ export default function PathCap({ seccion }) {
   }, []);
 
   const handleClick = (descripcion, direccion, id, postInfo) => {
+    const audio = new Audio(next);
+    audio.play();
     if (infoId !== id) {
       if (postInfo === "rigth") {
         setAnimateIntro("animate__bounceInRight");

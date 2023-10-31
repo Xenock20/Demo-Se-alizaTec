@@ -3,6 +3,8 @@ import NavBar from "./../components/components-pract-page/NavBar";
 import ContTop from "./../components/components-pract-page/ContTop";
 import GameCont from "./../components/components-pract-page/GameCont";
 import ButtonCont from "./../components/components-pract-page/ButtonCont";
+import wrong from "../../src/assets/sounds/wrong.wav";
+import correct from "../../src/assets/sounds/correct.wav";
 import { useParams } from "react-router";
 import { contGames } from "../Contenido/ContenidoGame";
 import { UserContext } from "../context/UserProvider";
@@ -33,6 +35,8 @@ export default function PractPage() {
  * Esta funcion desbloquea las rutas para acceder a los siguientes modos de juego, lecciones o niveles.
  */
   const handleCompleteGame = () => {
+    const audio = new Audio(correct);
+    audio.play();
     setCompletado(true);
     //deblock.leccionID.map((id) => console.log(id) /*desbloquearLeccion(id)*/);
     desbloquearLeccion(deblock.leccionID)
@@ -48,6 +52,8 @@ export default function PractPage() {
   };
 
   const gameOverShow = () => {
+    const audio = new Audio(wrong);
+    audio.play();
     setGameOver(true);
   };
 
