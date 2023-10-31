@@ -1,73 +1,128 @@
 const conexion = require("../DataBase/db");
-const bcrypts = require("bcrypt");
-
+const queries = require("../DataBase/query");
+const { addHash } = require("./hashing");
+const { generateToken } = require("../auth/generateToken");
+const logger = require("../debug/logger");
 exports.register = async (req, res) => {
-  const body = req.body;
-  const user = req.body.user;
-  const email = req.body.email;
-  const password = req.body.password;
-  console.log(body);
-  console.log(password);
+  const { body } = req;
 
-  let passHash = await bcrypts.hash(password, 10);
+  if (!body.user || !body.email || !body.password) {
+    logger.warn("Uno de los campos estas vacio");
+    return res.status(400).json({
+      status: "FAILED",
+      data: { error: "Uno de los campos estas vacio" },
+    });
+  }
+  const userData = await addHash(body);
 
-  const userData = {
-    user: user,
-    email: email,
-    password: passHash,
-  };
+  try {
+    queries.createUser(userData);
+    res
+      .status(200)
+      .send({ status: "OK", message: "Se ha registrado correctamente" });
+  } catch (error) {
+    res
+      .status(300)
+      .send({ status: "FAILED", data: { error: error?.message || error } });
+  }
+};
+
+exports.login = async (req, res) => {
+  try {
+    const { body } = req;
+
+    if (!body.email || !body.password) {
+      logger.warn("Uno de los campos estas vacio");
+      return res.status(400).json({
+        status: "FAILED",
+        data: { error: "Uno de los campos estas vacio" },
+      });
+    }
+
+    const result = await queries.validateUser(body);
+
+    const id = await result.id;
+
+    const token = await generateToken(id);
+
+    const cookiesOptions = {
+      expires: new Date(
+        Date.now() + process.env.JWT_COOKIE_EXPIRE * 24 * 60 * 60 * 1000
+      ),
+      httpOnly: true,
+    };
+
+    res.cookie("jwt", token, cookiesOptions);
+
+    res.status(200).send({ status: "OK", data: "Inicio de sesion exitoso" });
+  } catch (error) {
+    res
+      .status(error.statusCode)
+      .send({ status: error.code, data: error.message });
+  }
+};
+exports.authenticated = async (req, res) => {
+  try {
+    const token = await req.cookies.jwt;
+
+    const data = await queries.getUserData(token);
+
+    res.send({
+      status: "OK",
+      data: {
+        user: data.user,
+        nivel: data.nivel,
+        lecciones: data.lecciones,
+        modoJuego: data.modoJuego,
+        numeroProgreso: data.numeroProgreso,
+        coloresProgreso: data.colorProgreso,
+        familiaProgreso: data.familiaProgreso,
+        diasMesesProgreso: data.diasMesesProgreso,
+        preguntasProgreso: data.PreguntasBasicasProgreso,
+      },
+    });
+  } catch (error) {
+    logger.error(error);
+    res.status(400).send({ status: "Failed", data: error });
+  }
+};
+
+exports.progreso = async (req, res) => {
+  const { body } = req;
+
+  if (!body.niveles || !body.lecciones || !body.modoJuego) {
+    logger.warn("[PROGRESO] - Uno de los campos estas vacio en ");
+    return res.status(400).json({
+      status: "FAILED",
+      data: { error: "Uno de los campos estas vacio" },
+    });
+  }
+  const token = await req.cookies.jwt;
+  const data = await queries.getUserData(token);
+  console.log(data);
+
+  const level = JSON.stringify(body.niveles);
+  const lesson = JSON.stringify(body.lecciones);
+  const modeGame = JSON.stringify(body.modoJuego);
 
   conexion.query(
-    "SELECT * FROM USERS WHERE email = ?",
-    [userData.email],
-    (err, result) => {
-      if (result.length > 0) {
-        console.log("Email ya existe");
-        return res
-          .status(409)
-          .json({ error: "El correo electrónico ya está registrado." });
-      } else {
-        conexion.query("INSERT INTO users SET ?", userData, (err, result) => {
-          if (err) {
-            console.log("El error es" + err);
-          } else {
-            return res.send("CORRECTO");
-          }
-        });
+    "UPDATE niveles SET nivel = ?,lecciones = ?,modoJuego = ?  WHERE id_usersfk = ?",
+    [level, lesson, modeGame, data.id_users],
+    (err) => {
+      if (err) {
+        logger.error("Error al actualizar el progreso");
+
+        res.status(500).json({ mensaje: "Error al actualizar el progreso" });
+        return;
       }
+      logger.info("Progreso Actualizado Correctamente");
+      res.status(200).json({ mensaje: "Progreso actualizado correctamente" });
     }
   );
 };
 
-exports.login = (req, res) => {
-  const body = req.body;
-  const password = req.body.password;
-  const email = req.body.email;
-  console.log(body);
-
-  console.log(password);
-
-  conexion.query(
-    "SELECT * FROM users WHERE email = ?",
-    [email],
-    async (err, result) => {
-      if (err) {
-        console.error(err);
-        return res
-          .status(500)
-          .json({ error: "Error en la consulta de la base de datos." });
-      }
-
-      if (
-        result.length === 0 ||
-        !(await bcrypts.compare(password, result[0].password))
-      ) {
-        console.log("Credenciales incorrectas");
-        return res.status(401).json({ error: "Credenciales incorrectas." });
-      } else {
-        console.log("Inicio de sesión exitoso");
-        res.status(200).json({ user: result[0].user });
-      }
-    }
-  );
+exports.logout = (req, res) => {
+  res.clearCookie("jwt");
+  res.status(200).json({ mensaje: "Sesion cerrada correctamente" });
+  logger.info("Cerrando sesion");
 };

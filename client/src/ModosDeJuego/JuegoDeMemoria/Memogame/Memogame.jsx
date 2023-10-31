@@ -18,7 +18,7 @@ export default function Memogame({ contenido, gameComplete, style }) {
     if (time > 0) {
       const timer = setInterval(() => {
         setTime(time - 1);
-      }, 3000);
+      }, 1000);
 
       return () => {
         clearInterval(timer);
@@ -61,7 +61,7 @@ export default function Memogame({ contenido, gameComplete, style }) {
           type: item.type,
         }))
       );
-    }, 1750);
+    }, 3000);
   };
 
   const arrayRevuelto = (a) => {
