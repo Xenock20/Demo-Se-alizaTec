@@ -406,7 +406,7 @@ export const seccionLevels = [
           {
             id: 37,
             descripcion: "Realizar una presentación básica en LSA.",
-            link: "",
+            link: "/leccion/20",
             position: "izquierda",
             positionInfo: "rigth",
           },

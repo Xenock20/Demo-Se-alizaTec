@@ -12,8 +12,9 @@ const BotonesLevels = () => {
   return (
     <>
       <div className="levels-path">
-        {sectLV.map((e, i) => 
-          <PathCap seccion={e} key={i}></PathCap>)}
+        {sectLV.map((e, i) => (
+          <PathCap seccion={e} key={i}></PathCap>
+        ))}
       </div>
     </>
   );

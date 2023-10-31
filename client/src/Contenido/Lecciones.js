@@ -400,8 +400,7 @@ export const lecciones = [
     id: 18,
     titulo: "Aprenderemos cómo representar la palabra “Semana” en LSA.",
     contenido: {
-      contPrincipal:
-        "",
+      contPrincipal: "",
       contSecundario: [
         {
           subtitulo: "",
@@ -419,8 +418,7 @@ export const lecciones = [
     id: 19,
     titulo: "Mes",
     contenido: {
-      contPrincipal:
-        "Ahora aprenderemos a cómo representar la palabra “Mes”",
+      contPrincipal: "Ahora aprenderemos a cómo representar la palabra “Mes”",
       contSecundario: [
         {
           subtitulo: "",
@@ -432,6 +430,43 @@ export const lecciones = [
     link: {
       return: "/mododejuego/13",
       next: "/mododejuego/14",
+    },
+  },
+  {
+    id: 20,
+    titulo: "Realizar una presentación en “LSA”",
+    contenido: {
+      contPrincipal:
+        "Vamos a ver la introducción a preguntas y algo de presentación.",
+      contSecundario: [
+        {
+          subtitulo: "“YO”",
+          img: hijo,
+          text: "Para empezar, ¿Cómo hacemos para referirnos a nosotros mismos?. Sencillo, vamos a señalar sobre nuestro pecho con el dedo índice.",
+        },
+      ],
+    },
+    link: {
+      return: "/home",
+      next: "/",
+    },
+  },
+  {
+    id: 21,
+    titulo: "Realizar una presentación en “LSA”",
+    contenido: {
+      contPrincipal: "",
+      contSecundario: [
+        {
+          subtitulo: "“VOS”",
+          img: hijo,
+          text: "Para referirse a alguien más, lo que tenemos que hacer es señalar a la persona en frente nuestro con el dedo índice.",
+        },
+      ],
+    },
+    link: {
+      return: "/home",
+      next: "/",
     },
   },
 ];

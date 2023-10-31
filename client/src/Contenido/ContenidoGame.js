@@ -190,9 +190,9 @@ export const contGames = [
       next: "/home",
     },
     desblock: {
-      leccionID: [4, 8, 9, 12, 13, 14, 17, 18],
+      leccionID: [4, 8, 9, 12, 13, 14, 17, 18, 20],
       modeGameID: [4, 8, 11, 13],
-      levelID: [1, 10, 19, 28],
+      levelID: [1, 10, 19, 28, 37],
     },
   },
   {
@@ -439,21 +439,22 @@ export const contGames = [
     id: 13,
     modeGame: "juego-pr-letras",
     cont: {
-      pregunta: "¿Cuál es la seña que para poder representarla se debe realizar la seña de la vocal “A”,  al final?",
+      pregunta:
+        "¿Cuál es la seña que para poder representarla se debe realizar la seña de la vocal “A”,  al final?",
       opciones: [
         {
           text: "Lunes",
-          opcion: false
+          opcion: false,
         },
         {
           text: "Día",
-          opcion: true
+          opcion: true,
         },
         {
           text: "Semana",
-          opcion: false
+          opcion: false,
         },
-      ]
+      ],
     },
     link: {
       return: "/leccion/18",
@@ -473,33 +474,33 @@ export const contGames = [
         {
           url: amarillo,
           opt: "semana",
-          alt: "Semana"
+          alt: "Semana",
         },
         {
           url: azul,
           opt: "dia",
-          alt: "Dia"
+          alt: "Dia",
         },
         {
           url: rojo,
           opt: "mes",
-          alt: "Mes"
+          alt: "Mes",
         },
       ],
       opts: [
         {
           text: "Semana",
-          opt: "semana"
+          opt: "semana",
         },
         {
           text: "Dia",
-          opt: "dia"
+          opt: "dia",
         },
         {
           text: "Mes",
-          opt: "mes"
+          opt: "mes",
         },
-      ]
+      ],
     },
     link: {
       return: "/leccion/19",
