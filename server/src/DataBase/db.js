@@ -1,5 +1,6 @@
 const mysql = require("mysql2");
 const { color } = require("colors");
+const logger = require("../debug/logger");
 
 //CONEXION
 const conexion = mysql.createConnection({
@@ -11,7 +12,7 @@ const conexion = mysql.createConnection({
 
 conexion.connect((err) => {
   if (err) {
-    console.log(err);
+    logger.error("Error en la conexion - MYSQL".red, err);
   } else {
     console.log("Conectado - MYSQL".blue);
   }

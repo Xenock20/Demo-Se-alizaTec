@@ -322,7 +322,7 @@ export const seccionLevels = [
           {
             id: 28,
             descripcion: "Conceptos básicos sobre el tiempo en LSA.",
-            link: "/leccion/17",
+            link: "",
             position: "izquierda",
             positionInfo: "rigth",
           },
@@ -406,7 +406,7 @@ export const seccionLevels = [
           {
             id: 37,
             descripcion: "Realizar una presentación básica en LSA.",
-            link: "/leccion/20",
+            link: "",
             position: "izquierda",
             positionInfo: "rigth",
           },
