@@ -1,6 +1,7 @@
 const conexion = require("./db");
 const jwt = require("jsonwebtoken");
 const bcrypts = require("bcrypt");
+
 const createUser = (newUser) => {
   conexion.query(
     "SELECT * FROM USERS WHERE email = ?",
@@ -24,7 +25,7 @@ const createUser = (newUser) => {
 
         conexion.query(
           "INSERT INTO niveles (id_usersfk, nivel, numeroProgreso, coloresProgreso, familiaProgreso, diasMesesProgreso, PreguntasBasicasProgreso) VALUES (?, ?, ?, ?, ?, ?, ?)",
-          [userId, null, 0, 0, 0, 0, 0],
+          [userId, 0, 0, 0, 0, 0, 0],
           (err, result) => {
             if (err) {
               return {

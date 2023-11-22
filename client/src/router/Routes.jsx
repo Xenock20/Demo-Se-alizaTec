@@ -11,6 +11,7 @@ import LeccionPage from "../pages/LeccionPage";
 import PractPage from "./../pages/PractPage";
 import JuegoOrdenamiento from "../ModosDeJuego/JuegoOrdenamiento/JuegoOrdenamiento";
 import FlechasGame from "../ModosDeJuego/FlechasGame/FlechasGame";
+import GenerateNameSign from "../pages/GenerateNameSign";
 
 export default function Routers() {
   return (
@@ -27,6 +28,7 @@ export default function Routers() {
       <Route path="/register" element={<Register></Register>}></Route>
       <Route path="/login" element={<Login></Login>}></Route>
       <Route path="/gameOrdenamiento" element={<JuegoOrdenamiento />}></Route>
+      <Route path="/signName" element={<GenerateNameSign />}></Route>
     </Routes>
   );
 }

@@ -15,39 +15,34 @@ export default function HomePage() {
     desbloquearNiveles,
     desbloquearLeccion,
     desbloquearModoJuego,
+    addData,
   } = useContext(UserContext);
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const { data, error } = useGet(BASE_URL_DATA);
 
   useEffect(() => {
     resetBarr();
   }, [resetBarr]);
 
-  const { data, error } = useGet(BASE_URL_DATA);
-
-  const verifyAuthenticated = (dataUser) => {
-    if (!dataUser) {
-      return;
-    }
-    insertUserName(dataUser.data.user);
-
-    const levelsUnlocked = JSON.parse(dataUser.data.nivel);
-    const lessonsUnlocked = JSON.parse(dataUser.data.lecciones);
-    const modeGameUnlocked = JSON.parse(dataUser.data.modoJuego);
-
-    if (!levelsUnlocked) {
-      return setIsAuthenticated(true);
-    }
+  const verifyAuthenticated = () => {
+    insertUserName(data.data.user);
+    addData(data.data);
+    const levelsUnlocked = JSON.parse(data.data.nivel);
+    const lessonsUnlocked = JSON.parse(data.data.lecciones);
+    const modeGameUnlocked = JSON.parse(data.data.modoJuego);
 
     desbloquearNiveles(levelsUnlocked);
     desbloquearLeccion(lessonsUnlocked);
     desbloquearModoJuego(modeGameUnlocked);
 
-    return setIsAuthenticated(true);
+    setIsAuthenticated(true);
+    return;
   };
 
   useEffect(() => {
-    verifyAuthenticated(data);
+    if (data) verifyAuthenticated();
   }, [data]);
 
   return (
