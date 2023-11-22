@@ -369,15 +369,15 @@ export const contGames = [
         },
 
         {
-          url: amarillo,
+          url: rojo,
           name: "AMARILLO",
         },
         {
-          url: amarillo,
+          url: colores,
           name: "AMARILLO",
         },
         {
-          url: amarillo,
+          url: azul,
           name: "AMARILLO",
         },
       ],
@@ -475,17 +475,17 @@ export const contGames = [
     cont: {
       imgs: [
         {
-          url: amarillo,
+          url: semana,
           opt: "semana",
           alt: "Semana",
         },
         {
-          url: azul,
+          url: dia,
           opt: "dia",
           alt: "Dia",
         },
         {
-          url: rojo,
+          url: mes,
           opt: "mes",
           alt: "Mes",
         },
