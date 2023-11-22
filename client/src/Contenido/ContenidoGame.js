@@ -19,6 +19,9 @@ import colores from "../Contenido/Image/N3-Colores/colorB&W.png";
 import rojo from "../Contenido/Image/N3-Colores/rojoB&W.png";
 import mama from "../Contenido/Image/N4-Familia/mama.png";
 import papa from "../Contenido/Image/N4-Familia/papa.png";
+import dia from "../Contenido/Image/N6-DYM/dia.png";
+import mes from "../Contenido/Image/N6-DYM/mes.png";
+import semana from "../Contenido/Image/N6-DYM/semana.png";
 
 export const contGames = [
   {
